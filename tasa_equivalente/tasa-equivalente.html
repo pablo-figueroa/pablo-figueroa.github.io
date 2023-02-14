@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Page Title</title>
+    <link href="./css/style.css" rel="stylesheet">
+    <script src="./js/main.js" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>Tasa Equivalentessssssssss</h1>
+
+
+<div class="wrapper">
+    
+
+    <br>
+    <form>
+        <div class="box a"><br>Tengo la:&nbsp;
+            <br><br>
+            <select id="selectRate_in" onChange="getValue()">
+                <!--<option disabled selected="">Seleccionar TASA</option>-->
+                <option value="1" id="nocentrar">Tasa de Interés Efectiva</option>
+                <option value="2" id="nocentrar">Tasa de Interés NOMINAL</option>
+                <option value="3" id="nocentrar">Tasa de Descuento Efectiva</option>
+                <option value="4" id="nocentrar">Tasa de Descuento NOMINAL</option>
+            </select>
+            
+            <br>&nbsp;
+            <br>
+            <span id="showIn">Frecuencia de capitalización: &nbsp;
+            <br><br>
+            <select id="selectCapit_In" onChange="getValue()">
+            
+                <!--<option disabled selected="">Seleccionar CAPITALIZACIÓN</option>-->
+                
+                <option value="360" id="centrar">ANUAL</option>
+                <option value="180" id="centrar">Semestral</option>
+                <option value="120" id="centrar">Cuatrimestral</option>
+                <option value="90" id="centrar">Trimestral</option>
+                <option value="60" id="centrar">Bimestral</option>
+                <option selected value="30" id="centrar">MENSUAL</option>
+                <option value="15" id="centrar">Quincenal</option>
+                <option value="1" id="centrar">Diaria</option>
+            </select>
+            <br><br>
+        </span>
+        
+        </div>
+    </form>
+    
+    
+
+    
+
+    
+    <form>
+        <div class="box b"><br>del &nbsp;
+            
+            <input type="number" step="1" id="valueRate_in" name="valueRate_in" placeholder="Ingresar tasa" min="0" value="1" onChange="getValue()"> 
+            
+            
+            <span>% &nbsp; &nbsp;</span>
+            <br><br>
+            <select id="selectPeriod_in" onChange="getValue()">
+            
+                <!--<option disabled selected="">Seleccionar PERIODO</option>-->
+                
+                <option value="360" id="centrar">ANUAL</option>
+                <option value="180" id="centrar">Semestral</option>
+                <option value="120" id="centrar">Cuatrimestral</option>
+                <option value="90" id="centrar">Trimestral</option>
+                <option value="60" id="centrar">Bimestral</option>
+                <option selected value="30" id="centrar">MENSUAL</option>
+                <option value="15" id="centrar">Quincenal</option>
+                <option value="1" id="centrar">Diaria</option>
+                
+                
+                
+            
+        </select>
+        <br>&nbsp;
+        </div>
+    </form>
+    
+<br>
+
+<form>
+    <div class="box c"><br>... y quiero la:&nbsp;
+        <br><br>
+        <select id="selectRate_out" onChange="getValue()">
+            <!--<option disabled selected="">Seleccionar TASA</option>-->
+            <option value="1" id="nocentrar">Tasa de Interés Efectiva</option>
+            <option value="2" id="nocentrar">Tasa de Interés NOMINAL</option>
+            <option value="3" id="nocentrar">Tasa de Descuento Efectiva</option>
+            <option value="4" id="nocentrar">Tasa de Descuento NOMINAL</option>
+        </select>
+        <br>&nbsp;
+        
+        <br>
+    
+        
+            <span id="showOut">Frecuencia de capitalización: &nbsp;
+                <br><br>
+                <select id="selectCapit_Out" onChange="getValue()">
+        
+            <!--<option disabled selected="">Seleccionar CAPITALIZACIÓN</option>-->
+            
+                <option value="360" id="centrar">ANUAL</option>
+                <option value="180" id="centrar">Semestral</option>
+                <option value="120" id="centrar">Cuatrimestral</option>
+                <option value="90" id="centrar">Trimestral</option>
+                <option value="60" id="centrar">Bimestral</option>
+                <option selected value="30" id="centrar">MENSUAL</option>
+                <option value="15" id="centrar">Quincenal</option>
+                <option value="1" id="centrar">Diaria</option>
+                </select>
+                <br><br>
+            </span>
+        
+    
+    </div>
+</form>
+
+
+    <form>
+        <div class="box d">
+            <br>&nbsp;
+            <select id="selectPeriod_out" onChange="getValue()">
+                
+                <!--<option disabled selected="">Seleccionar PERIODO</option>-->
+                    <option value="360" id="centrar">ANUAL</option>
+                    <option value="180" id="centrar">Semestral</option>
+                    <option value="120" id="centrar">Cuatrimestral</option>
+                    <option value="90" id="centrar">Trimestral</option>
+                    <option value="60" id="centrar">Bimestral</option>
+                    <option selected value="30" id="centrar">MENSUAL</option>
+                    <option value="15" id="centrar">Quincenal</option>
+                    <option value="1" id="centrar">Diaria</option>
+                    
+            </select>
+            <br>&nbsp;
+        </div>
+    </form>
+
+
+        
+    
+    <div class="box e">
+        
+        <br>
+        <p id="demo">12.6825 %</p>
+
+        <br>
+        
+    
+    </div>
+    <br>
+    
+</div>
+
+
+<br>
+<footer>developed by Pablo Figueroa</footer>
+
+<!--
+<div id="check">
+    <p>Check</p>
+
+    Tasa in:&nbsp;
+    <input type="text" id="text1">&nbsp;&nbsp;"Index"
+
+
+
+    <br>
+    <span>del: </span>
+    <span id="text2"></span>
+
+
+
+    <br>
+    <span>Periodo in: </span>
+    <span id="text3"></span>
+
+    <br><br>
+    <br>Tasa out:&nbsp;
+    <input type="text" id="text4">
+
+    <br>Periodo out:&nbsp;
+    <input type="text" id="text5">
+
+</div>
+-->
+
+</body>
+</html>

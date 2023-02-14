@@ -1,0 +1,326 @@
+/* { 
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box
+}*/
+
+body {
+  background-image: url("./img/DALL·E.png");
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+
+#seleccionar-mascota {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.titulo {
+  color: whitesmoke;
+  font-size: 55px;
+  background-color: rgba(5, 5, 5, 0.7);
+  border-radius: 5%;
+  font-family: 'Fredoka One', cursive;
+  width: 7em;
+  height: 2em;
+  display: flex;
+  align-content: space-around;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  letter-spacing: 15px;
+  text-shadow: 2px 2px 5px rgb(255 255 255 / 60%);
+  animation: myAnim 2s ease 0s 1 normal forwards;
+}
+
+.subtitulo{
+  background-color: rgba(255, 255, 255, 0.7);
+  animation: myAnim2 2s ease-in 0s 1 normal both;
+}
+
+.tarjetas {
+  display: flex;
+  gap: 10px;
+  animation: myAnim 2s ease 0s 1 normal forwards;
+  
+}
+
+
+
+.tarjeta-de-mokepon {
+  box-sizing: border-box;
+  width: 150px;
+  height: 243px;
+  padding: 10px;
+  border: 5px outset rgba(238, 238, 238, .7);
+  margin: 10px;
+  
+  border-radius: 40%;
+  
+  background-color: rgba(238, 238, 238, .7);
+  
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  
+  font-family: 'Sassy Frass', cursive;
+  font-size: 40px;
+  
+  transition: all 0.5s ease-in-out;
+  animation: myAnim 2s ease 0s 1 normal both;
+  
+}
+
+@keyframes myAnim {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 1;
+		transform: translateY(-45px);
+	}
+
+	24% {
+		opacity: 1;
+	}
+
+	40% {
+		animation-timing-function: ease-in;
+		transform: translateY(-24px);
+	}
+
+	65% {
+		animation-timing-function: ease-in;
+		transform: translateY(-12px);
+	}
+  
+	82% {
+    animation-timing-function: ease-in;
+		transform: translateY(-6px);
+	}
+
+	93% {
+    animation-timing-function: ease-in;
+		transform: translateY(-4px);
+	}
+
+	25%,
+	55%,
+	75%,
+	87% {
+    animation-timing-function: ease-out;
+		transform: translateY(0px);
+	}
+  
+	100% {
+    animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+.tarjeta-de-mokepon img {
+  width: 160px;
+  opacity: .7;
+  border-radius: 50%;
+  position: relative;
+}
+
+.tarjeta-de-mokepon:hover {
+  cursor: pointer;
+  box-shadow: 5px 5px 20px rgba(255, 255, 0, 0.7),
+             -5px -5px 20px rgba(255, 255, 0, 0.7),
+             1px 1px 20px rgba(5, 5, 5, 0.7),
+             -1px -1px 20px rgba(5, 5, 5, 0.7);
+  background-color: rgba(255, 255, 0, 0.7);
+  border: 5px outset rgba(255, 255, 0, 0.7);
+  border-radius: 30%;
+}
+
+
+
+
+input[type="radio"] {
+  display: none;
+}
+
+input:checked+label {
+  box-shadow: 5px 5px 20px rgba(255, 255, 0, 0.7),
+             -5px -5px 20px rgba(255, 255, 0, 0.7),
+             1px 1px 20px rgba(5, 5, 5, 0.7),
+             -1px -1px 20px rgba(5, 5, 5, 0.7);
+  background-color: rgba(255, 255, 0, 0.7);
+  border: 5px outset rgba(255, 255, 0, 0.7);
+  width: 200px;
+  border-radius: 20%;
+}
+
+#boton-mascota {
+  /*box-sizing: border-box; */
+  width: 15em;
+  height: 3em;
+  /* padding: 9px; */
+  border: 2px solid rgba(101, 136, 100, .7);
+  margin-top: 10px;
+  border-radius: 95% 5% 95% 5% / 5% 95% 5% 95% ;
+  color: black;
+  background-color: rgba(101, 136, 100, .7);
+  font-size: 20px;
+  /* display: flex;
+  align-items: center;
+  justify-content: space-around; */
+  font-family: 'Poppins';
+  animation: myAnim2 2s ease-in 0s 1 normal both;
+  transition: all 0.5s ease-in-out;
+  
+  
+}
+
+@keyframes myAnim2 {
+  0% {
+    opacity: 0;
+	}
+  
+	100% {
+    opacity: 1;
+	}
+}
+
+#boton-mascota:hover {
+  border-radius: 5% 95% 5% 95% / 95% 5% 95% 5%;
+  background-color: rgba(5,5,5,0.8);
+  font-size: 22px;
+  color:aliceblue;
+  box-shadow: 5px 5px 20px rgba(222, 0, 0, 0.7),
+             -5px -5px 20px rgba(222, 0, 0, 0.7),
+             5px 1px 10px rgba(5, 5, 5, 0.7),
+             -1px -5px 10px rgba(5, 5, 5, 0.7);
+
+}
+
+
+#seleccionar-ataque {
+  display: flex; /*En realidad no haría falta porque lo toma de mokepon.js*/
+  flex-direction: column;
+  align-items: center; /*Porque la dirección está en columnas*/
+}
+
+#boton-ataque {
+  display: flex;
+}
+
+.boton-de-ataque {
+  width: 5em;
+  height: 100px;
+  padding: 10px;
+  border: 5px outset rgba(255,255,255,0.7);
+  margin: 10px;
+  border-radius: 15%;
+  background-color: rgba(255,255,255,0.7);
+  
+  font-family: 'Sassy Frass', cursive;
+  font-size: 60px;
+  
+  transition: all 0.5s ease-in-out;
+  
+  animation: myAnim 2s ease 0s 1 normal both;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  
+  box-sizing: border-box;
+}
+
+
+
+.boton-de-ataque:hover {
+  cursor: pointer;
+  background-color: rgba(136, 232, 9, 0.7);
+  width: 345px;
+}
+
+
+
+
+#mensajes {
+  width: 90vw;
+  border: 5px outset rgba(36, 36, 36, 0.7);
+  background-color: rgba(36, 36, 36, 0.7);
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 20px;
+  
+  display: flex;
+  
+  flex-direction: column;
+  align-items: center;
+  
+  font-family: 'Fredoka One', cursive;
+  font-size: 20px;
+  letter-spacing: 10px;
+  color: white;
+}
+
+#resultado {
+  text-align: center;
+}
+
+#boton-reiniciar {
+  border: none;
+  color: black;
+  font-family: 'Fredoka One', cursive;
+  font-size: 20px;
+}
+
+.ataques {
+  display: grid;
+  grid-template-columns: 200px 300px 200px;
+  text-align: center;
+
+  margin-top: 20px;
+
+  font-family: 'Fredoka One', cursive;
+  font-size: 15px;
+  letter-spacing: 10px;
+  color: rgb(50,50,50);
+
+  border-radius: 5% 95% 5% 95% / 95% 5% 95% 5%;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 5px 5px 20px rgba(20, 200, 20, 0.7),
+             -5px -5px 20px rgba(20, 200, 20, 0.7),
+             5px 1px 10px rgba(5, 5, 5, 0.7),
+             -1px -5px 10px rgba(5, 5, 5, 0.7);
+}
+
+#vidas-jugador, #vidas-enemigo {
+  font-size: 30px;
+}
+
+#mascota-jugador, #mascota-enemigo {
+  font-family: 'Sassy Frass', cursive;
+  font-size: 40px;
+  font-weight: bold;
+  text-decoration: underline;
+  text-shadow: 4px 4px 5px rgba(230,230,0,0.8);
+}
+
+#vs {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  font-family: 'Sassy Frass', cursive;
+  font-size: 150px;
+  font-weight: bold;
+
+  text-shadow: 4px 4px 5px rgba(220,20,220,0.8);
+}
+@media (max-width: 530px) {
+  .tarjetas {
+    flex-direction: column;
+  }
+}

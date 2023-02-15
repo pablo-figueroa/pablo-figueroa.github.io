@@ -49,6 +49,15 @@ body {
 }
 
 
+/* .tarjetas {
+  display: grid;
+  gap: 1rem;
+  grid-auto-rows: 18rem;
+  grid-template-columns: repeat(auto-fill, minmax(2rem, 28rem));
+  animation: myAnim 2s ease 0s 1 normal forwards;
+  border: 1px;
+} */
+
 
 .tarjeta-de-mokepon {
   box-sizing: border-box;
@@ -206,8 +215,10 @@ input:checked+label {
   align-items: center; /*Porque la dirección está en columnas*/
 }
 
-#boton-ataque {
+.tarjetas, .tarjetas-ataques {
   display: flex;
+  gap: 10px;
+  flex-direction: row;
 }
 
 .boton-de-ataque {
@@ -319,8 +330,19 @@ input:checked+label {
 
   text-shadow: 4px 4px 5px rgba(220,20,220,0.8);
 }
-@media (max-width: 530px) {
-  .tarjetas {
+@media (max-width: 678px) {
+  .tarjetas, .tarjetas-ataques {
     flex-direction: column;
   }
+  .ataques {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+  
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+  #vs {
+    font-size: 50px;
+  }
+    
 }

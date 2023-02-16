@@ -1,277 +1,144 @@
-body {
-  background-color: rgb(220, 220, 200);
-  }
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.contenedor {
+  width: 90%;
+  max-width: 1000px;
+  margin: 10px auto;
+
+  /* crear 6 filas y 3 columnas  */
+  display:grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, auto); /* 6 filas de tamaño automático */
+
+  grid-template-areas: "header header header"
+                       "tengo tengo tengo"
+                       "quiero quiero quiero"
+                       "widget-1 widget-1 widget-2"
+                       "widget-3 widget-3 widget-4"
+                       "footer footer footer";
+}
+
+/* Acceder div que están dentro de la clase contenedor */
+.contenedor > div,
+.contenedor .header,
+.contenedor .tengo,
+.contenedor .quiero,
+.contenedor .footer {
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.contenedor .header {
+  grid-area: header; /* ver en .contenedor*/
   
+  background: #12203e;
+  color: #fff;
   
-.wrapper {
-    
-    border-radius: 2em;
-    
+  /* grid-column-start: 1;
+  grid-column-end: -1; Si le coloco "-1" abarca todo el espacio disponible, sino "4" */
 
-    
-    background-color: #e5e5f7;
-    opacity: 0.9;
-    background-image: radial-gradient(#333cdd 0.75px, #e5e5f7 0.75px);
-    background-size: 15px 15px;
-    
-       
- }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
 
+.contenedor .tengo {
+  /* grid-column-start: 1;
+  grid-column-end: -2; Si le coloco "-2" dejo 1 columna disponible, sino "3" */
+  /* grid-column: 1 / -2; */
+  /* grid-column: span 2; "Esa es otra forma de hacer lo mismo" */
 
+  grid-area: tengo; /* ver en .contenedor*/
+  background: #12a03e;
 
-
-  .a, .b {
-
-    margin: 1px;
-    font-size: 100%;
-    text-align: center;
-    
+  display: flex;
+  flex-direction: column;
  
-
-    background: rgba(255, 255, 255, 0.19);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-
-  }
-
-
- 
- 
-  .c, .d {
-   
-    margin: 1px;
-    font-size: 100%;
-    text-align: center;
-    
-    background: rgba(255, 255, 255, 0.19);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-
-
-
-  }
-
-  .e {
-
-    margin: 1px;
-    font-size: 100%;
-    text-align: center;
-    
-    background: rgba(255, 255, 255, 0.19);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-
-
-
-
-  }
-
-
-.a, .b, .c, .d, .e {
-    margin-left: 20vw;
-    margin-right: 20vw;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-    
-}
- 
-.a {
-  
-   
-    padding-left: 5vw;
-    padding-right: 5vw;
-
-    font-size: 25px;
-    
-
-    
-  }
-  .b {
-  
-    
-    padding-left: 5vw;
-    padding-right: 5vw;
-
-    font-size: 20px;
-    
-    
-  }
-  .c {
-
-    font-style: oblique;
-    padding-left: 5vw;
-    padding-right: 5vw;
-
-    font-size: 25px;
-    
-    
-  }
-  .d {
-
-    padding-left: 5vw;
-    padding-right: 5vw;
-  }
-  .e {
-
-    padding-left: 5vw;
-    padding-right: 5vw;
-    font-size: 25px;
-    
-  }
-  
-
- #selectRate_in{
-    
-    
-    background: rgba(255, 255, 255, 0.19);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-
- }
-
-
- #selectCapit_In{
-  background: rgba(255, 255, 255, 0.19);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
- }
-
-
-  #selectPeriod_in{
-    background: rgba(255, 255, 255, 0.19);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-                
-  }
-
-  #selectRate_out{
-    background: rgba(255, 255, 255, 0.19);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-   }
-  
-  
-   #selectCapit_Out{
-    background: rgba(255, 255, 255, 0.19);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-   }
-  
-  
-    #selectPeriod_out{
-      background: rgba(255, 255, 255, 0.19);
-      border-radius: 16px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-                  
-    }
-
-
-
-#valueRate_in {
-  border: 0px;
-  border-radius: 50px;
-  width: 7em;
-  height: 2em;
-  text-align: center;
-  color: rgb(7, 7, 7);
-  font-weight: bolder;
-  font-size: 18px;
-  background-color: rgba(250,250,250,0.9);
-
 }
 
-#seleccionarPeriodo {
-  border: 0px;
-  border-radius: 5%;
-  
-  height: 2em;
-  text-align: center;
-  
-  font-style: oblique;
-  background-color: rgba(250,250,250,0.6);
-}
-  
-  h1 {
-    color:#000;
-    text-align: center;
-    text-shadow: 1px 1px 20px #111;
-  }  
+.contenedor .quiero {
+  /* grid-column-start: 1;
+  grid-column-end: -2; Si le coloco "-2" dejo 1 columna disponible, sino "3" */
+  /* grid-column: 1 / -2; */
+  /* grid-column: span 2; "Esa es otra forma de hacer lo mismo" */
 
- 
-  
-  #demo {
-    font-family: verdana;
-    
-    color: #000;
-    text-align: center;
-    font-size: 30px;
-    font-size: 25px;
-    text-shadow: 5px 5px 5px rgb(255, 255, 0);
-  }
-  
-  footer{
-    text-align: center;
-    color:#000;
-    text-shadow: 5px 5px 5px #000;
-  }
+  grid-area: quiero; /* ver en .contenedor*/
+  background: #1220fe;
 
-
-
-#centrar {
-  text-align: center;
-  font-style: oblique;
-  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
   
 }
 
-#nocentrar {
-  font-style: oblique;
-  background-color: rgba(0, 0, 0, 0.1);
+.contenedor .widget-1 {
+  grid-area: widget-1;
 }
 
+.contenedor .widget-2 {
+  grid-area: widget-2;
+}
 
-#selectPeriod_in, #selectPeriod_out, #selectRate_in, #selectRate_out, #selectCapit_In, #selectCapit_Out {
-  height: 30px;
-  width: auto;
-  font-size: 15px;
+.contenedor .widget-3 {
+  grid-area: widget-3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedor .widget-4 {
+  grid-area: widget-4;
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedor .widget-1,
+.contenedor .widget-2,
+.contenedor .widget-3,
+.contenedor .widget-4 {
+  background: #55a8fd;
+  color: #fff;
   
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.contenedor .footer {
+  background: #12203e;
+  color: #fff;
+  /* grid-column: 1 / -1; */
+  grid-area: footer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 #showIn {
   display: none;
-  font-size: 15px;
 }
 
 #showOut {
   display: none;
-  font-size: 15px;
 }
 
-
+@media screen and (min-width: 768px) {
+  .contenedor {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "header    header    header    header"
+                           "tengo     tengo     quiero    quiero"
+                           "tengo     tengo     quiero    quiero"
+                           "widget-1  widget-2  widget-4  widget-4"
+                           "widget-3  widget-3  widget-4  widget-4"
+                           "footer    footer    footer    footer";
+  }
+}

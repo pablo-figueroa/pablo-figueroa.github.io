@@ -1,7 +1,7 @@
 
-var valueRateOut = 1.0
+// var valueRateOut = 1.0
 
-
+document.getElementById('demo').innerHTML = 12.6825 + " %";
 
 function getValue()
 {

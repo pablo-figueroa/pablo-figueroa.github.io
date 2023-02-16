@@ -73,10 +73,13 @@
                 </p>
 
                 <br>
-                <p>del&nbsp;
-                    <input type="number" id="valueRate_in" name="valueRate_in" min="0"  onChange="getValue()">&nbsp;%
-                </p>
+                <div id="texto-ingresar">
+                    <p>&nbsp;del&nbsp;
+                        <input type="number" value="1" id="valueRate_in" name="valueRate_in" min="0"  onChange="getValue()">
+                        &nbsp;%&nbsp;
+                    </p>
                 <!-- quité step="1" -->
+                </div>
                 
             
             </div>
@@ -105,17 +108,17 @@
     <!-- </form> -->
     
     
-        <form>
+        <!-- <form> -->
             <div class="box d">
                 <select id="selectPeriod_out" onChange="getValue()">
                     
                     <!--<option disabled selected="">Seleccionar PERIODO</option>-->
-                        <option value="360" id="centrar">ANUAL</option>
+                        <option selected value="360" id="centrar">ANUAL</option>
                         <option value="180" id="centrar">Semestral</option>
                         <option value="120" id="centrar">Cuatrimestral</option>
                         <option value="90" id="centrar">Trimestral</option>
                         <option value="60" id="centrar">Bimestral</option>
-                        <option selected value="30" id="centrar">MENSUAL</option>
+                        <option value="30" id="centrar">MENSUAL</option>
                         <option value="15" id="centrar">Quincenal</option>
                         <option value="1" id="centrar">Diaria</option>
                         
@@ -139,7 +142,7 @@
 
 
             </div>
-        </form>
+        <!-- </form> -->
     
     </div>
     
@@ -151,7 +154,7 @@
     <!-- widget-3 -->
     <div class="widget-2">
         <div class="box e">
-            <p id="demo">1 %</p>
+            <p id="demo">%</p>
         </div>
     </div>
     

@@ -6,6 +6,7 @@
 html {
   font-size: calc(12px + 0.5vw);
   background-color: #000;
+  
 }
 
 .contenedor {
@@ -16,7 +17,7 @@ html {
 
   /* crear 6 filas y 3 columnas  */
   display:grid;
-  grid-gap: 10px;
+  grid-gap: .5rem;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(6, auto); /* 6 filas de tamaño automático */
 
@@ -122,6 +123,8 @@ input:hover {
   justify-content: center;
 }
 
+
+
 #valueRate_in {
   height: 2rem;
   width: 8rem;
@@ -179,10 +182,10 @@ h4 {
   color: #000;
   font-size: 1rem;
 
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
 
 .contenedor .widget-3 p {
@@ -261,7 +264,7 @@ form {
 
 @media screen and (min-width: 1025px) {
   .contenedor {
-      /* grid-template-rows: repeat(2, auto); 6 filas de tamaño automático */
+      grid-template-rows: repeat(5, auto);
       grid-template-columns: repeat(3, 1fr);
       grid-template-areas: "header    header    header"
                            "tengo     quiero    widget-1"
@@ -269,5 +272,9 @@ form {
                            "widget-3  widget-3  widget-4"
                            "footer    footer    footer";
       width: 70vw;
+  }
+  html {
+    width: 90vw;
+    min-height: 98vh;
   }
 }

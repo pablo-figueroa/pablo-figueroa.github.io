@@ -21,29 +21,26 @@
     <!-- tengo -->
     <div class="tengo">
         <h3>Tengo la:</h3>
-
-        <form>
+        <br>
+        <!-- <form> -->
             <div class="box a">
                 
-                <select id="selectRate_in" onChange="getValue()">
+                <p> <select id="selectRate_in" onChange="getValue()">
                     <!--<option disabled selected="">Seleccionar TASA</option>-->
                     <option value="1" id="nocentrar">Tasa de Interés Efectiva</option>
                     <option value="2" id="nocentrar">Tasa de Interés NOMINAL</option>
                     <option value="3" id="nocentrar">Tasa de Descuento Efectiva</option>
                     <option value="4" id="nocentrar">Tasa de Descuento NOMINAL</option>
-                </select>
-                
-                
-                
+                </select></p>
             
             </div>
-        </form>
+        <!-- </form> -->
 
-        <form>
+        <!-- <form>  -->
             <div class="box b">
                 
 
-                <select id="selectPeriod_in" onChange="getValue()">
+                <p> <select id="selectPeriod_in" onChange="getValue()">
                 
                     <!--<option disabled selected="">Seleccionar PERIODO</option>-->
                     
@@ -55,9 +52,9 @@
                     <option selected value="30" id="centrar">MENSUAL</option>
                     <option value="15" id="centrar">Quincenal</option>
                     <option value="1" id="centrar">Diaria</option>
-                </select>
+                </select></p>
                 
-                <span id="showIn">Cuya frecuencia de capitalización es: &nbsp;
+                <p id="showIn"><br>Cuya frecuencia de capitalización es: &nbsp;
                 
                     <select id="selectCapit_In" onChange="getValue()">
                     
@@ -73,15 +70,17 @@
                         <option value="1" id="centrar">Diaria</option>
                     </select>
                 
-                </span>
+                </p>
 
-
-                <p>del</p>
-                <input type="number" step="1" id="valueRate_in" name="valueRate_in" placeholder="Ingresar tasa" min="0" value="1" onChange="getValue()"> 
-                <span>% &nbsp; &nbsp;</span>
+                <br>
+                <p>del&nbsp;
+                    <input type="number" id="valueRate_in" name="valueRate_in" min="0"  onChange="getValue()">&nbsp;%
+                </p>
+                <!-- quité step="1" -->
+                
             
             </div>
-        </form>
+        <!-- </form> -->
 
 
 
@@ -90,7 +89,8 @@
     <!-- quiero -->
     <div class="quiero">
         <h3>Quiero la:</h3>
-    <form>
+        <br>
+    <!-- <form> -->
         <div class="box c">
             
             <select id="selectRate_out" onChange="getValue()">
@@ -100,14 +100,9 @@
                 <option value="3" id="nocentrar">Tasa de Descuento Efectiva</option>
                 <option value="4" id="nocentrar">Tasa de Descuento NOMINAL</option>
             </select>
-            
-        
-            
-               
-            
         
         </div>
-    </form>
+    <!-- </form> -->
     
     
         <form>
@@ -126,7 +121,7 @@
                         
                 </select>
 
-                <span id="showOut">Cuya frecuencia de capitalización es: &nbsp;
+                <span id="showOut"><br>Cuya frecuencia de capitalización es: &nbsp;
                     <select id="selectCapit_Out" onChange="getValue()">
             
                 <!--<option disabled selected="">Seleccionar CAPITALIZACIÓN</option>-->
@@ -150,7 +145,7 @@
     
     <!-- widget-1 -->
     <div class="widget-1">
-        <h4>Resultado</h4>
+        <h4>Resultado:</h4>
     </div>
     
     <!-- widget-3 -->

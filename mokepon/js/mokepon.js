@@ -12,7 +12,7 @@ let inputCapipepo = document.getElementById("capipepo");
 let inputRatigueya = document.getElementById("ratigueya");
 
 let sectionMensajes = document.getElementById("resultado")
-// let sectionMensajes = document.getElementById("resultado")
+// let sectionMensajes = document.getElementById("resultado")d
 let sectionReiniciar = document.getElementById("reiniciar")
 let sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque")
 

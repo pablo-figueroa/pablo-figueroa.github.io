@@ -208,18 +208,18 @@ function combate() {
 function revisarVidas() {
     crearMensaje()
     if (vidasJugador == 0) {
-        crearMensajeFinal("Lo siento, perdiste...! 😭😭😭")
+        crearMensajeFinal("Lo siento, perdiste...! 😭")
         
         const element = document.getElementById("mensajes");
         element.style.color = "red";
-        element.style.textShadow = "2px 2px 5px #ffffff";
+        element.style.textShadow = "2px 2px 5px #000";
         
     } else if (vidasEnemigo ==0) {
-        crearMensajeFinal("FELICITACIONES GANASTE 😂😂😂")
+        crearMensajeFinal("FELICITACIONES GANASTE 😂")
         
         const element = document.getElementById("mensajes");
         element.style.color = "green";
-        element.style.textShadow = "2px 2px 5px #ffffff";
+        element.style.textShadow = "2px 2px 5px #000";
     } 
 }
 

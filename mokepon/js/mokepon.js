@@ -5,9 +5,6 @@ const botonFuego = document.getElementById("boton-fuego");
 const botonAgua = document.getElementById("boton-agua");
 const botonTierra = document.getElementById("boton-tierra");
 const botonReiniciar = document.getElementById("boton-reiniciar")
-const inputHipodoge = document.getElementById("hipodoge");
-const inputCapipepo = document.getElementById("capipepo");
-const inputRatigueya = document.getElementById("ratigueya");
 const sectionMensajes = document.getElementById("resultado")
 const sectionReiniciar = document.getElementById("reiniciar")
 const sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque")
@@ -15,6 +12,7 @@ const spanMascotaJugador = document.getElementById("mascota-jugador");
 const spanMascotaEnemigo = document.getElementById("mascota-enemigo")
 const spanVidasJugador = document.getElementById("vidas-jugador")
 const spanVidasEnemigo = document.getElementById("vidas-enemigo")
+const contenedorTarjetas = document.getElementById("contenedorTarjetas")
 
 let ataqueJugador
 let ataqueEnemigo 
@@ -23,6 +21,11 @@ let resultadoCombate = "";
 let vidasJugador = 3
 let vidasEnemigo = 3
 let mokepones = []
+let opcionDeMokepones
+//les quito document.getElementById porque ya no exiten el HTML
+let inputHipodoge
+let inputCapipepo
+let inputRatigueya
 
 class Mokepon {
     constructor(nombre, foto, vida) {
@@ -34,11 +37,11 @@ class Mokepon {
 }
 
 
-let hipodoge = new Mokepon("Hipodogue", "./img/hipodoge.png", 5)
+let hipodoge = new Mokepon("Hipodoge", "./img/hipodoge.png", 5)
 let capipepo = new Mokepon("Capipepo", "./img/capipepo.png", 5)
 let ratigueya = new Mokepon("Ratigueya", "./img/ratigueya.png", 5)
 
-mokepones.push(hipodoge,capipepo,ratigueya)
+
 
 hipodoge.ataques.push (
     { nombre: '♒', id:"boton-agua" },
@@ -64,12 +67,29 @@ ratigueya.ataques.push (
     { nombre: '🌱', id:"boton-tierra" }
 ) 
 
-
+mokepones.push(hipodoge,capipepo,ratigueya)
 
 
 function iniciarJuego() {
     // document.getElementById("seleccionar-ataque").style.display = "none" // Ocultar section
     sectionSeleccionarAtaque.style.display = "none"
+
+    // por cada uno; en lugar de mokepon pudo haber sido otra nombre.
+    mokepones.forEach((mokepon)=>{
+        opcionDeMokepones = `
+        <input type="radio" name="mascota" id=${mokepon.nombre} class="selector-radio">
+        <label class="tarjeta-de-mokepon" for=${mokepon.nombre}>
+            <p><img src=${mokepon.foto} alt=${mokepon.nombre}>${mokepon.nombre}</p>
+        </label>
+        `
+    contenedorTarjetas.innerHTML += opcionDeMokepones
+    
+    inputHipodoge = document.getElementById("Hipodoge");
+    inputCapipepo = document.getElementById("Capipepo");
+    inputRatigueya = document.getElementById("Ratigueya");
+
+    });
+
     sectionReiniciar.style.display = "none"
     botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador);
     botonFuego.addEventListener("click", ataqueFuego);
@@ -159,11 +179,10 @@ function seleccionarMascotaEnemigo() {
 
 
 function seleccionarMascotaJugador() {
-    
-    
-    if (inputHipodoge.checked) { //checked devuelve TRUE si boton radio es seleccionado
-        
-        spanMascotaJugador.innerHTML = "Hipodoge"
+    //checked devuelve TRUE si boton radio es seleccionado
+    if (inputHipodoge.checked) { 
+        //una fuente de verdad: cambiar = "Hipodoge" por = inputHipodoge.id
+        spanMascotaJugador.innerHTML = inputHipodoge.id
         
         document.getElementById("boton-mascota").disabled = true // Deshabilita el botón con el texto "Seleccionar"
 
@@ -179,7 +198,7 @@ function seleccionarMascotaJugador() {
 
     } else if (inputCapipepo.checked) {
         
-        spanMascotaJugador.innerHTML = "Capipepo"
+        spanMascotaJugador.innerHTML = inputCapipepo.id
        
         document.getElementById("boton-mascota").disabled = true
 
@@ -195,7 +214,7 @@ function seleccionarMascotaJugador() {
 
     } else if (inputRatigueya.checked) {
         
-        spanMascotaJugador.innerHTML = "Ratigueya"
+        spanMascotaJugador.innerHTML = inputRatigueya.id
         
         document.getElementById("boton-mascota").disabled = true
 

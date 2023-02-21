@@ -113,7 +113,8 @@ function aleatorio(min, max) {
 
 function seleccionAtaqueEnemigo () {
     
-    ataqueEnemigo = aleatorio(1, 3)
+    
+    ataqueEnemigo = aleatorio(1,3)
     if (ataqueEnemigo == 1) {
         ataqueEnemigo = "FUEGO🔥"
     } else if (ataqueEnemigo == 2) {
@@ -166,15 +167,21 @@ function ataqueTierra() {
 
 
 function seleccionarMascotaEnemigo() {
-    let ataqueAleatorio = aleatorio (1,3)
     
-    if (ataqueAleatorio == 1){
-        spanMascotaEnemigo.innerHTML = "Hipodoge"
-    } else if (ataqueAleatorio == 2) {
-        spanMascotaEnemigo.innerHTML = "Capipepo"
-    } else {
-        spanMascotaEnemigo.innerHTML = "Ratigueya"
-    }
+    //Siendo 3 mokepones: antes (1,3) ahora (0,2)
+    let ataqueAleatorio = aleatorio (0, mokepones.length -1)
+    
+    // if (ataqueAleatorio == 1){
+    //     spanMascotaEnemigo.innerHTML = "Hipodoge"
+    // } else if (ataqueAleatorio == 2) {
+    //     spanMascotaEnemigo.innerHTML = "Capipepo"
+    // } else {
+    //     spanMascotaEnemigo.innerHTML = "Ratigueya"
+    // }
+
+    spanMascotaEnemigo.innerHTML = mokepones[ataqueAleatorio].nombre;
+    
+
 }
 
 

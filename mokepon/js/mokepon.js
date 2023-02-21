@@ -27,6 +27,8 @@ let inputHipodoge
 let inputCapipepo
 let inputRatigueya
 
+let mascotaJugador
+
 class Mokepon {
     constructor(nombre, foto, vida) {
         this.nombre = nombre;
@@ -168,18 +170,20 @@ function ataqueTierra() {
 
 function seleccionarMascotaEnemigo() {
     
-    //Siendo 3 mokepones: antes (1,3) ahora (0,2)
-    let ataqueAleatorio = aleatorio (0, mokepones.length -1)
+    let mascotaAleatoria = aleatorio (0, mokepones.length -1)
+    spanMascotaEnemigo.innerHTML = mokepones[mascotaAleatoria].nombre;
     
+    //Siendo 3 mokepones: antes (1,3) ahora (0,2)
+    
+    // let ataqueAleatorio = aleatorio (1,3)
     // if (ataqueAleatorio == 1){
-    //     spanMascotaEnemigo.innerHTML = "Hipodoge"
-    // } else if (ataqueAleatorio == 2) {
-    //     spanMascotaEnemigo.innerHTML = "Capipepo"
-    // } else {
-    //     spanMascotaEnemigo.innerHTML = "Ratigueya"
-    // }
-
-    spanMascotaEnemigo.innerHTML = mokepones[ataqueAleatorio].nombre;
+        //     spanMascotaEnemigo.innerHTML = "Hipodoge"
+        // } else if (ataqueAleatorio == 2) {
+            //     spanMascotaEnemigo.innerHTML = "Capipepo"
+            // } else {
+                //     spanMascotaEnemigo.innerHTML = "Ratigueya"
+                // }
+                
     
 
 }
@@ -190,6 +194,7 @@ function seleccionarMascotaJugador() {
     if (inputHipodoge.checked) { 
         //una fuente de verdad: cambiar = "Hipodoge" por = inputHipodoge.id
         spanMascotaJugador.innerHTML = inputHipodoge.id
+        mascotaJugador = inputHipodoge.id
         
         document.getElementById("boton-mascota").disabled = true // Deshabilita el botón con el texto "Seleccionar"
 
@@ -206,6 +211,7 @@ function seleccionarMascotaJugador() {
     } else if (inputCapipepo.checked) {
         
         spanMascotaJugador.innerHTML = inputCapipepo.id
+        mascotaJugador = inputCapipepo.id
        
         document.getElementById("boton-mascota").disabled = true
 
@@ -222,6 +228,7 @@ function seleccionarMascotaJugador() {
     } else if (inputRatigueya.checked) {
         
         spanMascotaJugador.innerHTML = inputRatigueya.id
+        mascotaJugador = inputRatigueya.id
         
         document.getElementById("boton-mascota").disabled = true
 
@@ -233,15 +240,28 @@ function seleccionarMascotaJugador() {
 
         document.getElementById("seleccionar-mascota").style.display = "none"
 
+        
         seleccionarMascotaEnemigo();
 
     } else {
         alert("Debes seleccionar a tu mascota\n  - Hipodoge\n  - Capipepo\n  - Ratigueya");
     }
+    extraerAtaques(mascotaJugador)
  }
 
+function extraerAtaques(mascotaJugador){
+    let ataques
+    for (let i = 0; i < mokepones.length; i++) {
+        if (mascotaJugador === mokepones[i].nombre) {
+            ataques = mokepones[i].ataques
+        }
+        
+    }
+    mostrarAtaques(ataques);
+    console.log(mascotaJugador , ataques);
+}
 
-
+function mostrarAtaques(){}
 
 function combate() {
     
@@ -298,5 +318,13 @@ function crearMensajeFinal(resultadoFinal) {
 
     document.getElementById("reiniciar").style.display = "flex"
 }
+
+
+
+
+
+
+
+
 
 window.addEventListener("load", iniciarJuego)

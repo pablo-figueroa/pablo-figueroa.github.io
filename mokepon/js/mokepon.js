@@ -204,10 +204,6 @@ function seleccionarMascotaEnemigo() {
                 // }
 }
 
-
-
-
-
 function seleccionarMascotaJugador() {
     //checked devuelve TRUE si boton radio es seleccionado
     if (inputHipodoge.checked) { 
@@ -295,10 +291,6 @@ function extraerAtaques(mascotaJugador){
     
 }
 
-
-
-
-
 function mostrarAtaques(ataques){
     ataques.forEach((ataque)=>{
         ataquesMokepon = `
@@ -320,8 +312,6 @@ function mostrarAtaques(ataques){
     // botonTierra.addEventListener("click", ataqueTierra);
 
 }
-
-
 
 //con el click se disparan estas funciones:
 // PORQUE AHORA TENEMOS function secuenciaAtaque
@@ -396,13 +386,5 @@ function crearMensajeFinal(resultadoFinal) {
 
     document.getElementById("reiniciar").style.display = "flex"
 }
-
-
-
-
-
-
-
-
 
 window.addEventListener("load", iniciarJuego)

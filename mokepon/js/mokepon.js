@@ -12,8 +12,8 @@ const spanVidasEnemigo = document.getElementById("vidas-enemigo")
 const contenedorTarjetas = document.getElementById("contenedorTarjetas")
 const contenedorAtaques = document.getElementById("contenedorAtaques")
 
-let ataqueJugador
-let ataqueEnemigo 
+
+let ataqueEnemigo = []
 // COMBATE
 let resultadoCombate = "";
 let vidasJugador = 3
@@ -27,10 +27,15 @@ let inputRatigueya
 
 let mascotaJugador
 let ataquesMokepon
+let ataquesMokeponEnemigo
 
 let botonFuego
 let botonAgua
 let botonTierra
+
+let botones = []
+
+let ataqueJugador = [] //para hacerle push()
 
 class Mokepon {
     constructor(nombre, foto, vida) {
@@ -114,19 +119,7 @@ function aleatorio(min, max) {
     return Math.floor(Math.random()*(max-min+1)+min);
 }
 
-function seleccionAtaqueEnemigo () {
-    
-    
-    ataqueEnemigo = aleatorio(1,3)
-    if (ataqueEnemigo == 1) {
-        ataqueEnemigo = "FUEGO🔥"
-    } else if (ataqueEnemigo == 2) {
-        ataqueEnemigo = "AGUA♒"
-    } else {
-        ataqueEnemigo = "TIERRA🌱"
-    }
-    combate()
-}
+
 
 //CREAR MENSAJE
 function crearMensaje() {
@@ -151,15 +144,53 @@ function crearMensaje() {
     
 }
 
+function secuenciaAtaque() {
+    //hacer una iteración:
+    botones.forEach((boton) => {
+        boton.addEventListener("click", (e) => {
+            //console.log(e)
+            //aparecerá un PointerEvent
+            // buscar target: textContent
+            if (e.target.textContent === "🔥") {
+                ataqueJugador.push("FUEGO")
+                console.log(ataqueJugador);
+                boton.style.background = "#112f58";
+            } else if (e.target.textContent === "♒") {
+                ataqueJugador.push("AGUA")
+                console.log(ataqueJugador);
+                boton.style.background = "#112f58";
+            } else {
+                ataqueJugador.push("TIERRA")
+                console.log(ataqueJugador);
+                boton.style.background = "#112f58";
+            }
+            seleccionAtaqueEnemigo()
+        })
+    })
+    
+}
 
-
-
+function seleccionAtaqueEnemigo () {
+    
+    let ataqueAleatorio = aleatorio(0, ataquesMokeponEnemigo.length -1)
+    if (ataqueAleatorio == 0 || ataqueAleatorio == 1) {
+        ataqueEnemigo.push("FUEGO🔥")
+    } else if (ataqueAleatorio == 3 || ataqueAleatorio == 4) {
+        ataqueEnemigo.push("AGUA♒")
+    } else {
+        ataqueEnemigo.push("TIERRA🌱")
+    }
+    console.log(ataqueEnemigo)
+    combate()
+}
 
 
 function seleccionarMascotaEnemigo() {
     
     let mascotaAleatoria = aleatorio (0, mokepones.length -1)
     spanMascotaEnemigo.innerHTML = mokepones[mascotaAleatoria].nombre;
+    ataquesMokeponEnemigo = mokepones[mascotaAleatoria].ataques;
+    secuenciaAtaque()
     
     //Siendo 3 mokepones: antes (1,3) ahora (0,2)
     
@@ -171,10 +202,10 @@ function seleccionarMascotaEnemigo() {
             // } else {
                 //     spanMascotaEnemigo.innerHTML = "Ratigueya"
                 // }
-                
-    
-
 }
+
+
+
 
 
 function seleccionarMascotaJugador() {
@@ -271,7 +302,7 @@ function extraerAtaques(mascotaJugador){
 function mostrarAtaques(ataques){
     ataques.forEach((ataque)=>{
         ataquesMokepon = `
-        <button id=${ataque.id} class="boton-de-ataque">${ataque.nombre}</button>
+        <button id=${ataque.id} class="boton-de-ataque BAtaque">${ataque.nombre}</button>
         `
         contenedorAtaques.innerHTML += ataquesMokepon
     })
@@ -279,27 +310,35 @@ function mostrarAtaques(ataques){
     botonFuego = document.getElementById("boton-fuego");
     botonAgua = document.getElementById("boton-agua");
     botonTierra = document.getElementById("boton-tierra");
-
-    botonFuego.addEventListener("click", ataqueFuego);
-    botonAgua.addEventListener("click", ataqueAgua);
-    botonTierra.addEventListener("click", ataqueTierra);
+    
+    //se con las class porque se pueden repetir. los id no se repiten.
+    botones = document.querySelectorAll(".BAtaque")
+    
+    //PORQUE AHORA LAS TENEMOS EN function secuenciaAtaque
+    // botonFuego.addEventListener("click", ataqueFuego);
+    // botonAgua.addEventListener("click", ataqueAgua);
+    // botonTierra.addEventListener("click", ataqueTierra);
 
 }
+
+
+
 //con el click se disparan estas funciones:
-function ataqueFuego() {
-    ataqueJugador = "FUEGO🔥"
-    seleccionAtaqueEnemigo();
-}
+// PORQUE AHORA TENEMOS function secuenciaAtaque
+// function ataqueFuego() {
+//     ataqueJugador = "FUEGO🔥"
+//     seleccionAtaqueEnemigo();
+// }
 
-function ataqueAgua() {
-    ataqueJugador = "AGUA♒"
-    seleccionAtaqueEnemigo();
-}
+// function ataqueAgua() {
+//     ataqueJugador = "AGUA♒"
+//     seleccionAtaqueEnemigo();
+// }
 
-function ataqueTierra() {
-    ataqueJugador = "TIERRA🌱"
-    seleccionAtaqueEnemigo();
-}
+// function ataqueTierra() {
+//     ataqueJugador = "TIERRA🌱"
+//     seleccionAtaqueEnemigo();
+// }
 
 
 function combate() {

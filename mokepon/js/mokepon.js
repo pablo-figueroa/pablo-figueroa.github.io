@@ -40,6 +40,9 @@ let ataqueJugador = [] //para hacerle push()
 let indexAtaqueJugador
 let indexAtaqueEnemigo
 
+let victoriasJugador = 0
+let victoriasEnemigo = 0
+
 class Mokepon {
     constructor(nombre, foto, vida) {
         this.nombre = nombre;
@@ -86,7 +89,6 @@ mokepones.push(hipodoge,capipepo,ratigueya)
 function iniciarJuego() {
     // document.getElementById("seleccionar-ataque").style.display = "none" // Ocultar section
     sectionSeleccionarAtaque.style.display = "none"
-
     // por cada uno; en lugar de mokepon pudo haber sido otra nombre.
     mokepones.forEach((mokepon)=>{
         // opcionDeMokepones = `
@@ -156,12 +158,12 @@ function crearMensaje() {
     
     // let parrafo = document.createElement("p");
     // parrafo.innerHTML = "Tu mascota atacó con " + ataqueJugador + "y la mascota enemiga atacó con " + ataqueEnemigo + " ===> " + resultadoCombate;
-
-    
 }
+
 
 function secuenciaAtaque() {
     //hacer una iteración:
+    
     botones.forEach((boton) => {
         boton.addEventListener("click", (e) => {
             //console.log(e)
@@ -170,18 +172,32 @@ function secuenciaAtaque() {
             if (e.target.textContent === "🔥") {
                 ataqueJugador.push("FUEGO")
                 boton.style.background = "rgba(255, 255, 255, 0.1)";
+                boton.disabled = true
+                console.log(ataqueJugador)
             } else if (e.target.textContent === "♒") {
                 ataqueJugador.push("AGUA")
                 boton.style.background = "rgba(255, 255, 255, 0.1)";
+                boton.disabled = true
+                console.log(ataqueJugador)
             } else {
                 ataqueJugador.push("TIERRA")
                 boton.style.background = "rgba(255, 255, 255, 0.1)";
+                boton.disabled = true
+                console.log(ataqueJugador)
             }
-            seleccionAtaqueEnemigo()
+            seleccionAtaqueEnemigo()        
+            
         })
     })
     
 }
+    
+
+
+    
+    
+
+
 
 function seleccionAtaqueEnemigo () {
     
@@ -219,6 +235,8 @@ function combate() {
     for (let i = 0; i < ataqueJugador.length; i++) {
         if (ataqueJugador[i] === ataqueEnemigo[i]) {
             indexAmbosOponentes(i, i)
+            
+            crearMensaje()
             resultadoCombate = "EMPATE 😐"
             console.log(resultadoCombate)
         } else if (
@@ -226,9 +244,17 @@ function combate() {
             (ataqueJugador[i] == "AGUA" && ataqueEnemigo[i] == "FUEGO") || 
             (ataqueJugador[i] == "TIERRA" && ataqueEnemigo[i] == "AGUA")
         ) {
+            indexAmbosOponentes(i, i)
+            victoriasJugador++
+            spanVidasJugador.innerHTML = victoriasJugador
+            crearMensaje()
             resultadoCombate = "GANASTE...!!! 😂😂😂"
             console.log(resultadoCombate)
         } else {
+            indexAmbosOponentes(i, i)
+            victoriasEnemigo++
+            spanVidasEnemigo.innerHTML = victoriasEnemigo
+            crearMensaje()
             resultadoCombate = "PERDISTE...😭😭😭"
             console.log(resultadoCombate)
         }
@@ -419,21 +445,24 @@ function mostrarAtaques(ataques){
 
 
 function revisarVidas() {
-    crearMensaje()
-    // if (vidasJugador == 0) {
-    //     crearMensajeFinal("Lo siento, perdiste...! 😭")
+    // crearMensaje()
+    if (victoriasJugador == victoriasEnemigo) {
+        crearMensajeFinal("Esto fue un EMPATE!")
+        const element = document.getElementById("mensajes");
+        element.style.color = "yellow";
+        element.style.textShadow = "2px 2px 5px #000";
         
-    //     const element = document.getElementById("mensajes");
-    //     element.style.color = "red";
-    //     element.style.textShadow = "2px 2px 5px #000";
-        
-    // } else if (vidasEnemigo ==0) {
-    //     crearMensajeFinal("FELICITACIONES GANASTE 😂")
-        
-    //     const element = document.getElementById("mensajes");
-    //     element.style.color = "green";
-    //     element.style.textShadow = "2px 2px 5px #000";
-    // } 
+    } else if (victoriasJugador > victoriasEnemigo) { 
+        crearMensajeFinal("FELICITACIONES GANASTE 😂")
+        const element = document.getElementById("mensajes");
+        element.style.color = "green";
+        element.style.textShadow = "2px 2px 5px #000";
+    } else {
+    crearMensajeFinal("Habeis PERDIDO!")
+        const element = document.getElementById("mensajes");
+        element.style.color = "red";
+        element.style.textShadow = "2px 2px 5px #000";
+    }
 }
 
 //CREAR MENSAJE FINAL
@@ -441,11 +470,7 @@ function crearMensajeFinal(resultadoFinal) {
     
     sectionMensajes.innerHTML = resultadoFinal
 
-    document.getElementById("boton-fuego").disabled = true
-    document.getElementById("boton-agua").disabled = true
-    document.getElementById("boton-tierra").disabled = true
-
-    document.getElementById("reiniciar").style.display = "flex"
+    document.getElementById("reiniciar").style.display = "block"
 }
 
 window.addEventListener("load", iniciarJuego)

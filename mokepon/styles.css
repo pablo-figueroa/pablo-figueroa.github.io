@@ -286,12 +286,12 @@ input:checked+label {
 
 
 .boton-de-ataque {
-  width: 24rem;
+  width: 12rem;
   height: 12rem;
   /* padding: 1px; */
   border: 5px outset rgba(255,255,255,0.7);
   margin: 1rem;
-  border-radius: 1rem;
+  border-radius: 50%;
   background-color: rgba(255,255,255,0.7);
   font-family: 'Sassy Frass', cursive;
   font-size: 7rem;
@@ -322,21 +322,23 @@ input:checked+label {
   padding: 1rem;
   margin-top: 3rem;
   border-radius: 7rem;
-  display: flex;
   align-items: center;
   font-family: 'Fredoka One', cursive;
   font-size: 3rem;
   letter-spacing: .8rem;
   min-height: 12rem;
   /* height: auto; */
-  justify-content: center;
+  display: flex;
   align-content: center;
+  justify-content: center;
   flex-wrap: wrap;
+
 }
 
 #resultado {
   text-align: center;
   margin: 2rem;
+  font-size: 5rem;
 }
 
 #boton-reiniciar {
@@ -377,6 +379,20 @@ input:checked+label {
              -5px -5px 20px rgb(91 143 185 / 70%),
               5px 5px 10px rgb(5 5 5 / 70%),
              -5px -5px 10px rgb(255 201 60 / 90%);
+}
+
+#ataques-del-enemigo > p {
+  background-color:rgba(255, 201, 60, .3);
+  border-radius: 1rem;
+  margin: 3rem 0;
+  font-size: 3rem;
+}
+
+#ataques-del-jugador > p {
+  background-color:rgba(255, 201, 60, .3);
+  border-radius: 1rem;
+  margin: 3rem 0;
+  font-size: 3rem;
 }
 
 #vidas-jugador, #vidas-enemigo {

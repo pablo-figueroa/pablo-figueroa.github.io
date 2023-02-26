@@ -12,6 +12,11 @@ const spanVidasEnemigo = document.getElementById("vidas-enemigo")
 const contenedorTarjetas = document.getElementById("contenedorTarjetas")
 const contenedorAtaques = document.getElementById("contenedorAtaques")
 
+// CANVAS
+const sectionVerMapa = document.getElementById("ver-mapa")
+const mapa = document.getElementById("mapa")
+let lienzo = mapa.getContext("2d")
+
 
 let ataqueEnemigo = []
 // COMBATE
@@ -43,12 +48,31 @@ let indexAtaqueEnemigo
 let victoriasJugador = 0
 let victoriasEnemigo = 0
 
+let kanvas = document.getElementById("mapa")
+let kanvasWidth = kanvas.width
+// let kanvasHheight = kanvas.height 
+//Calcular la anchura y altura relativa de la imagen.
+let imgWidth = kanvasWidth * 0.33
+let imgHeight = imgWidth * 1
+
+let intervalo
+
 class Mokepon {
     constructor(nombre, foto, vida) {
         this.nombre = nombre;
         this.foto = foto;
         this.vida = vida;
         this.ataques = []
+        //canvas
+        this.x = 20
+        this.y = 30
+        this.ancho = imgWidth
+        this.alto = imgHeight
+        this.mapaFoto = new Image()
+        this.mapaFoto.src = foto
+
+        this.velocidadX = 0
+        this.velocidadY = 0
     }
 }
 
@@ -85,10 +109,18 @@ ratigueya.ataques.push (
 
 mokepones.push(hipodoge,capipepo,ratigueya)
 
+sectionVerMapa.style.display = "none"
+sectionSeleccionarAtaque.style.display = "none"
+sectionReiniciar.style.display = "none"
 
 function iniciarJuego() {
     // document.getElementById("seleccionar-ataque").style.display = "none" // Ocultar section
-    sectionSeleccionarAtaque.style.display = "none"
+    
+    // sectionSeleccionarAtaque.style.display = "none"
+    // sectionVerMapa.style.display ="none"
+    
+    
+    
     // por cada uno; en lugar de mokepon pudo haber sido otra nombre.
     mokepones.forEach((mokepon)=>{
         // opcionDeMokepones = `
@@ -118,7 +150,7 @@ function iniciarJuego() {
 
     });
 
-    sectionReiniciar.style.display = "none"
+    
     botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador);
     
     
@@ -136,8 +168,6 @@ function reiniciarJuego() {
 function aleatorio(min, max) { 
     return Math.floor(Math.random()*(max-min+1)+min);
 }
-
-
 
 //CREAR MENSAJE
 function crearMensaje() {
@@ -192,12 +222,6 @@ function secuenciaAtaque() {
     
 }
     
-
-
-    
-    
-
-
 
 function seleccionAtaqueEnemigo () {
     
@@ -310,10 +334,6 @@ function combate() {
     revisarVidas()
 }
 
-
-
-
-
 function seleccionarMascotaEnemigo() {
     
     let mascotaAleatoria = aleatorio (0, mokepones.length -1)
@@ -335,6 +355,9 @@ function seleccionarMascotaEnemigo() {
 
 function seleccionarMascotaJugador() {
     //checked devuelve TRUE si boton radio es seleccionado
+    
+    intervalo = setInterval(pintarPersonaje, 10)
+   
     if (inputHipodoge.checked) { 
         //una fuente de verdad: cambiar = "Hipodoge" por = inputHipodoge.id
         spanMascotaJugador.innerHTML = inputHipodoge.id
@@ -344,8 +367,11 @@ function seleccionarMascotaJugador() {
         document.getElementById("boton-mascota").disabled = true 
         // Deshabilita el botón con el texto "Seleccionar"
 
-        document.getElementById("seleccionar-ataque").style.display = "flex"
+        
+        pintarPersonaje()
        
+
+
         document.getElementById("boton-fuego").disabled = false  
         // Habilita botón de fuego
         document.getElementById("boton-agua").disabled = false   
@@ -364,7 +390,9 @@ function seleccionarMascotaJugador() {
         extraerAtaques(mascotaJugador);
 
         document.getElementById("boton-mascota").disabled = true
-        document.getElementById("seleccionar-ataque").style.display = "flex"
+        
+        pintarPersonaje()
+        
         document.getElementById("boton-fuego").disabled = false
         document.getElementById("boton-agua").disabled = false
         document.getElementById("boton-tierra").disabled = false
@@ -380,7 +408,7 @@ function seleccionarMascotaJugador() {
 
         document.getElementById("boton-mascota").disabled = true
 
-        document.getElementById("seleccionar-ataque").style.display = "flex"
+        pintarPersonaje()
 
         document.getElementById("boton-fuego").disabled = false
         document.getElementById("boton-agua").disabled = false
@@ -398,8 +426,6 @@ function seleccionarMascotaJugador() {
  }
 
 function extraerAtaques(mascotaJugador){
-    // document.getElementById("seleccionar-mascota").style.display = "none"
-    
     let ataques
     // for (let i = 0; i < mokepones.length; i++) {
     //     if (mascotaJugador === mokepones[i].nombre) {
@@ -408,17 +434,64 @@ function extraerAtaques(mascotaJugador){
         
     // }
     
-    
     mokepones.forEach((mokepon) => {
         if (mascotaJugador === mokepon.nombre) {
             ataques = mokepon.ataques
         }
     })    
-    
-    
     mostrarAtaques(ataques);
-    
 }
+
+
+
+function pintarPersonaje() {
+    
+    sectionVerMapa.style.display = "flex"
+    
+     
+    //Limpiar canvas: por moverCapipepo()
+    lienzo.clearRect(0, 0, mapa.width, mapa.height)
+
+    capipepo.x = capipepo.x + capipepo.velocidadX
+    capipepo.y = capipepo.y + capipepo.velocidadY
+    
+    //Dibujar la imagen en el lienzo
+    lienzo.drawImage(
+        capipepo.mapaFoto,
+        capipepo.x,
+        capipepo.y,
+        capipepo.ancho, 
+        capipepo.alto
+    )
+}
+
+//para actualizar la posicion de capipepo
+function moverDerecha() {
+    // para mover onclick
+    // capipepo.x = capipepo.x + 5
+    // pintarPersonaje()
+
+    //para mover onmouse
+    capipepo.velocidadX = 1
+}
+
+function moverIzquierda() {
+    capipepo.velocidadX = -1
+}
+
+function moverAbajo() {
+    capipepo.velocidadY = 1
+}
+
+function moverArriba() {
+    capipepo.velocidadY = -1
+}
+
+function detenerMovimiento() {
+    capipepo.velocidadX = 0
+    capipepo.velocidadY = 0
+}
+
 
 function mostrarAtaques(ataques){
     ataques.forEach((ataque)=>{
@@ -441,8 +514,6 @@ function mostrarAtaques(ataques){
     // botonTierra.addEventListener("click", ataqueTierra);
 
 }
-
-
 
 function revisarVidas() {
     // crearMensaje()

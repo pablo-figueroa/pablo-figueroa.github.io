@@ -94,6 +94,37 @@ body {
   animation: myAnim 2s ease 0s 1 normal forwards;
 }
 
+.titulo-mapa {
+  background-color: var(--congress_blue);
+  box-shadow: 2px 2px 15px 1px var(--summer3), -2px -2px 15px 1px var(--summer3);
+  color: var(--summer4);
+  border-radius: 2rem;
+  width: 95rem;
+  height: 3em;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Fredoka One', cursive;
+  font-size: 5rem;
+  letter-spacing: 1.01rem;
+  text-shadow: 2px 2px 5px rgb(182 234 218 / 60%);
+  animation: myAnim 2s ease 0s 1 normal forwards;
+}
+
+#ver-mapa {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#mapa {
+  border: .1rem solid white;
+  margin-top: 2rem;
+  width: 40rem;
+}
+
 .subtitulo{
   background-color: rgb(3, 0, 28);
   border-radius: 2rem;

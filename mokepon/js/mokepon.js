@@ -56,6 +56,11 @@ let imgWidth = kanvasWidth * 0.33
 let imgHeight = imgWidth * 1
 
 let intervalo
+let mapaBackground = new Image()
+mapaBackground.src = "./img/mokemap.webp"
+let mascotaJugadorObjeto
+
+
 
 class Mokepon {
     constructor(nombre, foto, vida) {
@@ -356,7 +361,7 @@ function seleccionarMascotaEnemigo() {
 function seleccionarMascotaJugador() {
     //checked devuelve TRUE si boton radio es seleccionado
     
-    intervalo = setInterval(pintarPersonaje, 10)
+   
    
     if (inputHipodoge.checked) { 
         //una fuente de verdad: cambiar = "Hipodoge" por = inputHipodoge.id
@@ -367,8 +372,8 @@ function seleccionarMascotaJugador() {
         document.getElementById("boton-mascota").disabled = true 
         // Deshabilita el botón con el texto "Seleccionar"
 
-        
-        pintarPersonaje()
+        iniciarMapa()
+        pintarCanvas()
        
 
 
@@ -391,7 +396,8 @@ function seleccionarMascotaJugador() {
 
         document.getElementById("boton-mascota").disabled = true
         
-        pintarPersonaje()
+        iniciarMapa()
+        pintarCanvas()
         
         document.getElementById("boton-fuego").disabled = false
         document.getElementById("boton-agua").disabled = false
@@ -407,8 +413,9 @@ function seleccionarMascotaJugador() {
         extraerAtaques(mascotaJugador)
 
         document.getElementById("boton-mascota").disabled = true
-
-        pintarPersonaje()
+        
+        iniciarMapa()
+        pintarCanvas()
 
         document.getElementById("boton-fuego").disabled = false
         document.getElementById("boton-agua").disabled = false
@@ -442,54 +449,102 @@ function extraerAtaques(mascotaJugador){
     mostrarAtaques(ataques);
 }
 
+function iniciarMapa () {
+    mapa.width = 800
+    mapa.height = 600
 
+    mascotaJugadorObjeto = obtenerObjetoMascota(mascotaJugador)
+    
+    intervalo = setInterval(pintarCanvas, 10)
+    window.addEventListener("keydown", sePresionoUnaTecla)
+    window.addEventListener("keyup", detenerMovimiento)
+}
 
-function pintarPersonaje() {
+function obtenerObjetoMascota() {
+    console.log("hola")
+    for (let i = 0; i < mokepones.length; i++) {
+        if (mascotaJugador === mokepones[i].nombre) {
+            return mokepones[i]
+        }
+    }
+}
+
+function pintarCanvas() {
     
     sectionVerMapa.style.display = "flex"
     
      
     //Limpiar canvas: por moverCapipepo()
     lienzo.clearRect(0, 0, mapa.width, mapa.height)
+    lienzo.drawImage(
+        mapaBackground,
+        0,
+        0,
+        mapa.width,
+        mapa.height
+    )
 
-    capipepo.x = capipepo.x + capipepo.velocidadX
-    capipepo.y = capipepo.y + capipepo.velocidadY
+    mascotaJugadorObjeto.x = mascotaJugadorObjeto.x + mascotaJugadorObjeto.velocidadX
+    mascotaJugadorObjeto.y = mascotaJugadorObjeto.y + mascotaJugadorObjeto.velocidadY
     
     //Dibujar la imagen en el lienzo
     lienzo.drawImage(
-        capipepo.mapaFoto,
-        capipepo.x,
-        capipepo.y,
-        capipepo.ancho, 
-        capipepo.alto
+        mascotaJugadorObjeto.mapaFoto,
+        mascotaJugadorObjeto.x,
+        mascotaJugadorObjeto.y,
+        mascotaJugadorObjeto.ancho, 
+        mascotaJugadorObjeto.alto
     )
 }
 
-//para actualizar la posicion de capipepo
+
+
 function moverDerecha() {
     // para mover onclick
     // capipepo.x = capipepo.x + 5
-    // pintarPersonaje()
+    // pintarCanvas()
 
     //para mover onmouse
-    capipepo.velocidadX = 1
+    mascotaJugadorObjeto.velocidadX = 1
 }
 
 function moverIzquierda() {
-    capipepo.velocidadX = -1
+    mascotaJugadorObjeto.velocidadX = -1
 }
 
 function moverAbajo() {
-    capipepo.velocidadY = 1
+    mascotaJugadorObjeto.velocidadY = 1
 }
 
 function moverArriba() {
-    capipepo.velocidadY = -1
+    mascotaJugadorObjeto.velocidadY = -1
 }
 
 function detenerMovimiento() {
-    capipepo.velocidadX = 0
-    capipepo.velocidadY = 0
+    mascotaJugadorObjeto.velocidadX = 0
+    mascotaJugadorObjeto.velocidadY = 0
+}
+
+function sePresionoUnaTecla(event) {
+    console.log(event.key)
+    switch (event.key) {
+        case "ArrowUp":
+            moverArriba()
+            break;
+        case "ArrowDown":
+            moverAbajo()
+            break;
+        case "ArrowRight":
+            moverDerecha()
+            break;
+        case "ArrowLeft":
+            moverIzquierda()
+            break;
+
+
+        default:
+            break;
+    }
 }
 
 

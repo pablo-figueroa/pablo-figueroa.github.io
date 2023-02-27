@@ -120,11 +120,91 @@ body {
 }
 
 #mapa {
-  border: .1rem solid white;
+  /* border: .1rem solid white; */
   margin-top: 2rem;
-  width: 75rem;
-  border-radius: 1%;
+  width: 75vw;
+  border-radius: 10rem;
 }
+
+#ver-mapa button {
+  box-sizing: border-box;
+  width: 5rem;
+  height: 5rem;
+  /* padding: 9px; */
+  border: 2px solid rgba(91, 143, 185, .7);
+  /* margin-top: 0rem; */
+  border-radius: 95% 5% 95% 5% / 5% 95% 5% 95%;
+  color: aliceblue;
+  background-color: rgba(3, 0, 28, .7);
+  font-size: 3rem;
+  font-family: 'Poppins';
+  animation: myAnim2 2s ease-in 0s 1 normal both;
+  transition: all 0.5s ease-in-out;
+}
+
+
+
+#ver-mapa button:hover {
+  border-radius: 5% 95% 5% 95% / 95% 5% 95% 5%;
+  background-color: rgba(91, 143, 185, .7);
+  font-size: 3.3rem;
+  color: black;
+  box-shadow: +5px +5px +20px rgba(182, 234, 218, .7),
+              -5px -5px +20px rgba(182, 234, 218, .7),
+              +5px +1px +10px rgba( 91, 143, 185, .7),
+              -1px -5px +10px rgba( 91, 143, 185, .7);
+
+}
+
+.container {  display: grid;
+  grid-template-columns: 0rem 5rem 5rem 5rem 0rem;
+    grid-template-rows: 5rem 5rem 5rem;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "lat-izq . arriba . lat-der"
+    "lat-izq izquierda . derecha lat-der"
+    "lat-izq . abajo . lat-der";
+}
+
+.lat-izq {
+  grid-area: lat-izq;
+  background-color: white;
+}
+
+.arriba { 
+  grid-area: arriba; 
+  background-color: yellowgreen; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.izquierda { grid-area: izquierda; 
+  background-color: yellowgreen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.derecha { grid-area: derecha;
+  background-color: yellowgreen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.abajo { grid-area: abajo;
+  background-color: yellowgreen;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.lat-der {grid-area: lat-der;
+  background-color: white;
+}
+
+
+
 
 .subtitulo{
   background-color: rgb(3, 0, 28);
@@ -471,10 +551,16 @@ input:checked+label {
   html {
     font-size: calc(0px + .7vw);
   }
+  #mapa {
+    width: 70rem;
+  }
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1300px) {
   html {
     font-size: calc(0px + .5vw);
+  }
+  #mapa {
+    width: 80rem;
   }
 }

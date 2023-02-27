@@ -123,6 +123,7 @@ body {
   border: .1rem solid white;
   margin-top: 2rem;
   width: 75rem;
+  border-radius: 1%;
 }
 
 .subtitulo{

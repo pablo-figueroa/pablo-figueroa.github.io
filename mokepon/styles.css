@@ -144,7 +144,7 @@ body {
 
 
 
-#ver-mapa button:hover {
+/* #ver-mapa button:hover {
   border-radius: 5% 95% 5% 95% / 95% 5% 95% 5%;
   background-color: rgba(91, 143, 185, .7);
   font-size: 3.3rem;
@@ -154,7 +154,7 @@ body {
               +5px +1px +10px rgba( 91, 143, 185, .7),
               -1px -5px +10px rgba( 91, 143, 185, .7);
 
-}
+} */
 
 .container {  display: grid;
   grid-template-columns: 0rem 5rem 5rem 5rem 0rem;

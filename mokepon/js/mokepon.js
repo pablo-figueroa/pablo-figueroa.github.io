@@ -209,7 +209,7 @@ function iniciarJuego() {
 
     unirseAlJuego()
 }
-
+let jugadorId
 function unirseAlJuego() { 
     fetch("http://localhost:3000/unirse")
     .then(function(res) {
@@ -218,6 +218,7 @@ function unirseAlJuego() {
             res.text()
                 .then(function(respuesta) {
                     console.log(respuesta)
+                    jugadorId = respuesta
                 })
         }
     })
@@ -472,6 +473,7 @@ function seleccionarMascotaJugador() {
         document.getElementById("seleccionar-mascota").style.display = "none"
 
         // seleccionarMascotaEnemigo();
+        seleccionarMokepon(mascotaJugador)
 
     } else if (inputCapipepo.checked) {
         
@@ -490,6 +492,7 @@ function seleccionarMascotaJugador() {
         document.getElementById("seleccionar-mascota").style.display = "none"
 
         // seleccionarMascotaEnemigo();
+        seleccionarMokepon(mascotaJugador)
 
     } else if (inputRatigueya.checked) {
         
@@ -510,11 +513,26 @@ function seleccionarMascotaJugador() {
 
         
         // seleccionarMascotaEnemigo();
+        seleccionarMokepon(mascotaJugador)
 
     } else {
         alert("Debes seleccionar a tu mascota\n  - Hipodoge\n  - Capipepo\n  - Ratigueya");
     }
     
+ }
+
+ function seleccionarMokepon(mascotaJugador) {
+    fetch(`http://localhost:3000/mokepon/${jugadorId}`, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            mokepon: mascotaJugador
+        })
+    })
+    // no es necesario acá poner .then porque no espero respuesta
+    // la variable jugadorId declarada en function unirseAlJuego
  }
 
 function extraerAtaques(mascotaJugador){

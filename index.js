@@ -1,15 +1,22 @@
 // Importamos el módulo express para crear nuestro servidor web
 const express = require("express")
-
-const cors = require("cors")
-
-
-
 // Creamos una instancia de nuestra aplicación express
 const app = express()
 
+const cors = require("cors")
+
 app.use(cors())
 app.use(express.json())
+
+// Iniciamos el servidor y lo hacemos escuchar en el puerto 8080
+app.listen(3000, () => {
+    // Imprimimos un mensaje en la consola para confirmar que el servidor está en ejecución
+    console.log("Server is running")
+})
+
+
+
+
 const jugadores = []
 
 class Jugador {
@@ -19,6 +26,11 @@ class Jugador {
 
     asignarMokepon(mokepon) {
         this.mokepon = mokepon
+    }
+
+    actualizarPosicion(x, y) {
+      this.x = x
+      this.y = y
     }
 }
 
@@ -40,6 +52,11 @@ app.get("/unirse", (req, res) => {
     res.send(id)
 })
 
+app.get("/hola", (req, res) => {
+  res.end("<h1>Hola Mundo!</h1>")
+})
+
+
 app.post("/mokepon/:jugadorId", (req, res) => {
     // console.log(jugadores)
     
@@ -48,17 +65,48 @@ app.post("/mokepon/:jugadorId", (req, res) => {
     const mokepon = new Mokepon(nombre)
 
     const jugadorIndex = jugadores.findIndex((jugador) => jugadorId === jugador.id)
-
     if (jugadorIndex >= 0) {
         jugadores[jugadorIndex].asignarMokepon(mokepon)
     }
+
     console.log(jugadores)
     console.log(jugadorId)
-    res.end()
+    
+    res.end() //se utiliza para enviar una respuesta HTTP al cliente y finalizar la comunicación entre el servidor y el cliente. PERO no cierra la conexión, para cerrarla: res.destroy()
 })
 
-// Iniciamos el servidor y lo hacemos escuchar en el puerto 8080
-app.listen(3000, () => {
-    // Imprimimos un mensaje en la consola para confirmar que el servidor está en ejecución
-    console.log("Server is running")
+app.post("/mokepon/:jugadorId/posicion", (req, res) => {
+  const jugadorId = req.params.jugadorId || ""
+  const x = req.body.x || 0
+  const y = req.body.y || 0
+  
+  const jugadorIndex = jugadores.findIndex((jugador) => jugadorId === jugador.id)
+  if (jugadorIndex >= 0) {
+    jugadores[jugadorIndex].actualizarPosicion(x, y)
+    res.end()
+  }
 })
+
+
+
+app.post('/usuarios', (req, res) => {
+    // extraer datos del cuerpo de la solicitud
+    const nuevoUsuario = req.body;
+    // guardar el nuevo usuario en la base de datos
+    db.guardarUsuario(nuevoUsuario);
+    // enviar una respuesta al cliente
+    res.send('Usuario creado exitosamente');
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+

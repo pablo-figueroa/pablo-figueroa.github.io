@@ -650,13 +650,13 @@ function enviarPosicion(x, y) {
                         let mokeponEnemigo = null
                         const mokeponNombre = enemigo.mokepon.nombre || ""
                         if (mokeponNombre === "Hipodoge") {
-                            mokeponEnemigo = new Mokepon("Hipodoge", "./img/hipodoge.png", 5, "./img/hipodogeEnemigo_mapa.png", enemigo.id)
+                            mokeponEnemigo = new Mokepon("Hipodoge", "./img/hipodoge.png", 7, "./img/hipodogeEnemigo_mapa.png", enemigo.id)
                             // hipodogeEnemigo.ataques.push(...HIPODOGE_ATAQUES)
                         } else if (mokeponNombre === "Capipepo") {
-                             mokeponEnemigo = new Mokepon("Capipepo", "./img/capipepo.png", 5, "./img/capipepoEnemigo_mapa.png", enemigo.id)
+                             mokeponEnemigo = new Mokepon("Capipepo", "./img/capipepo.png", 7, "./img/capipepoEnemigo_mapa.png", enemigo.id)
                             //  hipodogeEnemigo.ataques.push(...CAPIPEPO_ATAQUES)
                         } else if (mokeponNombre === "Ratigueya") {
-                            mokeponEnemigo = new Mokepon("Ratigueya", "./img/ratigueya.png", 5, "./img/ratigueyaEnemigo_mapa.png", enemigo.id)
+                            mokeponEnemigo = new Mokepon("Ratigueya", "./img/ratigueya.png", 7, "./img/ratigueyaEnemigo_mapa.png", enemigo.id)
                             // hipodogeEnemigo.ataques.push(...RATIGUEYA_ATAQUES)
                         }
                         

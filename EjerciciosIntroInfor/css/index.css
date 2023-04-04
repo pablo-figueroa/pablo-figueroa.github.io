@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: calc(5px + 2vw);
+  background-color: #000;
+  
+}
+
+
+
+#contenedor {
+  color: #fff;
+  
+  width: 90vw;
+  min-height: 98vh;
+  
+  margin: 1rem auto;
+
+  /* crear 6 filas y 3 columnas  */
+  display:grid;
+  grid-gap: .1rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(8, auto); /* 8 filas de tamaño automático */
+
+  grid-template-areas: "header header header header"
+                       "ejer-09 d-ejer-09 d-ejer-09 d-ejer-09"
+                       "ejer-10 d-ejer-10 d-ejer-10 d-ejer-10"
+                       "ejer-11 d-ejer-11 d-ejer-11 d-ejer-11"
+                       "ejer-12 d-ejer-12 d-ejer-12 d-ejer-12"
+                       "ejer-13 d-ejer-13 d-ejer-13 d-ejer-13"
+                       "ejer-14 d-ejer-14 d-ejer-14 d-ejer-14"
+                       "ejer-15 ejer-15 ejer-15 ejer-15"
+
+                       "footer footer footer footer";
+}
+
+
+#n-ejer-09 {
+  grid-area: ejer-09; /* ver en .contenedor*/
+}
+#d-ejer-09 {
+  grid-area: d-ejer-09; /* ver en .contenedor*/
+}
+#n-ejer-10 {
+  grid-area: ejer-10; /* ver en .contenedor*/
+}
+#d-ejer-10 {
+  grid-area: d-ejer-10; /* ver en .contenedor*/
+}
+#n-ejer-11 {
+  grid-area: ejer-11; /* ver en .contenedor*/
+}
+#d-ejer-11 {
+  grid-area: d-ejer-11; /* ver en .contenedor*/
+}
+#n-ejer-12 {
+  grid-area: ejer-12; /* ver en .contenedor*/
+}
+#d-ejer-12 {
+  grid-area: d-ejer-12; /* ver en .contenedor*/
+}
+#n-ejer-13 {
+  grid-area: ejer-13; /* ver en .contenedor*/
+}
+#d-ejer-13 {
+  grid-area: d-ejer-13; /* ver en .contenedor*/
+}
+#n-ejer-14 {
+  grid-area: ejer-14; /* ver en .contenedor*/
+}
+#d-ejer-14 {
+  grid-area: d-ejer-14; /* ver en .contenedor*/
+}
+
+#n-ejer-15 {
+  grid-area: ejer-14; /* ver en .contenedor*/
+}
+
+
+
+
+/* Acceder div que están dentro de la clase contenedor */
+
+#header, 
+.n-ejer,
+.d-ejer {
+  border-radius: 10px;
+  margin: .1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+#header {
+  grid-area: header; /* ver en .contenedor*/
+  
+  font-family: 'Fredoka One';
+  background-color: #146C94;
+  color: #F6F1F1;
+  
+  font-size: 1rem;
+  min-height: 10rem;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+h1 {
+  text-align: center;
+}
+.n-ejer {
+  background-color: #19A7CE;
+  color: #fff;
+  font-family: 'Poppins';
+  
+  min-height: 5rem; 
+  /* font-size: 1rem; */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.n-ejer:hover {
+  background-color: #146C94;
+  transition: background-color 1s ease-in-out;
+}
+
+a {
+  color: #fff;
+}
+
+a:hover {
+  color: #f5f500;
+  transition: color 1s ease-in-out;
+
+
+}
+
+
+.d-ejer {
+  font-family: 'Poppins';
+  font-size: .8rem;
+  background-color: #19A7CE;
+  
+  display: flex;
+  align-items: center;
+  
+  line-height: 1.3rem;
+  text-align: left;
+  
+}
+
+.d-block {
+  width: 100%;
+}
+
+  /* .n-ejer:not(:hover) {
+    background-color: #19A7CE;
+    transition: background-color 3s ease-in-out;
+  } 
+  
+  .d-ejer:not(:hover) {
+    background-color: #19A7CE;
+    transition: background-color 3s ease-in-out;
+  } */
+
+

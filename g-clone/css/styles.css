@@ -13,7 +13,7 @@
 body {
     font-size: 1.4rem;
     font-family: Arial, sans-serif;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 a {
@@ -145,7 +145,7 @@ footer {
         bottom: 0;
         width: 100%;
 
-        font-size: 1.7rem;
+        font-size: 1.5rem;
 
 
         & .pais {

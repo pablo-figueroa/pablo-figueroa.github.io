@@ -1,11 +1,24 @@
-@media only screen and (width < 500px) {
+@media only screen and (width < 600px) {
     main .main-container :is(.buttons, .idioma) {
-        display: none;
+        display: none !important;
+        /* Specificity issue */
+    }
+
+
+    .footer-container .pais {
+        font-size: 1.2rem;
+        padding: 5px 30px !important;
+    }
+
+    .about a {
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+        font-size: 1.1rem;
     }
 }
 
 
-@media only screen and (width < 950px) {
+@media only screen and (width < 1024px) {
     footer .footer-container .about {
         flex-direction: column;
         align-items: center;

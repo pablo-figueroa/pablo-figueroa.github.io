@@ -79,7 +79,7 @@ main {
             max-width: 100%;
             height: 52px;
 
-            border: 1px solid #ccc;
+            border: 1px solid hsl(210, 17%, 80%);
             border-radius: 50px;
 
             display: grid;
@@ -90,6 +90,12 @@ main {
 
             margin-bottom: 35px;
 
+            transition: box-shadow 350ms ease;
+
+            &:hover {
+                box-shadow: 1px 1px 10px 1px hsl(210, 17%, 80%);
+            }
+
             & img {
                 width: 90%;
                 height: auto;
@@ -98,6 +104,11 @@ main {
             & input {
                 height: 70%;
                 border: none;
+
+                &:focus {
+                    background-color: hsl(0, 0%, 99%);
+                    outline: none;
+                }
             }
         }
 

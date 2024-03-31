@@ -30,7 +30,6 @@
     }
 }
 
-
 @media only screen and (width < 1024px) {
     footer .footer-container .about {
         flex-direction: column;
@@ -39,7 +38,7 @@
     }
 }
 
-@media screen and (orientation: landscape) {
+@media screen and (orientation: landscape) and (height < 600px) {
     main .main-container :is(.buttons, .idioma) {
         display: none !important;
         /* Specificity issue */
@@ -49,19 +48,16 @@
         margin-top: 8px !important;
     }
 
-
     & .logo {
         margin-top: 20px !important;
-        margin-bottom: 25px !important ;
+        margin-bottom: 25px !important;
 
     }
 
     .search {
         height: 42px !important;
     }
-    
-    
-    
+
     .footer-container .pais {
         font-size: 1.2rem;
         padding: 5px 30px !important;

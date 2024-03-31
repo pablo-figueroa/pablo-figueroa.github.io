@@ -4,6 +4,19 @@
         /* Specificity issue */
     }
 
+    .header-container {
+        margin-top: 8px !important;
+    }
+
+
+    & .logo {
+        margin-top: 30px !important;
+
+    }
+
+    .search {
+        height: 42px !important;
+    }
 
     .footer-container .pais {
         font-size: 1.2rem;
@@ -23,5 +36,40 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    main .main-container :is(.buttons, .idioma) {
+        display: none !important;
+        /* Specificity issue */
+    }
+
+    .header-container {
+        margin-top: 8px !important;
+    }
+
+
+    & .logo {
+        margin-top: 20px !important;
+        margin-bottom: 25px !important ;
+
+    }
+
+    .search {
+        height: 42px !important;
+    }
+    
+    
+    
+    .footer-container .pais {
+        font-size: 1.2rem;
+        padding: 5px 30px !important;
+    }
+
+    .about a {
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+        font-size: 1.1rem;
     }
 }

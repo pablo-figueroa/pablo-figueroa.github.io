@@ -44,7 +44,8 @@ a {
 }
 
 header {
-    background-image: linear-gradient(225deg, var(--warm-black) 3%, var(--bitcoin-orange) 97%);
+    /* background-image: linear-gradient(207.8, #201E1C 16.69%, #F7931A 100%); */
+    background-image: linear-gradient(210deg, var(--warm-black) 17%, var(--bitcoin-orange) 100%);
     position: relative;
 
     display: flex;
@@ -75,34 +76,56 @@ header {
 
         & h1 {
             font-size: 9cqi;
+            font-weight: bold;
             margin-bottom: 2rem;
+            color: var(--just-white);
         }
 
         & p {
             font-size: 5cqi;
+            font-weight: 300;
+            line-height: 1.2;
+            color: var(--soft-orange)
         }
     }
 
     & .header__button {
         background-color: var(--off-white);
-        display: block;
-        height: 50px;
         container-type: inline-size;
-        width: clamp(200px, 60%, 500px);
         align-content: center;
         text-align: center;
+        
+        width: clamp(200px, 60%, 500px);
+        height: 50px;
         position: absolute;
-        bottom: -20px;
-        padding: 20px;
+        bottom: -25px;
+        
+        padding: 10px 20px;
         border-radius: 5px;
         box-shadow: 1px 1px 10px 1px var(--black);
+        box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
 
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        
         & :first-child {
+            /* background-color: #1d9cf7; */
             color: var(--warm-black);
             font-family: "Inter";
             font-weight: 600;
-
             font-size: 6cqi;
+        }
+
+        & :last-child {
+            display: inline-block;
+            width: 20px;
+            height: auto;
+
+            background-image: url("../assets/icons/down-arrow.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+
         }
     }
 }

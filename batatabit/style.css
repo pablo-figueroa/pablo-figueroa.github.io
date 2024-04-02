@@ -62,7 +62,7 @@ header {
         /* align-self: center; */
     }
 
-    & .header__title-container {
+    & .__title-container {
         container-type: inline-size;
         text-align: center;
         width: clamp(288px, 90%, 700px);
@@ -85,26 +85,31 @@ header {
         }
     }
 
-    & .header__button {
-        background-color: var(--off-white);
+    & .__button {
         container-type: inline-size;
+
+        background-color: var(--off-white);
         align-content: center;
         text-align: center;
-        
+
         width: clamp(200px, 60%, 500px);
         height: 50px;
         position: absolute;
         bottom: -25px;
-        
+
         padding: 10px 20px;
         border-radius: 5px;
-        box-shadow: 1px 1px 10px 1px var(--black);
         box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+        box-shadow: 1px 1px 10px 1px var(--warm-black);
 
-        display: flex;
+        /* display: flex;
         align-items: center;
-        justify-content: space-evenly;
-        
+        justify-content: space-evenly; */
+
+        display: grid;
+        grid-template-columns: auto auto;
+        place-items: center;
+
         & :first-child {
             color: var(--warm-black);
             font-family: "Inter";
@@ -113,14 +118,58 @@ header {
         }
 
         & :last-child {
-            display: inline-block;
-            width: 20px;
-            height: auto;
-
             background-image: url("./assets/icons/down-arrow.svg");
             background-repeat: no-repeat;
             background-position: center;
+            width: 25px;
+            height: auto;
+        }
+    }
+}
 
+main {
+    width: 100%;
+    height: auto;
+    background-color: var(--off-white);
+
+    & .exchange {
+        width: 100%;
+        height: auto;
+
+        & .__backgr-img {
+            width: clamp(250px, 80%, 500px);
+            aspect-ratio: 1 / 1;
+            margin-inline: auto;
+
+            & img {
+                width: 100%;
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
+            }
+        }
+
+        & .__title-exchange {
+            container-type: inline-size;
+            width: 90%;
+            width: clamp(250px, 100%, 800px);
+
+            margin-inline: auto;
+
+
+            & :is(h2, p) {
+                text-align: center;
+                align-content: center;
+            }
+
+            & h2 {
+                font-size: 7cqw;
+                padding: 5cqw;
+            }
+
+            & p {
+                font-size: 4cqw;
+                padding: 3cqw;
+            }
         }
     }
 }

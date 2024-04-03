@@ -9,179 +9,6 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./style.css">
-        <!-- <script src="./script.js"></script> -->
-        <style>
-:root {
-    --bitcoin-orange: #f7951d;
-    --soft-orange: #ffead6;
-    --secondary-blue: #1d9cf7;
-    --soft-blue: #e5f4ff;
-    --warm-black: #292724;
-    --black: #211f1c;
-    --grey: #bababa;
-    --off-white: #faf7f5;
-    --just-white: #ffffff;
-}
-
-html {
-    font-size: 62.5%;
-    font-family: 'DM Sans', sans-serif;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-p, a, span {
-    font-size: 1.6rem;
-}
-
-a {
-    text-decoration: none;
-}
-
-header {
-    /* background-image: linear-gradient(207.8, #201E1C 16.69%, #F7931A 100%); */
-    background-image: linear-gradient(210deg, var(--warm-black) 17%, var(--bitcoin-orange) 100%);
-    position: relative;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    width: 100%;
-    min-width: 320px;
-
-    min-height: 50vh;
-
-    & img {
-        width: 200px;
-        height: auto;
-        margin-top: 5rem;
-        margin-bottom: 4rem;
-        /* align-self: center; */
-    }
-
-    & .__title-container {
-        container-type: inline-size;
-        text-align: center;
-        width: clamp(288px, 90%, 700px);
-        height: auto;
-        margin-bottom: 60px;
-        color: var(--off-white);
-
-        & h1 {
-            font-size: 9cqi;
-            font-weight: bold;
-            margin-bottom: 2rem;
-            color: var(--just-white);
-        }
-
-        & p {
-            font-size: 5cqi;
-            font-weight: 300;
-            line-height: 1.2;
-            color: var(--soft-orange)
-        }
-    }
-
-    & .__button {
-        container-type: inline-size;
-
-        background-color: var(--off-white);
-        align-content: center;
-        text-align: center;
-
-        width: clamp(200px, 60%, 500px);
-        height: 50px;
-        position: absolute;
-        bottom: -25px;
-
-        padding: 10px 20px;
-        border-radius: 5px;
-        /* box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16); */
-        box-shadow: 1px 1px 10px 1px var(--warm-black);
-
-        /* display: flex;
-        align-items: center;
-        justify-content: space-evenly; */
-
-        display: grid;
-        grid-template-columns: auto auto;
-        place-items: center;
-
-        & :first-child {
-            color: var(--warm-black);
-            font-family: "Inter";
-            font-weight: 600;
-            font-size: 6cqi;
-        }
-
-        & :last-child {
-            background-image: url("./assets/icons/down-arrow.svg");
-            background-repeat: no-repeat;
-            background-position: center;
-            width: 25px;
-            height: auto;
-        }
-    }
-}
-
-main {
-    width: 100%;
-    height: auto;
-    background-color: var(--off-white);
-
-    & .exchange {
-        width: 100%;
-        height: auto;
-
-        & .__backgr-img {
-            /* background-image: url("./assets/img/Bitcoin.svg");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat; */
-
-            width: clamp(250px, 80%, 400px);
-            aspect-ratio: 1 / 1;
-            margin-inline: auto;
-
-            & img {
-                width: 100%;
-                aspect-ratio: 1 / 1;
-                object-fit: cover;
-            }
-        }
-
-        & .__title-exchange {
-            container-type: inline-size;
-            width: 90%;
-            width: clamp(250px, 100%, 800px);
-
-            margin-inline: auto;
-
-
-            & :is(h2, p) {
-                text-align: center;
-                align-content: center;
-            }
-
-            & h2 {
-                font-size: 7cqw;
-                padding: 5cqw;
-            }
-
-            & p {
-                font-size: 4cqw;
-                padding: 3cqw;
-            }
-        }
-    }
-}
-        </style>
     </head>
     <body>
         <header>
@@ -261,19 +88,19 @@ main {
                                 </div>
                                 <table>
                                     <tr>
-                                        <td data-cell="coin">Bitrade</td>
+                                        <td data-cell="platform">Bitrade</td>
                                         <td data-cell="value">$12.96</td>
                                     </tr>
                                     <tr>
-                                        <td ata-cell="coin">Bitpreco</td>
+                                        <td ata-cell="platform">Bitpreco</td>
                                         <td data-cell="value">$13.07</td>
                                     </tr>
                                     <tr>
-                                        <td data-cell="coin">Novadax</td>
+                                        <td data-cell="platform">Novadax</td>
                                         <td data-cell="value">$13.15</td>
                                     </tr>
                                     <tr>
-                                        <td data-cell="coin">Coinext</td>
+                                        <td data-cell="platform">Coinext</td>
                                         <td data-cell="value">$14.96</td>
                                     </tr>
                                 </table>

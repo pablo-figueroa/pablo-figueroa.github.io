@@ -111,8 +111,7 @@ header {
 
         padding: 10px 20px;
         border-radius: 5px;
-        /* box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16); */
-        box-shadow: 1px 1px 1px var(--warm-black);
+        box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
 
         /* display: flex;
         align-items: center;
@@ -196,7 +195,7 @@ main {
 }
 
 
-.__coins-container {
+:is(.__coins-container, .__comission-container) {
     container-type: inline-size;
 
     display: flex;
@@ -227,6 +226,7 @@ main {
             background-color: var(--off-white);
             border-radius: 10px;
             font-size: 5cqw;
+            font-family: "Inter";
             color: var(--warm-black);
 
             & tr {
@@ -272,104 +272,13 @@ main {
         }
     }
 
-    & .actualizacion {
-        background-color: var(--soft-orange);
-        margin-top: 1rem;
-        padding-top: .5rem;
-        padding-bottom: .5rem;
-        border-radius: 5px;
-        width: clamp(170px, 50%, 600px);
-        text-align: center;
-        container-type: inline-size;
-        align-content: center;
-
-        & .refresh-text {
-            font-weight: 700;
-            font-size: 6cqw;
+    & :has(#left-arrow) {
+        & .table-title {
+            color: var(--secondary-blue);
         }
 
-        & .refresh-date {
-            font-weight: 300;
-            font-size: 5.5cqw;
-        }
-    }
-}
-
-
-.__comission-container {
-    container-type: inline-size;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    width: clamp(320px, 80%, 600px);
-    aspect-ratio: 2 / 1;
-    margin-inline: auto;
-    border-radius: 10px;
-
-    /* background-color: red; */
-    padding-top: 4rem;
-    padding-bottom: 5rem;
-
-    & .table-title {
-        color: var(--secondary-blue);
-        font-size: 4.5cqw;
-        padding-left: .5rem;
-    }
-
-    & .__table-container {
-        display: grid;
-        grid-template-columns: auto auto;
-        align-items: center;
-
-        & table {
-            background-color: var(--off-white);
-            border-radius: 10px;
-            font-size: 5cqw;
-            color: var(--warm-black);
-
-            & tr {
-                background-color: var(--just-white);
-                border-collapse: collapse;
-
-                & td {
-                    padding: .5rem;
-                    border-collapse: var(--bitcoin-orange);
-
-                    &[data-cell="value"] {
-                        text-align: right;
-                        padding-left: 2rem;
-                    }
-
-                    &[data-cell="coin"] {
-                        text-align: left;
-                        padding-right: 2rem;
-                    }
-
-                    &[data-cell="trend"] {
-                        text-align: left;
-                        padding: 0 1rem;
-                    }
-                }
-            }
-        }
-
-        & .table-arrow {
-            margin-right: .5rem;
-            background-color: var(--just-white);
-
-            & img {
-                transform: scaleX(-1);
-                cursor: pointer;
-                padding: 1rem;
-                border-radius: 5px;
-                box-shadow: 1px 1px 1px var(--warm-black);
-            }
-
-            & img:hover {
-                box-shadow: -1px -1px 1px var(--warm-black);
-            }
+        & img {
+            transform: scaleX(-1);
         }
     }
 

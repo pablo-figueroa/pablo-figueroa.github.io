@@ -1,13 +1,18 @@
 :root {
-    --bitcoin-orange: #f7951d;
-    --soft-orange: #ffead6;
-    --secondary-blue: #1d9cf7;
-    --soft-blue: #e5f4ff;
-    --warm-black: #292724;
-    --black: #211f1c;
-    --grey: #bababa;
-    --off-white: #faf7f5;
-    --just-white: #ffffff;
+    --bitcoin-orange: hwb(33 11% 3%);
+    --soft-orange: hwb(33 85% 3%);
+
+    --secondary-blue: hwb(205 10% 3%);
+    --soft-blue: hwb(205 90% 3%);
+
+    --black: hwb(36 11% 87%);
+    --warm-black: hwb(30 11% 87%);
+    --warm-black-1: hwb(36 14% 84%);
+
+    --grey: hwb(0 73% 27%);
+
+    --off-white: hwb(24 96% 2%);
+    --just-white: hwb(0 100% 0%);
 }
 
 /* html */
@@ -194,7 +199,6 @@ main {
     }
 }
 
-
 :is(.__coins-container, .__comission-container) {
     container-type: inline-size;
 
@@ -303,4 +307,79 @@ main {
             font-size: 5.5cqw;
         }
     }
+}
+
+.info-card {
+    background-color: var(--black);
+    color: var(--off-white);
+    position: relative;
+
+    padding-bottom: 3rem;
+
+    & .batata {
+
+        position: absolute;
+        width: 100%;
+        top: -1rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    & .__title {
+        container-type: inline-size;
+        padding-top: 2rem;
+        /* background-color: steelblue; */
+        width: clamp(288px, 70%, 700px);
+        margin-inline: auto;
+
+        text-align: center;
+
+        & h2 {
+            font-weight: 700;
+            font-size: 9cqw;
+            margin-bottom: 1rem;
+        }
+
+        & p {
+            font-weight: 500;
+            font-size: 5cqw;
+        }
+    }
+
+    & .__container {
+
+        & .__detail {
+            background-color: var(--warm-black-1);
+            container-type: inline-size;
+
+            margin-top: 1rem;
+            width: clamp(288px, 70%, 500px);
+            aspect-ratio: 16/8;
+            margin-inline: auto;
+            border-radius: 5px;
+            padding: .8rem;
+
+            & :nth-child(2) {
+                font-weight: 700;
+                font-size: 7.5cqw;
+                margin-bottom: 1rem;
+
+            }
+
+            & :nth-child(3) {
+                font-weight: 300;
+                font-size: 5.5cqw;
+                line-height: 1.5;
+            }
+        }
+    }
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+    grid-template-rows: 1fr;
+    grid-gap: 1rem;
+    width: 100%;
+    margin-inline: auto;
 }

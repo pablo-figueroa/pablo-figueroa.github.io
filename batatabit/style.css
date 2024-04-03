@@ -37,6 +37,7 @@ a {
     text-decoration: none;
 }
 
+/* * ========= SCROLLBAR FASHION ========= */
 
 ::-webkit-scrollbar {
     width: .5rem;
@@ -53,6 +54,8 @@ a {
 ::-webkit-scrollbar-thumb:hover {
     background-color: hsl(33, 93%, 54%);
 }
+
+/* * ========= HEADER ========= */
 
 header {
     /* background-image: linear-gradient(207.8, #201E1C 16.69%, #F7931A 100%); */
@@ -147,6 +150,8 @@ header {
     }
 }
 
+/* * ========= TITULOS: COINS & COMISSION ========= */
+
 main {
     width: 100%;
     height: auto;
@@ -199,6 +204,8 @@ main {
     }
 }
 
+/* * ========= TABLAS COINS & COMISSION ========= */
+
 :is(.__coins-container, .__comission-container) {
     container-type: inline-size;
 
@@ -211,9 +218,8 @@ main {
     margin-inline: auto;
     border-radius: 10px;
 
-    /* background-color: red; */
-    padding-top: 4rem;
-    padding-bottom: 5rem;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
 
     & .table-title {
         color: var(--bitcoin-orange);
@@ -309,6 +315,14 @@ main {
     }
 }
 
+/* * ========= TARJETAS ========= */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+    grid-gap: 1rem;
+}
+
 .info-card {
     background-color: var(--black);
     color: var(--off-white);
@@ -316,7 +330,7 @@ main {
 
     padding-bottom: 3rem;
 
-    & .batata {
+    & .batata-icon {
 
         position: absolute;
         width: 100%;
@@ -328,7 +342,6 @@ main {
     & .__title {
         container-type: inline-size;
         padding-top: 2rem;
-        /* background-color: steelblue; */
         width: clamp(288px, 70%, 700px);
         margin-inline: auto;
 
@@ -368,18 +381,9 @@ main {
 
             & :nth-child(3) {
                 font-weight: 300;
-                font-size: 5.5cqw;
+                font-size: 4.5cqw;
                 line-height: 1.5;
             }
         }
     }
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
-    grid-template-rows: 1fr;
-    grid-gap: 1rem;
-    width: 100%;
-    margin-inline: auto;
 }

@@ -11,15 +11,15 @@
         <link rel="stylesheet" href="./style.css">
         <style>
 :root {
-    --bitcoin-orange: hsl(33, 93%, 54%);
-    --soft-orange: hsl(29, 100%, 92%);
-    --secondary-blue: hsl(205, 93%, 54%);
-    --soft-blue: hsl(206, 100%, 95%);
-    --warm-black: hsl(36, 6%, 15%);
-    --black: hsl(36, 8%, 12%);
-    --grey: hwb(0 73% 27%);
-    --off-white: hsl(24, 33%, 97%);
-    --just-white: hsl(0, 0%, 100%);
+    --bitcoin-orange: #f7951d;
+    --soft-orange: #ffead6;
+    --secondary-blue: #1d9cf7;
+    --soft-blue: #e5f4ff;
+    --warm-black: #292724;
+    --black: #211f1c;
+    --grey: #bababa;
+    --off-white: #faf7f5;
+    --just-white: #ffffff;
 }
 
 html {
@@ -31,6 +31,154 @@ html {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+p, a, span {
+    font-size: 1.6rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    /* background-image: linear-gradient(207.8, #201E1C 16.69%, #F7931A 100%); */
+    background-image: linear-gradient(210deg, var(--warm-black) 17%, var(--bitcoin-orange) 100%);
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    min-width: 320px;
+
+    min-height: 50vh;
+
+    & img {
+        width: 200px;
+        height: auto;
+        margin-top: 5rem;
+        margin-bottom: 4rem;
+        /* align-self: center; */
+    }
+
+    & .__title-container {
+        container-type: inline-size;
+        text-align: center;
+        width: clamp(288px, 90%, 700px);
+        height: auto;
+        margin-bottom: 60px;
+        color: var(--off-white);
+
+        & h1 {
+            font-size: 9cqi;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            color: var(--just-white);
+        }
+
+        & p {
+            font-size: 5cqi;
+            font-weight: 300;
+            line-height: 1.2;
+            color: var(--soft-orange)
+        }
+    }
+
+    & .__button {
+        container-type: inline-size;
+
+        background-color: var(--off-white);
+        align-content: center;
+        text-align: center;
+
+        width: clamp(200px, 60%, 500px);
+        height: 50px;
+        position: absolute;
+        bottom: -25px;
+
+        padding: 10px 20px;
+        border-radius: 5px;
+        /* box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16); */
+        box-shadow: 1px 1px 10px 1px var(--warm-black);
+
+        /* display: flex;
+        align-items: center;
+        justify-content: space-evenly; */
+
+        display: grid;
+        grid-template-columns: auto auto;
+        place-items: center;
+
+        & :first-child {
+            color: var(--warm-black);
+            font-family: "Inter";
+            font-weight: 600;
+            font-size: 6cqi;
+        }
+
+        & :last-child {
+            background-image: url("./assets/icons/down-arrow.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 25px;
+            height: auto;
+        }
+    }
+}
+
+main {
+    width: 100%;
+    height: auto;
+    background-color: var(--off-white);
+
+    & .exchange {
+        width: 100%;
+        height: auto;
+
+        & .__backgr-img {
+            /* background-image: url("./assets/img/Bitcoin.svg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat; */
+
+            width: clamp(250px, 80%, 400px);
+            aspect-ratio: 1 / 1;
+            margin-inline: auto;
+
+            & img {
+                width: 100%;
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
+            }
+        }
+
+        & .__title-exchange {
+            container-type: inline-size;
+            width: 90%;
+            width: clamp(250px, 100%, 800px);
+
+            margin-inline: auto;
+
+
+            & :is(h2, p) {
+                text-align: center;
+                align-content: center;
+            }
+
+            & h2 {
+                font-size: 7cqw;
+                padding: 5cqw;
+            }
+
+            & p {
+                font-size: 4cqw;
+                padding: 3cqw;
+            }
+        }
+    }
 }
         </style>
     </head>
@@ -48,13 +196,57 @@ html {
         </header>
         <main>
             <section class="exchange">
-                <div class="__backgr-img"><img src="./assets/img/Bitcoin.svg" alt=""></div>
+                <div class="__backgr-img">
+                    <img src="./assets/img/Bitcoin.svg" alt="">
+                </div>
                 <div class="__title-exchange">
                     <h2>Visibilizamos todas las tasas de cambio</h2>
                     <p>Traemos información en tiempo real de las casas de cambio y las monedas más importantes del mundo</p>
                 </div>
-                <section>
-                    <div></div>
+                <section class="__coins">
+                    <div class="__coins-container">
+                        <div>
+                            <p class="table-title">Monedas</p>
+                            <div class="__table-container">
+                                <table>
+                                    <tr>
+                                        <td data-cell="coin">Bitcoin</td>
+                                        <td data-cell="value">$1.96</td>
+                                        <td data-cell="trend">
+                                            <img src="./assets/icons/trending-down.svg" alt="">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td ata-cell="coin">Ethereum</td>
+                                        <td data-cell="value">$0.07</td>
+                                        <td data-cell="trend">
+                                            <img src="./assets/icons/trending-up.svg" alt="">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-cell="coin">Ripple</td>
+                                        <td data-cell="value">$2.15</td>
+                                        <td data-cell="trend">
+                                            <img src="./assets/icons/trending-down.svg" alt="">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-cell="coin">Stellar</td>
+                                        <td data-cell="value">$4.96</td>
+                                        <td data-cell="trend"><img src="./assets/icons/trending-down.svg" alt="">
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div class="table-arrow">
+                                    <a href=""><img src="./assets/icons/right-arrow.svg" alt="right-arrow"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="actualizacion">
+                            <span class="refresh-text">Actualizado:</span>
+                            <span class="refresh-date">19 Julio 23:45</span>
+                        <div/>
+                    </div>
                 </section>
                 <div></div>
             </section>

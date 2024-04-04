@@ -356,6 +356,7 @@ main {
         & p {
             font-weight: 500;
             font-size: 5cqw;
+            color: var(--grey);
         }
     }
 
@@ -383,7 +384,23 @@ main {
                 font-weight: 300;
                 font-size: 4.5cqw;
                 line-height: 1.5;
+                letter-spacing: .1ch;
             }
+        }
+    }
+}
+
+.bitcoin-laby {
+    padding-bottom: 1rem;
+    background-color: var(--warm-black);
+    & .bitcoin-laby__container {
+        display: flex;
+        justify-content: center;
+
+        & .bitcoin-laby__img {
+            width: clamp(50px, 100%, 400px);
+            object-fit: cover;
+            /* filter: opacity(0.9) blur(1px); */
         }
     }
 }

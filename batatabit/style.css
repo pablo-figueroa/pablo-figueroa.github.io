@@ -399,7 +399,7 @@ main {
 
 .bitcoin-lady {
     background-color: var(--warm-black);
-    padding-bottom: 1rem;
+    padding-bottom: 0rem;
 
     & .bitcoin-lady__container {
         display: flex;
@@ -421,6 +421,154 @@ main {
             color: var(--off-white);
             font-size: 1.5rem;
             font-weight: bold;
+        }
+    }
+}
+
+
+/* * ========= PLANES ========= */
+
+.main-plans {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    & .__container {
+        width: 100%;
+        height: auto;
+
+        & .title {
+            width: clamp(288px, 70%, 700px);
+            container-type: inline-size;
+            margin-inline: auto;
+            text-align: center;
+
+            & h2 {
+                font-size: 8cqw;
+                font-weight: 700;
+                padding-bottom: 1rem;
+
+            }
+
+            & p {
+                font-size: 4.75cqw;
+                font-weight: 500;
+                padding-bottom: 3rem;
+            }
+        }
+
+        & .slider {
+
+            container-type: inline-size;
+
+            width: clamp(288px, 70%, 500px);
+            margin-inline: auto;
+
+            text-align: center;
+
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+
+            & .slider__left-row {
+                align-content: center;
+                background-color: var(--off-white);
+                font-size: 8cqw;
+                padding: 0 6cqw;
+                border-radius: 0 8px 8px 0;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, .16);
+            }
+
+            & .plans-container__card {
+                background-color: var(--off-white);
+                width: 95%;
+                margin-inline: auto;
+
+                position: relative;
+                container-type: inline-size;
+
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, .16);
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+
+                & .recomended {
+                    background-color: var(--bitcoin-orange);
+                    position: absolute;
+                    top: 0%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+
+                    font-size: 6cqw;
+                    font-weight: 700;
+                    padding: .3rem;
+                    border-radius: 8px;
+                    color: var(--off-white);
+                }
+
+                & .plan-info__container {
+                    container-type: inline-size;
+
+
+                    & .plan-card__title {
+                        font-size: 7cqw;
+                        font-weight: 700;
+                        padding-top: 4cqw;
+                        padding-bottom: 4cqw;
+                    }
+
+                    & .plan-card__price {
+                        font-family: "Inter", sans-serif;
+                        font-weight: 500;
+                        font-size: 25cqw;
+
+                        & sup {
+                            font-size: 8cqw;
+                        }
+                    }
+
+                    & .plan-card__saving {
+                        font-family: "Inter", sans-serif;
+                        font-weight: 500;
+                        font-size: 6cqw;
+                        padding: 0 8cqw 16cqw;
+                    }
+
+                    & .plan-card__ca {
+                        border-color: var(--bitcoin-orange);
+                        background-color: var(--just-white);
+                        border-radius: 4px;
+                        padding: 0 1rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 10px;
+
+                        margin-inline: auto;
+
+                        width: clamp(160px, 80%, 260px);
+                        aspect-ratio: 16/3;
+
+                        container-type: inline-size;
+
+                        & .saving-text {
+                            font-size: 11cqw;
+                            font-weight: 700;
+                        }
+
+                        & .flechita {
+                            color: var(--bitcoin-orange);
+                            align-self: center;
+                        }
+                    }
+                }
+            }
+
+            & .slider__right-row {
+                align-content: center;
+                background-color: var(--off-white);
+                font-size: 8cqw;
+                border-radius: 8px 0 0 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, .16);
+                padding: 0 6cqw;
+            }
         }
     }
 }

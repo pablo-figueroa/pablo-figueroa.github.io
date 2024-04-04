@@ -321,6 +321,40 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
     grid-gap: 1rem;
+    width: clamp(320px, 75%, 700px);
+    margin-inline: auto;
+
+    & .__container {
+
+
+        & .__detail {
+            container-type: inline-size;
+
+            margin-top: 1rem;
+            width: clamp(288px, 70%, 500px);
+            aspect-ratio: 16/8;
+            margin-inline: auto;
+
+            background-color: var(--warm-black-1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, .16);
+            border-radius: 5px;
+            padding: .8rem;
+
+            & :nth-child(2) {
+                font-weight: 700;
+                font-size: 7.5cqw;
+                margin-bottom: 1rem;
+            }
+
+            & :nth-child(3) {
+                color: #808080;
+                font-weight: 500;
+                font-size: 4.5cqw;
+                line-height: 1.5;
+                letter-spacing: .1ch;
+            }
+        }
+    }
 }
 
 .info-card {
@@ -360,47 +394,33 @@ main {
         }
     }
 
-    & .__container {
 
-        & .__detail {
-            background-color: var(--warm-black-1);
-            container-type: inline-size;
-
-            margin-top: 1rem;
-            width: clamp(288px, 70%, 500px);
-            aspect-ratio: 16/8;
-            margin-inline: auto;
-            border-radius: 5px;
-            padding: .8rem;
-
-            & :nth-child(2) {
-                font-weight: 700;
-                font-size: 7.5cqw;
-                margin-bottom: 1rem;
-
-            }
-
-            & :nth-child(3) {
-                font-weight: 300;
-                font-size: 4.5cqw;
-                line-height: 1.5;
-                letter-spacing: .1ch;
-            }
-        }
-    }
 }
 
-.bitcoin-laby {
-    padding-bottom: 1rem;
+.bitcoin-lady {
     background-color: var(--warm-black);
-    & .bitcoin-laby__container {
+    padding-bottom: 1rem;
+
+    & .bitcoin-lady__container {
         display: flex;
         justify-content: center;
+        position: relative;
 
-        & .bitcoin-laby__img {
+
+        & .bitcoin-lady__img {
             width: clamp(50px, 100%, 400px);
             object-fit: cover;
-            /* filter: opacity(0.9) blur(1px); */
+        }
+
+        & .bitcoin-lady__text {
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            color: var(--off-white);
+            font-size: 1.5rem;
+            font-weight: bold;
         }
     }
 }

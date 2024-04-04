@@ -431,6 +431,7 @@ main {
 .main-plans {
     margin-top: 2rem;
     margin-bottom: 2rem;
+
     & .__container {
         width: 100%;
         height: auto;
@@ -500,6 +501,7 @@ main {
                     font-weight: 700;
                     padding: .3rem;
                     border-radius: 8px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, .16);
                     color: var(--off-white);
                 }
 
@@ -535,6 +537,8 @@ main {
                         border-color: var(--bitcoin-orange);
                         background-color: var(--just-white);
                         border-radius: 4px;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, .16);
+                        box-shadow: 1px 1px 1px black;
                         padding: 0 1rem;
                         display: flex;
                         justify-content: center;
@@ -547,6 +551,10 @@ main {
                         aspect-ratio: 16/3;
 
                         container-type: inline-size;
+
+                        &:hover {
+                            box-shadow: -1px -1px 1px black;
+                        }
 
                         & .saving-text {
                             font-size: 11cqw;

@@ -15,7 +15,11 @@
     --just-white: hwb(0 100% 0%);
 }
 
-/* html */
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
     font-size: 62.5%;
     font-family: 'DM Sans', sans-serif;
@@ -88,14 +92,14 @@ header {
         margin-bottom: 60px;
         color: var(--off-white);
 
-        & h1 {
+        &>h1 {
             font-size: 9cqi;
             font-weight: bold;
             margin-bottom: 2rem;
             color: var(--just-white);
         }
 
-        & p {
+        &>p {
             font-size: 5cqi;
             font-weight: 300;
             line-height: 1.2;
@@ -191,12 +195,12 @@ main {
                 align-content: center;
             }
 
-            & h2 {
+            &>h2 {
                 font-size: 7cqw;
                 padding: 5cqw;
             }
 
-            & p {
+            &>p {
                 font-size: 4cqw;
                 padding: 3cqw;
             }
@@ -381,13 +385,13 @@ main {
 
         text-align: center;
 
-        & h2 {
+        &>h2 {
             font-weight: 700;
             font-size: 9cqw;
             margin-bottom: 1rem;
         }
 
-        & p {
+        &>p {
             font-weight: 500;
             font-size: 5cqw;
             color: var(--grey);
@@ -429,11 +433,12 @@ main {
 /* * ========= PLANES ========= */
 
 .main-plans {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 
     & .__container {
         width: 100%;
+
         height: auto;
 
         & .title {
@@ -442,14 +447,14 @@ main {
             margin-inline: auto;
             text-align: center;
 
-            & h2 {
+            &>h2 {
                 font-size: 8cqw;
                 font-weight: 700;
                 padding-bottom: 1rem;
 
             }
 
-            & p {
+            &>p {
                 font-size: 4.75cqw;
                 font-weight: 500;
                 padding-bottom: 3rem;
@@ -457,28 +462,42 @@ main {
         }
 
         & .slider {
-
             container-type: inline-size;
 
-            width: clamp(288px, 70%, 500px);
+            width: clamp(288px, 90%, 800px);
             margin-inline: auto;
 
+            height: fit-content;
             text-align: center;
 
             display: grid;
             grid-template-columns: auto 1fr auto;
 
+
             & .slider__left-row {
+
+                width: calc(1rem + 1cqw);
+                color: var(--grey);
+                font-size: calc(1rem + 1cqw);
                 align-content: center;
                 background-color: var(--off-white);
-                font-size: 8cqw;
-                padding: 0 6cqw;
-                border-radius: 0 8px 8px 0;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, .16);
+                border-radius: 8px 0 0 8px;
+                /* box-shadow: 0 4px 8px rgba(0, 0, 0, .16); */
             }
 
-            & .plans-container__card {
+            & .slider__right-row {
+                width: calc(1rem + 1cqw);
+                color: var(--grey);
+                font-size: calc(1rem + 1cqw);
+                align-content: center;
                 background-color: var(--off-white);
+                border-radius: 0 8px 8px 0;
+                /* box-shadow: 0 4px 8px rgba(0, 0, 0, .16); */
+            }
+
+            & .plans-container__card-reco {
+                background-color: var(--off-white);
+                /* width: clamp(500px, 95%, 600px); */
                 width: 95%;
                 margin-inline: auto;
 
@@ -503,10 +522,15 @@ main {
                     border-radius: 8px;
                     box-shadow: 0 4px 8px rgba(0, 0, 0, .16);
                     color: var(--off-white);
+
+                    & .plan-card__title {
+                        color: var(--black);
+                    }
                 }
 
                 & .plan-info__container {
                     container-type: inline-size;
+
 
 
                     & .plan-card__title {
@@ -537,8 +561,7 @@ main {
                         border-color: var(--bitcoin-orange);
                         background-color: var(--just-white);
                         border-radius: 4px;
-                        box-shadow: 0 4px 8px rgba(0, 0, 0, .16);
-                        box-shadow: 1px 1px 1px black;
+                        box-shadow: 0 4px 4px var(--bitcoin-orange);
                         padding: 0 1rem;
                         display: flex;
                         justify-content: center;
@@ -562,21 +585,111 @@ main {
                         }
 
                         & .flechita {
-                            color: var(--bitcoin-orange);
-                            align-self: center;
+                            display: flex;
                         }
                     }
                 }
             }
 
-            & .slider__right-row {
-                align-content: center;
+            & .plans-container__card {
                 background-color: var(--off-white);
-                font-size: 8cqw;
-                border-radius: 8px 0 0 8px;
+                /* width: clamp(200px, 95%, 300px); */
+                width: 95%;
+                margin-inline: auto;
+
+                position: relative;
+                container-type: inline-size;
+
+                border-radius: 8px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, .16);
-                padding: 0 6cqw;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+
+                & .plan-info__container {
+                    container-type: inline-size;
+
+
+                    & .plan-card__title {
+                        font-size: 7cqw;
+                        font-weight: 700;
+                        padding-top: 4cqw;
+                        padding-bottom: 4cqw;
+                    }
+
+                    & .plan-card__price {
+                        font-family: "Inter", sans-serif;
+                        font-weight: 500;
+                        font-size: 25cqw;
+                        color: var(--grey);
+
+
+                        & sup {
+                            font-size: 8cqw;
+                        }
+                    }
+
+                    & .plan-card__saving {
+                        font-family: "Inter", sans-serif;
+                        font-weight: 500;
+                        font-size: 6cqw;
+                        padding: 0 8cqw 16cqw;
+                        color: var(--grey);
+                    }
+
+                    & .plan-card__ca {
+                        border-color: var(--grey);
+                        background-color: var(--just-white);
+                        border-radius: 4px;
+                        padding: 0 1rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 10px;
+
+                        margin-inline: auto;
+
+                        width: clamp(160px, 80%, 260px);
+                        aspect-ratio: 16/3;
+
+                        container-type: inline-size;
+
+                        & .saving-text {
+                            font-size: 11cqw;
+                            font-weight: 700;
+                            color: var(--grey);
+                        }
+
+                        & .flechita {
+                            display: flex;
+                        }
+                    }
+                }
             }
+
+
         }
     }
+}
+
+/* *=========================================================* */
+
+.plans-container__wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    overflow-x: auto;
+    background-color: rgba(0, 0, 0, .03);
+    /* overscroll-behavior-x: contain; */
+    /* scroll-snap-type: x proximity; */
+}
+
+.plans-container__wrapper::-webkit-scrollbar {
+    height: 0;
+}
+
+
+.plans-container__wrapper .item {
+    min-width: clamp(180px, 75%, 200px);
+    min-height: 200px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }

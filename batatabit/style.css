@@ -412,7 +412,8 @@ main {
 
 
         & .bitcoin-lady__img {
-            width: clamp(50px, 100%, 400px);
+            width: clamp(50px, 100%, 1600px);
+            height: 400px;
             object-fit: cover;
         }
 
@@ -509,12 +510,19 @@ main {
                 padding-top: 1rem;
                 padding-bottom: 1rem;
 
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                border: 1px solid black;
+
                 & .recomended {
                     background-color: var(--bitcoin-orange);
                     position: absolute;
                     top: 0%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
+                    left: 10%;
+                    right: 10%;
+                    transform: translate(0%, -50%);
 
                     font-size: 6cqw;
                     font-weight: 700;
@@ -534,7 +542,7 @@ main {
 
 
                     & .plan-card__title {
-                        font-size: 7cqw;
+                        font-size: 9cqw;
                         font-weight: 700;
                         padding-top: 4cqw;
                         padding-bottom: 4cqw;
@@ -604,6 +612,11 @@ main {
                 box-shadow: 0 4px 8px rgba(0, 0, 0, .16);
                 padding-top: 1rem;
                 padding-bottom: 1rem;
+
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
 
                 & .plan-info__container {
                     container-type: inline-size;
@@ -687,13 +700,13 @@ main {
 }
 
 .plans-container__wrapper::-webkit-scrollbar {
-    height: 0;
+    height: 10px;
 }
 
 
 .plans-container__wrapper .item {
     min-width: clamp(180px, 75%, 200px);
-    min-height: 200px;
+    height: 320px;
     padding-top: 1rem;
     padding-bottom: 1rem;
 

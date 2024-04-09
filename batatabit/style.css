@@ -676,10 +676,14 @@ main {
 .plans-container__wrapper {
     display: flex;
     justify-content: space-evenly;
-    overflow-x: auto;
     background-color: rgba(0, 0, 0, .03);
-    /* overscroll-behavior-x: contain; */
-    /* scroll-snap-type: x proximity; */
+
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+
+    /* position: relative; */
+    /* scroll-snap-align: center; */
 }
 
 .plans-container__wrapper::-webkit-scrollbar {
@@ -692,4 +696,49 @@ main {
     min-height: 200px;
     padding-top: 1rem;
     padding-bottom: 1rem;
+
+    /* position: relative; */
+    /* scroll-snap-align: center; */
+}
+
+
+
+/* * footer =========================================================* */
+
+footer {
+    background-color: var(--bitcoin-orange);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.footer-wrapper {
+
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    margin-inline: auto;
+    container-type: inline-size;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+
+    & a {
+        font-size: clamp(0.5rem, 6cqw, 2.25rem);
+        color: var(--just-white);
+    }
+}
+
+.footer-logo {
+    display: flex;
+    justify-content: center;
+    width: clamp(60px, 20cqw, 150px);
+    aspect-ratio: 1 / 1;
+
+    & img {
+        width: 100%;
+    }
 }

@@ -351,7 +351,7 @@ main {
             }
 
             & :nth-child(3) {
-                color: #808080;
+                color: #f0f0f0;
                 font-weight: 500;
                 font-size: 4.5cqw;
                 line-height: 1.5;
@@ -394,7 +394,7 @@ main {
         &>p {
             font-weight: 500;
             font-size: 5cqw;
-            color: var(--grey);
+            color: #f0f0f0;
         }
     }
 

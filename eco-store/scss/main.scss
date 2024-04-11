@@ -1,8 +1,186 @@
-body {
-    background-color: red;
+// Variables -----------------------------------------------------------
+
+$colour_olive-dark: #7c6a0a;
+$colour_olive-ligth: #babd8d;
+$colour_pink-dark: #ffdac6;
+$colour_pink-light: #ffefe7;
+$colour_pink-very-light:hsl(20, 100%, 98%);
+$colour_orange-dark: #e86424;
+$colour_orange-light: #fa9500;
+$font-stack: "IBM Plex Sans", sans-serif;
+
+// Mixins --------------------------------------------------------------
+
+@mixin flex_dja($direction, $content, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $content;
+    align-items: $align;
 }
 
-h1 {
-    color: white;
-    text-align: center;
+@mixin buttonStyle {
+    button {
+        background: none;
+        border-style: none;
+    }
+}
+
+@mixin font_swc($size, $weight, $colour) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $colour;
+}
+
+// Estilos generales ---------------------------------------------------
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 62.5%;
+    // background-color: $colour_pink-light;
+    color: $colour_olive-dark;
+    font-family: $font-stack;
+}
+
+p,
+a,
+span {
+    font-size: 1.6rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* SCROLLBAR FASHION */
+
+::-webkit-scrollbar {
+    width: 0.75rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: $colour_pink-dark;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $colour_pink-light;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: $colour_orange-light;
+}
+
+// Estilo del contenedor
+
+.body__wrapper {
+    // border: 1px solid red;
+    padding: 0cqw;
+}
+
+nav, header, main, footer {
+    padding: 4cqw 4cqw;
+}
+
+nav, main {
+    background-color: $colour_pink-light;
+}
+header, footer {
+    background-color: $colour_pink-very-light;
+}
+
+
+.nav__wrapper {
+    // border: 1px solid black;
+    @include flex_dja(row, space-between, center);
+    container-type: inline-size;
+    // padding-bottom: 1rem;
+
+    & .nav-title {
+        // border: 1px solid black;
+        & h1 {
+            @include font_swc(5cqw, 700, $colour_olive-dark);
+            text-shadow: .5cqi .5cqi 5px $colour_olive-ligth
+        }
+        
+    }
+
+    & .nav-menu {
+        // border: 1px solid black;
+        @include flex_dja(row, center, center);
+        gap: 2cqw;
+        & img {
+            width: 4.5cqw;
+        }
+    }
+}
+
+.header__wrapper {
+    // border: 1px solid black;
+    @include flex_dja(row, space-between, center);
+    flex-wrap: wrap-reverse;
+    gap: 5%;
+    container-type: inline-size;
+    // border: 1px solid black;
+    
+    & .header__info {
+        min-width: 290px;
+        max-width: 50%;
+        // aspect-ratio: 4/3;
+        // padding-bottom: 1rem;
+        margin-inline: auto;
+        // position: relative;
+        
+        // border: 1px solid yellow;
+
+        & h1 {
+            @include font_swc(5cqw, 700, $colour_olive-dark);
+            padding-top: 3cqw;
+            padding-bottom: 3cqw;
+            // border: 1px solid black
+            
+        }
+        & p {
+            // border: 1px solid black;
+            @include font_swc(clamp(.8rem, 3cqw, 1.8rem), 400, $colour_olive-dark);
+            padding-bottom: 3cqw;
+            line-height: 1.5
+        }
+        & div {
+            background-color: $colour_orange-light;
+            width: clamp(120px, 24cqw, 300px);
+            aspect-ratio: 4 / 1;
+            margin-inline: auto;
+            border-radius: 35px;
+            text-align: center;
+            align-content: center;
+            // border: 1px solid black;
+            container-type: inline-size;
+            margin-top: 5cqw;
+            
+            & span {
+                // font-size: 12cqw;
+                @include font_swc(12cqw, 400, #fff);
+                // border: 1px solid black;
+            }
+        }
+    }
+
+    & .header__image {
+        // border: 1px solid black;
+        min-width: 290px;
+        max-width: 45%;
+        margin-inline: auto;
+        
+        & img {
+            // border: 1px solid black;
+            width: 100%;
+            aspect-ratio: 7/9;
+            object-fit: cover;
+            border-radius: 24px;
+        }
+    }
 }

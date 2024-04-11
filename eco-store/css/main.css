@@ -1,8 +1,135 @@
-body {
-  background-color: red;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h1 {
-  color: white;
+body {
+  font-size: 62.5%;
+  color: #7c6a0a;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+p,
+a,
+span {
+  font-size: 1.6rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* SCROLLBAR FASHION */
+::-webkit-scrollbar {
+  width: 0.75rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ffdac6;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ffefe7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #fa9500;
+}
+
+.body__wrapper {
+  padding: 0cqw;
+}
+
+nav, header, main, footer {
+  padding: 4cqw 4cqw;
+}
+
+nav, main {
+  background-color: #ffefe7;
+}
+
+header, footer {
+  background-color: hsl(20, 100%, 98%);
+}
+
+.nav__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  container-type: inline-size;
+}
+.nav__wrapper .nav-title h1 {
+  font-size: 5cqw;
+  font-weight: 700;
+  color: #7c6a0a;
+  text-shadow: 0.5cqi 0.5cqi 5px #babd8d;
+}
+.nav__wrapper .nav-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2cqw;
+}
+.nav__wrapper .nav-menu img {
+  width: 4.5cqw;
+}
+
+.header__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  gap: 5%;
+  container-type: inline-size;
+}
+.header__wrapper .header__info {
+  min-width: 290px;
+  max-width: 50%;
+  margin-inline: auto;
+}
+.header__wrapper .header__info h1 {
+  font-size: 5cqw;
+  font-weight: 700;
+  color: #7c6a0a;
+  padding-top: 3cqw;
+  padding-bottom: 3cqw;
+}
+.header__wrapper .header__info p {
+  font-size: clamp(0.8rem, 3cqw, 1.8rem);
+  font-weight: 400;
+  color: #7c6a0a;
+  padding-bottom: 3cqw;
+  line-height: 1.5;
+}
+.header__wrapper .header__info div {
+  background-color: #fa9500;
+  width: clamp(120px, 24cqw, 300px);
+  aspect-ratio: 4/1;
+  margin-inline: auto;
+  border-radius: 35px;
   text-align: center;
+  align-content: center;
+  container-type: inline-size;
+  margin-top: 5cqw;
+}
+.header__wrapper .header__info div span {
+  font-size: 12cqw;
+  font-weight: 400;
+  color: #fff;
+}
+.header__wrapper .header__image {
+  min-width: 290px;
+  max-width: 45%;
+  margin-inline: auto;
+}
+.header__wrapper .header__image img {
+  width: 100%;
+  aspect-ratio: 7/9;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 24px;
 }/*# sourceMappingURL=main.css.map */

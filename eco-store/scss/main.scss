@@ -4,7 +4,7 @@ $colour_olive-dark: #7c6a0a;
 $colour_olive-ligth: #babd8d;
 $colour_pink-dark: #ffdac6;
 $colour_pink-light: #ffefe7;
-$colour_pink-very-light:#fff8f5;
+$colour_pink-very-light: #fff8f5;
 $colour_orange-dark: #e86424;
 $colour_orange-light: #fa9500;
 $font-stack: "IBM Plex Sans", sans-serif;
@@ -67,7 +67,7 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: $colour_pink-light;
+    background-color: $colour_pink-very-light;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -77,21 +77,37 @@ a {
 // Estilo del contenedor
 
 .body__wrapper {
-    // border: 1px solid red;
     padding: 0cqw;
 }
 
-nav, header, main, footer {
-    padding: 4cqw 4cqw;
+// General styles ==========================================================================
+
+nav,
+header,
+main,
+footer {
+    padding: 2cqw 4cqw;
 }
 
-nav, main {
+nav,
+main {
     background-color: $colour_pink-light;
 }
-header, footer {
+header {
     background-color: $colour_pink-very-light;
 }
 
+footer {
+    background-color: $colour_orange-light;
+}
+
+nav {
+    position: sticky;
+    top: 1px;
+    z-index: 10;
+}
+
+// nav =====================================================================================
 
 .nav__wrapper {
     // border: 1px solid black;
@@ -102,9 +118,8 @@ header, footer {
     & .nav-title {
         & h1 {
             @include font_swc(5cqw, 700, $colour_olive-dark);
-            text-shadow: .5cqi .5cqi 5px $colour_olive-ligth
+            text-shadow: 0.5cqi 0.5cqi 5px $colour_olive-ligth;
         }
-        
     }
 
     & .nav-menu {
@@ -116,6 +131,8 @@ header, footer {
     }
 }
 
+// header =================================================================================
+
 .header__wrapper {
     // border: 1px solid black;
     @include flex_dja(row, space-between, center);
@@ -123,7 +140,7 @@ header, footer {
     gap: 5%;
     container-type: inline-size;
     // border: 1px solid black;
-    
+
     & .header__info {
         min-width: 290px;
         max-width: 50%;
@@ -131,21 +148,28 @@ header, footer {
         // padding-bottom: 1rem;
         margin-inline: auto;
         // position: relative;
-        
+
         // border: 1px solid yellow;
 
-        & h1 {
-            @include font_swc(5cqw, 700, $colour_olive-dark);
+        & h2 {
+            @include font_swc(
+                clamp(1.4rem, 4cqw, 4rem),
+                700,
+                $colour_olive-dark
+            );
             padding-top: 3cqw;
             padding-bottom: 3cqw;
             // border: 1px solid black
-            
         }
         & p {
             // border: 1px solid black;
-            @include font_swc(clamp(.8rem, 3cqw, 1.8rem), 400, $colour_olive-dark);
+            @include font_swc(
+                clamp(0.8rem, 3cqw, 1.8rem),
+                400,
+                $colour_olive-dark
+            );
             padding-bottom: 3cqw;
-            line-height: 1.5
+            line-height: 1.5;
         }
         & div {
             background-color: $colour_orange-light;
@@ -158,7 +182,7 @@ header, footer {
             margin-top: 5cqw;
             display: grid;
             place-items: center;
-            
+
             & span {
                 @include font_swc(12cqw, 400, #fff);
                 display: inline-block;
@@ -172,13 +196,202 @@ header, footer {
         max-width: 45%;
         width: clamp(290px, 45%, 450px);
         margin-inline: auto;
-        
+
         & img {
             // border: 1px solid black;
             width: 100%;
             aspect-ratio: 7/9;
             object-fit: cover;
             border-radius: 24px;
+        }
+    }
+}
+
+.main__wrapper {
+    container-type: inline-size;
+}
+
+// main healthcare and furniture ===================================================================
+
+.main-title {
+    @include font_swc(clamp(1.4rem, 4cqw, 4rem), 700, $colour_olive-dark);
+    padding-top: 3cqw;
+    padding-bottom: 3cqw;
+}
+
+.healthcare__wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 5cqw;
+}
+
+.furniture__wrapper {
+    @extend .healthcare__wrapper;
+}
+
+.item {
+    // width: 70cqw;
+    width: clamp(250px, 25cqw, 380px);
+    border-radius: 8px;
+
+    aspect-ratio: 325 / 500;
+
+    container-type: inline-size;
+
+    // dar al hijo 'card' la misma altura:
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    // recibir al altura del padre 'item'
+    flex: 1;
+    border-radius: 8px;
+    padding: 1rem;
+
+    & .cards__icon-heart {
+        display: flex;
+        justify-content: flex-end;
+        & img {
+            width: clamp(25px, 4.5cqw, 50px);
+            align-self: flex-end;
+        }
+    }
+
+    & img {
+        width: 100%;
+        border-radius: 4px;
+        aspect-ratio: 240 / 300;
+        padding-bottom: 5cqw;
+    }
+}
+
+// main just healthcare =============================================================================
+
+.health {
+    background-color: $colour_pink-dark;
+
+    & h3 {
+        @include font_swc(8cqw, 500, $colour_olive-dark);
+    }
+
+    & p {
+        @include font_swc(5cqw, 400, $colour_olive-dark);
+    }
+}
+
+// main just furniture ==========================================================================
+
+.furniture {
+    background-color: $colour_olive-ligth;
+
+    & h3 {
+        @include font_swc(8cqw, 500, $colour_pink-light);
+    }
+
+    & p {
+        @include font_swc(5cqw, 400, $colour_pink-light);
+    }
+}
+
+// main section about-us =============================================================================
+
+.about-us__info {
+    @include flex_dja(row, center, center);
+    flex-wrap: wrap;
+}
+.about-us__info-environment,
+.about-us__info-innovation {
+    @include flex_dja(row, space-between, center);
+    flex-grow: 1;
+    min-width: 290px;
+    width: clamp(290px, 45%, 1680px);
+    container-type: inline-size;
+}
+
+.about-us__img {
+    width: 40cqw;
+    aspect-ratio: 1 / 1;
+    padding: 1rem;
+}
+
+.about-us__p {
+    @include font_swc(5cqw, 400, $colour_orange-dark);
+    text-align: center;
+    padding-inline: 0.5rem;
+}
+
+// main section gallety ===============================================================================
+
+.gallery__wrapper {
+    container-type: inline-size;
+}
+
+.gallery__images {
+    @include flex_dja(row, center, center);
+    gap: 3cqw;
+    flex-wrap: wrap;
+
+    & img {
+        // width: 100%;
+        width: clamp(250px, 25cqw, 380px);
+        border-radius: 8px;
+        aspect-ratio: 1 / 1;
+    }
+}
+
+// main section location ============================================================================
+
+.location__wrapper {
+    // border: 1px solid black;
+
+    & .location-img {
+        width: 80vw;
+        margin-inline: auto;
+
+        & img {
+            width: 100%;
+            height: 300px;
+            // border: 1px solid black;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+    }
+
+    & h3 {
+        padding-top: 0.5rem;
+        @include font_swc(4.5cqw, 500, $colour_orange-dark);
+    }
+    & p {
+        @include font_swc(2.5cqw, 400, $colour_orange-dark);
+    }
+}
+
+// footer ====================================================================================
+
+.footer__wrapper {
+    padding-block: 1rem;
+    container-type: inline-size;
+    & .footer__info {
+        padding-bottom: 1rem;
+        & h3 {
+            @include font_swc(4.5cqw, 500, $colour_pink-very-light);
+            padding-block: .3rem;
+        }
+        & p {
+            @include font_swc(2.75cqw, 400, $colour_pink-very-light);
+            padding-left: .5rem
+        }
+    }
+    & .footer__social-media {
+        @include flex_dja(row, center, center);
+        gap: 5cqw;
+        & img {
+            // min-width: 20px;
+            // max-width: 50px;
+            // width: 3cqw;
+            width: clamp(25px, 4cqw, 60px);
         }
     }
 }

@@ -30,7 +30,7 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #ffefe7;
+  background-color: #fff8f5;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -41,16 +41,30 @@ a {
   padding: 0cqw;
 }
 
-nav, header, main, footer {
-  padding: 4cqw 4cqw;
+nav,
+header,
+main,
+footer {
+  padding: 2cqw 4cqw;
 }
 
-nav, main {
+nav,
+main {
   background-color: #ffefe7;
 }
 
-header, footer {
+header {
   background-color: #fff8f5;
+}
+
+footer {
+  background-color: #fa9500;
+}
+
+nav {
+  position: sticky;
+  top: 1px;
+  z-index: 10;
 }
 
 .nav__wrapper {
@@ -91,8 +105,8 @@ header, footer {
   max-width: 50%;
   margin-inline: auto;
 }
-.header__wrapper .header__info h1 {
-  font-size: 5cqw;
+.header__wrapper .header__info h2 {
+  font-size: clamp(1.4rem, 4cqw, 4rem);
   font-weight: 700;
   color: #7c6a0a;
   padding-top: 3cqw;
@@ -135,4 +149,185 @@ header, footer {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 24px;
+}
+
+.main__wrapper {
+  container-type: inline-size;
+}
+
+.main-title {
+  font-size: clamp(1.4rem, 4cqw, 4rem);
+  font-weight: 700;
+  color: #7c6a0a;
+  padding-top: 3cqw;
+  padding-bottom: 3cqw;
+}
+
+.healthcare__wrapper, .furniture__wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 5cqw;
+}
+
+.item {
+  width: clamp(250px, 25cqw, 380px);
+  border-radius: 8px;
+  aspect-ratio: 325/500;
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  flex: 1;
+  border-radius: 8px;
+  padding: 1rem;
+}
+.card .cards__icon-heart {
+  display: flex;
+  justify-content: flex-end;
+}
+.card .cards__icon-heart img {
+  width: clamp(25px, 4.5cqw, 50px);
+  align-self: flex-end;
+}
+.card img {
+  width: 100%;
+  border-radius: 4px;
+  aspect-ratio: 240/300;
+  padding-bottom: 5cqw;
+}
+
+.health {
+  background-color: #ffdac6;
+}
+.health h3 {
+  font-size: 8cqw;
+  font-weight: 500;
+  color: #7c6a0a;
+}
+.health p {
+  font-size: 5cqw;
+  font-weight: 400;
+  color: #7c6a0a;
+}
+
+.furniture {
+  background-color: #babd8d;
+}
+.furniture h3 {
+  font-size: 8cqw;
+  font-weight: 500;
+  color: #ffefe7;
+}
+.furniture p {
+  font-size: 5cqw;
+  font-weight: 400;
+  color: #ffefe7;
+}
+
+.about-us__info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-us__info-environment,
+.about-us__info-innovation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  min-width: 290px;
+  width: clamp(290px, 45%, 1680px);
+  container-type: inline-size;
+}
+
+.about-us__img {
+  width: 40cqw;
+  aspect-ratio: 1/1;
+  padding: 1rem;
+}
+
+.about-us__p {
+  font-size: 5cqw;
+  font-weight: 400;
+  color: #e86424;
+  text-align: center;
+  padding-inline: 0.5rem;
+}
+
+.gallery__wrapper {
+  container-type: inline-size;
+}
+
+.gallery__images {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3cqw;
+  flex-wrap: wrap;
+}
+.gallery__images img {
+  width: clamp(250px, 25cqw, 380px);
+  border-radius: 8px;
+  aspect-ratio: 1/1;
+}
+
+.location__wrapper .location-img {
+  width: 80vw;
+  margin-inline: auto;
+}
+.location__wrapper .location-img img {
+  width: 100%;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 4px;
+}
+.location__wrapper h3 {
+  padding-top: 0.5rem;
+  font-size: 4.5cqw;
+  font-weight: 500;
+  color: #e86424;
+}
+.location__wrapper p {
+  font-size: 2.5cqw;
+  font-weight: 400;
+  color: #e86424;
+}
+
+.footer__wrapper {
+  padding-block: 1rem;
+  container-type: inline-size;
+}
+.footer__wrapper .footer__info {
+  padding-bottom: 1rem;
+}
+.footer__wrapper .footer__info h3 {
+  font-size: 4.5cqw;
+  font-weight: 500;
+  color: #fff8f5;
+  padding-block: 0.3rem;
+}
+.footer__wrapper .footer__info p {
+  font-size: 2.75cqw;
+  font-weight: 400;
+  color: #fff8f5;
+  padding-left: 0.5rem;
+}
+.footer__wrapper .footer__social-media {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5cqw;
+}
+.footer__wrapper .footer__social-media img {
+  width: clamp(25px, 4cqw, 60px);
 }/*# sourceMappingURL=main.css.map */

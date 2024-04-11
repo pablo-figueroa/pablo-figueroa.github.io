@@ -4,7 +4,7 @@ $colour_olive-dark: #7c6a0a;
 $colour_olive-ligth: #babd8d;
 $colour_pink-dark: #ffdac6;
 $colour_pink-light: #ffefe7;
-$colour_pink-very-light:hsl(20, 100%, 98%);
+$colour_pink-very-light:#fff8f5;
 $colour_orange-dark: #e86424;
 $colour_orange-light: #fa9500;
 $font-stack: "IBM Plex Sans", sans-serif;
@@ -113,7 +113,7 @@ header, footer {
         @include flex_dja(row, center, center);
         gap: 2cqw;
         & img {
-            width: 4.5cqw;
+            width: clamp(20px, 4.5cqw, 50px);
         }
     }
 }
@@ -173,6 +173,7 @@ header, footer {
         // border: 1px solid black;
         min-width: 290px;
         max-width: 45%;
+        width: clamp(290px, 45%, 450px);
         margin-inline: auto;
         
         & img {

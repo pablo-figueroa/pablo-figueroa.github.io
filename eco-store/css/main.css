@@ -50,7 +50,7 @@ nav, main {
 }
 
 header, footer {
-  background-color: hsl(20, 100%, 98%);
+  background-color: #fff8f5;
 }
 
 .nav__wrapper {
@@ -74,7 +74,7 @@ header, footer {
   gap: 2cqw;
 }
 .nav__wrapper .nav-menu img {
-  width: 4.5cqw;
+  width: clamp(20px, 4.5cqw, 50px);
 }
 
 .header__wrapper {
@@ -124,6 +124,7 @@ header, footer {
 .header__wrapper .header__image {
   min-width: 290px;
   max-width: 45%;
+  width: clamp(290px, 45%, 450px);
   margin-inline: auto;
 }
 .header__wrapper .header__image img {

@@ -154,15 +154,14 @@ header, footer {
             margin-inline: auto;
             border-radius: 35px;
             text-align: center;
-            align-content: center;
-            // border: 1px solid black;
             container-type: inline-size;
             margin-top: 5cqw;
+            display: grid;
+            place-items: center;
             
             & span {
-                // font-size: 12cqw;
                 @include font_swc(12cqw, 400, #fff);
-                // border: 1px solid black;
+                display: inline-block;
             }
         }
     }

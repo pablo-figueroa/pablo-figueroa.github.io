@@ -112,14 +112,16 @@ header, footer {
   margin-inline: auto;
   border-radius: 35px;
   text-align: center;
-  align-content: center;
   container-type: inline-size;
   margin-top: 5cqw;
+  display: grid;
+  place-items: center;
 }
 .header__wrapper .header__info div span {
   font-size: 12cqw;
   font-weight: 400;
   color: #fff;
+  display: inline-block;
 }
 .header__wrapper .header__image {
   min-width: 290px;

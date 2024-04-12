@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Time-Calc</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="body-wrapper">
+            <div class="main-container">
+                <main>
+                    <section class="inputs">
+                        <div class="item">
+                            <div class="item-p">
+                                <p>Hora $</p>
+                            </div>
+                            <div class="item-input">
+                                <input
+                                    type="number"
+                                    name="hora_valor"
+                                    id="hora_valor"
+                                    value="2500"
+                                    min="0"
+                                    onChange="getValue()"
+                                >
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-p">
+                                <p>Horas</p>
+                            </div>
+                            <div class="item-input">
+                                <input
+                                    type="number"
+                                    name="hora_tiempo"
+                                    id="hora_tiempo"
+                                    value="1"
+                                    min="0"
+                                    onChange="getValue()"
+                                >
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="item-p">
+                                <p>Minutos</p>
+                            </div>
+                            <div class="item-input">
+                                <input
+                                    type="number"
+                                    name="minutos-tiempo"
+                                    id="minutos_tiempo"
+                                    value="0"
+                                    min="0"
+                                    onChange="getValue()"
+                                >
+                            </div>
+                        </div>
+                    </section>
+                    <section class="output">
+                        <p>Total $
+                            <span id="resultado">2,500.00</span>
+                        </p>
+                    </section>
+                </main>
+            </div>
+            <footer>
+                <div>
+                    <span>pablo-figueroa</span>
+                </div>
+            </footer>
+        </div>
+        <script src="./script.js" type="text/javascript"></script>
+    </body>
+</html>

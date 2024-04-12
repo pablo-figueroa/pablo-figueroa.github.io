@@ -1,13 +1,8 @@
 :root {
     --azul-1: hsl(220, 100%, 90%);
     --azul-2: hsl(220, 100%, 70%);
-    --azul-3: hsl(220, 100%, 30%);
-    --azul-4: hsl(220, 100%, 20%);
-    --azul-5: hsl(220, 100%, 10%);
     --azul-6: hsl(220, 100%, 5%);
-    --rojo-1: hsl(40, 100%, 50%);
-    --rojo-2: hsl(40, 100%, 40%);
-    --rojo-3: hsl(40, 100%, 30%);
+    --naranja: hsl(40, 100%, 40%);
 }
 
 * {
@@ -56,6 +51,7 @@ body {
 
                 & .item-p {
                     font-size: clamp(1rem, 3cqw, 2rem);
+                    letter-spacing: 1.2px;
                     flex: 1;
                 }
 
@@ -68,8 +64,7 @@ body {
                         background-color: var(--azul-1);
                         -moz-appearance: textfield;
                         /* Firefox */
-                        /* appearance: textfield; */
-                        /* -webkit-appearance: none; */
+                        appearance: textfield;
                     }
                 }
             }
@@ -89,6 +84,8 @@ body {
             & p {
 
                 text-align: center;
+                letter-spacing: 1.5px;
+                font-weight: 900;
 
                 & span {
                     color: var(--azul-6);
@@ -102,10 +99,12 @@ body {
 footer {
     position: absolute;
     bottom: 0;
+    font-family: "Whisper";
+    letter-spacing: 2px;
     font-size: clamp(.5rem, 3cqw, 1.5rem);
     width: 100%;
     height: 5vh;
-    background-color: var(--rojo-2);
+    background-color: var(--naranja);
     color: var(--azul-6);
     display: grid;
     place-items: center;

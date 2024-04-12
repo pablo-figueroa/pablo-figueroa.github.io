@@ -107,24 +107,28 @@ nav {
     z-index: 10;
 }
 
+button {
+    background: none;
+    border-style: none;
+}
+
 // nav =====================================================================================
 
 .nav__wrapper {
-    // border: 1px solid black;
     @include flex_dja(row, space-between, center);
     container-type: inline-size;
-    // padding-bottom: 1rem;
 
     & .nav-title {
         & h1 {
             @include font_swc(5cqw, 700, $colour_olive-dark);
-            text-shadow: 0.5cqi 0.5cqi 5px $colour_olive-ligth;
+            text-shadow: 0.2cqi 0.2cqi 1px $colour_orange-dark;
         }
     }
 
     & .nav-menu {
         @include flex_dja(row, center, center);
         gap: 2cqw;
+
         & img {
             width: clamp(20px, 4.5cqw, 50px);
         }
@@ -134,12 +138,10 @@ nav {
 // header =================================================================================
 
 .header__wrapper {
-    // border: 1px solid black;
     @include flex_dja(row, space-between, center);
     flex-wrap: wrap-reverse;
     gap: 5%;
     container-type: inline-size;
-    // border: 1px solid black;
 
     & .header__info {
         min-width: 290px;
@@ -377,11 +379,11 @@ nav {
         padding-bottom: 1rem;
         & h3 {
             @include font_swc(4.5cqw, 500, $colour_pink-very-light);
-            padding-block: .3rem;
+            padding-block: 0.3rem;
         }
         & p {
             @include font_swc(2.75cqw, 400, $colour_pink-very-light);
-            padding-left: .5rem
+            padding-left: 0.5rem;
         }
     }
     & .footer__social-media {

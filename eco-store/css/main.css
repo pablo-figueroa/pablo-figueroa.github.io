@@ -67,6 +67,11 @@ nav {
   z-index: 10;
 }
 
+button {
+  background: none;
+  border-style: none;
+}
+
 .nav__wrapper {
   display: flex;
   flex-direction: row;
@@ -78,7 +83,7 @@ nav {
   font-size: 5cqw;
   font-weight: 700;
   color: #7c6a0a;
-  text-shadow: 0.5cqi 0.5cqi 5px #babd8d;
+  text-shadow: 0.2cqi 0.2cqi 1px #e86424;
 }
 .nav__wrapper .nav-menu {
   display: flex;

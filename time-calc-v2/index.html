@@ -35,14 +35,26 @@
                 <p>Hora $</p>
               </div>
               <div class="item-input">
-                <input
+                <!-- <input
                   type="number"
                   name="hora_valor"
                   id="hora_valor"
                   value="2500"
                   min="0"
                   onChange="getValue()"
-                >
+                > -->
+                <span class="selection">
+                  <select
+                    id="hora_valor"
+                    onChange="getValue()"
+                  >
+                    <option value="2500">2500</option>
+                    <option value="2750">2750</option>
+                    <option value="3000">3000</option>
+                    <option value="3500">3500</option>
+                    <option value="3750">3750</option>
+                  </select>
+                </span>
               </div>
             </div>
             <div class="item">
@@ -50,14 +62,29 @@
                 <p>Horas</p>
               </div>
               <div class="item-input">
-                <input
+                <span class="selection">
+                  <select
+                    id="hora_tiempo"
+                    onChange="getValue()"
+                  >
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                  </select>
+                </span>
+                <!-- <input
                   type="number"
                   name="hora_tiempo"
                   id="hora_tiempo"
                   value="1"
                   min="0"
                   onChange="getValue()"
-                >
+                > -->
               </div>
             </div>
             <div class="item">
@@ -65,14 +92,33 @@
                 <p>Minutos</p>
               </div>
               <div class="item-input">
-                <input
+                <span class="selection">
+                  <select
+                    id="minutos_tiempo"
+                    onChange="getValue()"
+                  >
+                    <option value="0">0</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="25">25</option>
+                    <option value="30">30</option>
+                    <option value="35">35</option>
+                    <option value="40">40</option>
+                    <option value="45">45</option>
+                    <option value="50">50</option>
+                    <option value="55">55</option>
+                  </select>
+                </span>
+                <!-- <input
                   type="number"
                   name="minutos-tiempo"
                   id="minutos_tiempo"
                   value="0"
                   min="0"
                   onChange="getValue()"
-                >
+                > -->
               </div>
             </div>
           </section>

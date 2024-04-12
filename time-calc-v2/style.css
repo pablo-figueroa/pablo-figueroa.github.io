@@ -18,7 +18,7 @@ body {
 }
 
 .body-wrapper {
-  padding-top: clamp(4rem, 20cqi, 10rem);
+  padding-top: clamp(4rem, 20cqi, 7rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,7 +39,7 @@ body {
     & .inputs {
 
       & .item {
-        border-top: 1px solid var(--azul-2);
+        border-top: 2px solid var(--naranja);
 
         display: flex;
         justify-content: space-between;
@@ -49,50 +49,71 @@ body {
         padding-block: 1.5rem;
 
         & .item-p {
-          font-size: clamp(1rem, 3cqw, 2rem);
+          font-size: clamp(1.2rem, 3cqw, 2rem);
           letter-spacing: 1.2px;
           flex: 1;
         }
 
         & .item-input {
 
-          & input {
+          & .selection {
+            display: inline-block;
+            width: 130px;
+            aspect-ratio: 3 / 1;
+
+            & select {
+              width: 100%;
+              height: 100%;
+              border-radius: 8px;
+              text-align: center;
+              font-size: clamp(1.4rem, 3cqw, 2rem);
+            }
+          }
+
+          /* & input {
             width: 20cqw;
             font-size: clamp(1rem, 3cqw, 2rem);
             text-align: center;
             background-color: var(--azul-1);
             -moz-appearance: textfield;
-            /* Firefox */
             appearance: textfield;
-          }
+          } */
         }
       }
 
       & :nth-child(3) {
-        border-bottom: 1px solid var(--azul-2);
+        border-bottom: 2px solid var(--naranja);
       }
     }
 
     & .output {
       margin-top: 2rem;
+
       background-color: var(--azul-2);
       border-radius: 8px;
-      padding: .5rem;
-      font-size: clamp(1rem, 3cqw, 3rem);
+      padding: 1rem;
+      font-size: clamp(1rem, 3cqw, 2.5rem);
 
       & p {
 
         text-align: center;
         letter-spacing: 1.5px;
-        font-weight: 900;
+        font-weight: 500;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 4rem;
 
         & span {
           color: var(--azul-6);
+          font-weight: 900;
+          font-size: clamp(1.5rem, 4cqw, 3rem);
         }
       }
     }
   }
 }
+
 
 
 footer {
@@ -102,7 +123,7 @@ footer {
   letter-spacing: 2px;
   font-size: clamp(1.5rem, 3cqw, 1.5rem);
   width: 100%;
-  height: 5vh;
+  height: 7.5svh;
   background-color: var(--naranja);
   color: var(--azul-6);
   display: grid;

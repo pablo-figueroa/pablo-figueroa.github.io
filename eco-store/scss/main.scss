@@ -154,22 +154,14 @@ button {
         // border: 1px solid yellow;
 
         & h2 {
-            @include font_swc(
-                clamp(1.4rem, 4cqw, 4rem),
-                700,
-                $colour_olive-dark
-            );
+            @include font_swc(clamp(1.4rem, 4cqw, 4rem), 700, $colour_olive-dark);
             padding-top: 3cqw;
             padding-bottom: 3cqw;
             // border: 1px solid black
         }
         & p {
             // border: 1px solid black;
-            @include font_swc(
-                clamp(0.8rem, 3cqw, 1.8rem),
-                400,
-                $colour_olive-dark
-            );
+            @include font_swc(clamp(0.8rem, 3cqw, 1.8rem), 400, $colour_olive-dark);
             padding-bottom: 3cqw;
             line-height: 1.5;
         }

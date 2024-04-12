@@ -28,13 +28,13 @@ body {
     align-items: center;
     justify-content: space-between;
     color: var(--azul-1);
+    background-color: var(--azul-6);
 }
 
 .main-container {
-    background-color: var(--azul-6);
 
     width: 100%;
-    height: 95%;
+    min-height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -100,9 +100,11 @@ body {
 
 
 footer {
+    position: absolute;
+    bottom: 0;
     font-size: clamp(.5rem, 3cqw, 1.5rem);
     width: 100%;
-    height: 5%;
+    height: 5vh;
     background-color: var(--rojo-2);
     color: var(--azul-6);
     display: grid;

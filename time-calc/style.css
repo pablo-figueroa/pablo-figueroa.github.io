@@ -14,22 +14,21 @@
 
 body {
     font-size: 62.5%;
+    background-color: var(--azul-6);
 }
 
 .body-wrapper {
-    height: 100vh;
+    padding-top: clamp(4rem, 20cqi, 10rem);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     color: var(--azul-1);
-    background-color: var(--azul-6);
 }
 
 .main-container {
 
     width: 100%;
-    min-height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;

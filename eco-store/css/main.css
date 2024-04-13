@@ -26,11 +26,11 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #ffdac6;
+  background-color: #fff8f5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #fff8f5;
+  background-color: #ffdac6;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -335,4 +335,20 @@ button {
 }
 .footer__wrapper .footer__social-media img {
   width: clamp(25px, 4cqw, 60px);
+}
+
+@media screen and (width < 573px) {
+  .healthcare__wrapper, .furniture__wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    aspect-ratio: 1/1;
+    padding-bottom: 3rem;
+  }
+  .furniture__wrapper::-webkit-scrollbar-thumb {
+    background-color: #babd8d;
+  }
+  .furniture__wrapper::-webkit-scrollbar-thumb:hover {
+    background-color: #7c6a0a;
+  }
 }/*# sourceMappingURL=main.css.map */

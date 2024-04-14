@@ -45,7 +45,7 @@ nav,
 header,
 main,
 footer {
-  padding: 2cqw 4cqw;
+  padding: 1cqw 4cqw;
 }
 
 nav,
@@ -63,7 +63,7 @@ footer {
 
 nav {
   position: sticky;
-  top: 1px;
+  top: 0;
   z-index: 10;
 }
 
@@ -80,7 +80,7 @@ button {
   container-type: inline-size;
 }
 .nav__wrapper .nav-title h1 {
-  font-size: 5cqw;
+  font-size: 3cqw;
   font-weight: 700;
   color: #7c6a0a;
   text-shadow: 0.2cqi 0.2cqi 1px #e86424;
@@ -168,6 +168,15 @@ button {
   padding-bottom: 3cqw;
 }
 
+.main__healthcare, .main__furniture {
+  width: clamp(320px, 92vw, clamp(900px, 90vw, 1400px));
+  margin-inline: auto;
+}
+
+.main__furniture {
+  padding-top: 1rem;
+}
+
 .healthcare__wrapper, .furniture__wrapper {
   display: flex;
   justify-content: space-around;
@@ -176,7 +185,7 @@ button {
 }
 
 .item {
-  width: clamp(250px, 25cqw, 380px);
+  width: clamp(250px, 20cqw, 300px);
   border-radius: 8px;
   aspect-ratio: 325/500;
   container-type: inline-size;
@@ -230,6 +239,14 @@ button {
   font-size: 5cqw;
   font-weight: 400;
   color: #ffefe7;
+}
+
+.about-us, .location, .gallery {
+  padding-top: 2rem;
+}
+
+.location {
+  padding-bottom: 1rem;
 }
 
 .about-us__info {
@@ -339,11 +356,11 @@ button {
 
 @media screen and (width < 573px) {
   .healthcare__wrapper, .furniture__wrapper {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: scroll;
-    aspect-ratio: 1/1;
-    padding-bottom: 3rem;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: auto;
+    justify-content: start;
+    overflow-x: auto;
   }
   .furniture__wrapper::-webkit-scrollbar-thumb {
     background-color: #babd8d;

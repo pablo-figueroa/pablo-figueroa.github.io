@@ -104,6 +104,16 @@ body {
   }
 }
 
+.heart {
+  width: 50px;
+  aspect-ratio: 1/1;
+
+  & svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 footer {
   position: fixed;
   bottom: 0;

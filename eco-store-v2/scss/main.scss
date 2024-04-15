@@ -11,6 +11,39 @@ $font-stack: "IBM Plex Sans", sans-serif;
 
 // Mixins --------------------------------------------------------------
 
+@mixin mobile {
+  @media screen and (orientation: portrait) and (width < 573px) {
+    @content;
+  }
+}
+
+@mixin horizontal-scroller ($grid-auto-columns: auto) {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: $grid-auto-columns;
+  justify-content: start;
+  overflow-x: auto;
+}
+
+@mixin svgStyle($color, $width, $height, $hovercolor: null) {
+  svg {
+    width: $width;
+    height: $height;
+    path {
+      stroke: $color;
+    }
+  }
+  svg:hover {
+    fill: $hovercolor;
+  }
+}
+
+@mixin box-shadow($offset, $blur, $color: black) {
+  -webkit-box-shadow: $offset $offset $blur $color;
+  -moz-box-shadow: $offset $offset $blur $color;
+  box-shadow: $offset $offset $blur $color;
+}
+
 @mixin flex_dja($direction, $content, $align) {
   display: flex;
   flex-direction: $direction;
@@ -88,8 +121,6 @@ main,
 footer {
   padding: 1cqw 4cqw;
 }
-
-
 
 nav,
 main {
@@ -219,14 +250,26 @@ button {
 }
 
 .healthcare__wrapper {
-  display: flex;
-  justify-content: space-around;
+  @include flex_dja(null, space-around, null);
   flex-wrap: wrap;
   gap: 5cqw;
+
+  @include mobile() {
+    @include horizontal-scroller();
+  }
 }
 
 .furniture__wrapper {
   @extend .healthcare__wrapper;
+
+  @include mobile() {
+    &::-webkit-scrollbar-thumb {
+      background-color: $colour_olive-ligth;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: $colour_olive-dark;
+    }
+  }
 }
 
 .item {
@@ -234,13 +277,19 @@ button {
   width: clamp(250px, 20cqw, 300px);
   border-radius: 8px;
 
-  aspect-ratio: 325 / 500;
+  aspect-ratio: calc(11 / 1.618) / 11;
+
+  @include box-shadow(2px, 5px, rgba(0, 0, 0, 0.3));
+  @include mobile() {
+    &:has(.furniture) {
+      margin-bottom: 20px;
+    }
+  }
 
   container-type: inline-size;
 
   // dar al hijo 'card' la misma altura:
-  display: flex;
-  flex-direction: column;
+  @include flex_dja(column, null, null);
 }
 
 .card {
@@ -250,8 +299,7 @@ button {
   padding: 1rem;
 
   & .cards__icon-heart {
-    display: flex;
-    justify-content: flex-end;
+    @include flex_dja(null, flex-end, null);
     & img {
       width: clamp(25px, 4.5cqw, 50px);
       align-self: flex-end;
@@ -356,7 +404,6 @@ button {
 // main section location ============================================================================
 
 .location__wrapper {
-
   & .location-img {
     width: 80vw;
     margin-inline: auto;
@@ -403,20 +450,5 @@ button {
   }
 }
 
-@media screen and (width < 573px) {
-  
-    .healthcare__wrapper {
-      display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: auto;
-      justify-content: start;
-      overflow-x: auto;
-    }
 
-    .furniture__wrapper::-webkit-scrollbar-thumb {
-      background-color: $colour_olive-ligth;
-    }
-    .furniture__wrapper::-webkit-scrollbar-thumb:hover {
-      background-color: $colour_olive-dark;
-    }
-  }
+

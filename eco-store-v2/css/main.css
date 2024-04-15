@@ -115,14 +115,14 @@ button {
   margin-inline: auto;
 }
 .header__wrapper .header__info h2 {
-  font-size: clamp(1.4rem, 4cqw, 4rem);
+  font-size: clamp(1.75rem, 4cqw, 4rem);
   font-weight: 700;
   color: #7c6a0a;
   padding-top: 3cqb;
   padding-bottom: 3cqb;
 }
 .header__wrapper .header__info p {
-  font-size: clamp(0.85rem, 2.5cqw, 2.5rem);
+  font-size: clamp(1rem, 2.5cqw, 2.5rem);
   font-weight: 400;
   color: #7c6a0a;
   padding-bottom: 3cqb;
@@ -130,7 +130,7 @@ button {
 }
 .header__wrapper .header__info div {
   background-color: #fa9500;
-  width: clamp(120px, 24cqw, 300px);
+  width: clamp(220px, 24cqw, 300px);
   aspect-ratio: 4/1;
   margin-inline: auto;
   border-radius: 35px;
@@ -148,7 +148,7 @@ button {
   transform: scale(1.1);
 }
 .header__wrapper .header__info div span {
-  font-size: 2.25cqb;
+  font-size: clamp(1.1rem, 10cqi, 5rem);
   font-weight: 400;
   color: #fff;
   display: inline-block;
@@ -181,7 +181,7 @@ button {
 }
 
 .main__healthcare, .main__furniture {
-  width: clamp(320px, 92vw, clamp(900px, 90vw, 1400px));
+  width: clamp(320px, 90vw, clamp(900px, 80vw, 1200px));
   margin-inline: auto;
 }
 
@@ -264,12 +264,12 @@ button {
   background-color: #ffdac6;
 }
 .health h3 {
-  font-size: 3.75cqb;
+  font-size: clamp(1.4rem, 8cqw, 2.75rem);
   font-weight: 500;
   color: #7c6a0a;
 }
 .health p {
-  font-size: 2.25cqb;
+  font-size: clamp(0.85rem, 5cqi, 1.7rem);
   font-weight: 400;
   color: #7c6a0a;
   letter-spacing: 0.5px;
@@ -279,12 +279,12 @@ button {
   background-color: #babd8d;
 }
 .furniture h3 {
-  font-size: 3.75cqb;
+  font-size: clamp(1.4rem, 8cqw, 2.75rem);
   font-weight: 500;
   color: #ffefe7;
 }
 .furniture p {
-  font-size: 2.25cqb;
+  font-size: clamp(0.85rem, 5cqi, 1.7rem);
   font-weight: 400;
   color: #ffefe7;
   letter-spacing: 0.5px;
@@ -304,6 +304,7 @@ button {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .about-us__info-environment,
@@ -334,7 +335,7 @@ button {
 }
 
 .about-us__p {
-  font-size: 2.5cqb;
+  font-size: clamp(1.25rem, 4cqw, 2.5rem);
   font-weight: 400;
   color: #e86424;
   text-align: center;
@@ -385,12 +386,12 @@ button {
 }
 .location__wrapper h3 {
   padding-top: 0.5rem;
-  font-size: 3cqb;
+  font-size: clamp(1.25rem, 4cqw, 2.5rem);
   font-weight: 500;
   color: #e86424;
 }
 .location__wrapper p {
-  font-size: 1.75cqb;
+  font-size: clamp(0.75rem, 2.5cqw, 1.5rem);
   font-weight: 400;
   color: #e86424;
 }
@@ -403,13 +404,13 @@ button {
   padding-bottom: 1rem;
 }
 .footer__wrapper .footer__info h3 {
-  font-size: 5cqb;
+  font-size: clamp(1.75rem, 4cqw, 2.5rem);
   font-weight: 500;
   color: #fff8f5;
   padding-block: 0.3rem;
 }
 .footer__wrapper .footer__info p {
-  font-size: 2cqb;
+  font-size: clamp(1rem, 2.5cqw, 1.5rem);
   font-weight: 400;
   color: #fff8f5;
   padding-left: 0.5rem;

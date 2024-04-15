@@ -184,18 +184,19 @@ button {
     margin-inline: auto;
 
     & h2 {
-      @include font_swc(clamp(1.4rem, 4cqw, 4rem), 700, $colour_olive-dark);
+      @include font_swc(clamp(1.75rem, 4cqw, 4rem), 700, $colour_olive-dark);
       padding-top: 3cqb;
       padding-bottom: 3cqb;
     }
     & p {
-      @include font_swc(clamp(0.85rem, 2.5cqw, 2.5rem), 400, $colour_olive-dark);
+      @include font_swc(clamp(1rem, 2.5cqw, 2.5rem), 400, $colour_olive-dark);
       padding-bottom: 3cqb;
       line-height: 1.8;
     }
     & div {
       background-color: $colour_orange-light;
-      width: clamp(120px, 24cqw, 300px);
+      width: clamp(220px, 24cqw, 300px);
+      // min-width: fit-content;
       aspect-ratio: 4 / 1;
       margin-inline: auto;
       border-radius: 35px;
@@ -214,7 +215,7 @@ button {
         }
 
       & span {
-        @include font_swc(2.25cqb, 400, #fff);
+        @include font_swc(clamp(1.1rem, 10cqi, 5rem), 400, #fff);
         display: inline-block;
 
         
@@ -253,7 +254,8 @@ button {
 }
 
 .main__healthcare {
-  width: clamp(320px, 92vw, clamp(900px, 90vw, 1400px));
+  width: clamp(320px, 90vw, clamp(900px, 80vw, 1200px));
+  // width: clamp(320px, 90vw, 1200px);
   margin-inline: auto;
 }
 
@@ -341,11 +343,11 @@ button {
   background-color: $colour_pink-dark;
 
   & h3 {
-    @include font_swc(3.75cqb, 500, $colour_olive-dark);
+    @include font_swc(clamp(1.4rem, 8cqw, 2.75rem), 500, $colour_olive-dark);
   }
 
   & p {
-    @include font_swc(2.25cqb, 400, $colour_olive-dark);
+    @include font_swc(clamp(.85rem, 5cqi, 1.7rem), 400, $colour_olive-dark);
     letter-spacing: 0.5px;
   }
 }
@@ -356,11 +358,11 @@ button {
   background-color: $colour_olive-ligth;
 
   & h3 {
-    @include font_swc(3.75cqb, 500, $colour_pink-light);
+    @include font_swc(clamp(1.4rem, 8cqw, 2.75rem), 500, $colour_pink-light);
   }
 
   & p {
-    @include font_swc(2.25cqb, 400, $colour_pink-light);
+    @include font_swc(clamp(.85rem, 5cqi, 1.7rem), 400, $colour_pink-light);
     letter-spacing: 0.5px;
   }
 }
@@ -383,6 +385,7 @@ button {
 .about-us__info {
   @include flex_dja(row, center, center);
   flex-wrap: wrap;
+  gap: 2rem;
 }
 .about-us__info-environment,
 .about-us__info-innovation {
@@ -409,7 +412,7 @@ button {
 }
 
 .about-us__p {
-  @include font_swc(2.5cqb, 400, $colour_orange-dark);
+  @include font_swc(clamp(1.25rem, 4cqw, 2.5rem), 400, $colour_orange-dark);
   text-align: center;
   padding-inline: 0.5rem;
 }
@@ -466,10 +469,10 @@ button {
 
   & h3 {
     padding-top: 0.5rem;
-    @include font_swc(3cqb, 500, $colour_orange-dark);
+    @include font_swc(clamp(1.25rem, 4cqw, 2.5rem), 500, $colour_orange-dark);
   }
   & p {
-    @include font_swc(1.75cqb, 400, $colour_orange-dark);
+    @include font_swc(clamp(.75rem, 2.5cqw, 1.5rem), 400, $colour_orange-dark);
   }
 }
 
@@ -481,11 +484,11 @@ button {
   & .footer__info {
     padding-bottom: 1rem;
     & h3 {
-      @include font_swc(5cqb, 500, $colour_pink-very-light);
+      @include font_swc(clamp(1.75rem, 4cqw, 2.5rem), 500, $colour_pink-very-light);
       padding-block: 0.3rem;
     }
     & p {
-      @include font_swc(2cqb, 400, $colour_pink-very-light);
+      @include font_swc(clamp(1rem, 2.5cqw, 1.5rem), 400, $colour_pink-very-light);
       padding-left: 0.5rem;
       line-height: 1.5;
     }

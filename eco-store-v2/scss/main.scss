@@ -70,6 +70,7 @@ $font-stack: "IBM Plex Sans", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
 }
 
 body {
@@ -297,7 +298,6 @@ button {
     }
   }
 
-  user-select: none;
   cursor: pointer;
 
   transition: transform 500ms linear;
@@ -341,11 +341,11 @@ button {
   background-color: $colour_pink-dark;
 
   & h3 {
-    @include font_swc(2.75cqb, 500, $colour_olive-dark);
+    @include font_swc(3.75cqb, 500, $colour_olive-dark);
   }
 
   & p {
-    @include font_swc(1.7cqb, 400, $colour_olive-dark);
+    @include font_swc(2.25cqb, 400, $colour_olive-dark);
     letter-spacing: 0.5px;
   }
 }
@@ -356,11 +356,11 @@ button {
   background-color: $colour_olive-ligth;
 
   & h3 {
-    @include font_swc(2.75cqb, 500, $colour_pink-light);
+    @include font_swc(3.75cqb, 500, $colour_pink-light);
   }
 
   & p {
-    @include font_swc(1.7cqb, 400, $colour_pink-light);
+    @include font_swc(2.25cqb, 400, $colour_pink-light);
     letter-spacing: 0.5px;
   }
 }
@@ -391,7 +391,6 @@ button {
   min-width: 290px;
   width: clamp(290px, 45%, 1680px);
   container-type: inline-size;
-  user-select: none;
 }
 
 .about-us__img {
@@ -470,7 +469,7 @@ button {
     @include font_swc(3cqb, 500, $colour_orange-dark);
   }
   & p {
-    @include font_swc(1.5cqb, 400, $colour_orange-dark);
+    @include font_swc(1.75cqb, 400, $colour_orange-dark);
   }
 }
 
@@ -482,12 +481,13 @@ button {
   & .footer__info {
     padding-bottom: 1rem;
     & h3 {
-      @include font_swc(4cqb, 500, $colour_pink-very-light);
+      @include font_swc(5cqb, 500, $colour_pink-very-light);
       padding-block: 0.3rem;
     }
     & p {
-      @include font_swc(1.7cqb, 400, $colour_pink-very-light);
+      @include font_swc(2cqb, 400, $colour_pink-very-light);
       padding-left: 0.5rem;
+      line-height: 1.5;
     }
   }
   & .footer__social-media {

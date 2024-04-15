@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 body {
@@ -219,9 +222,6 @@ button {
   min-height: -moz-max-content;
   min-height: max-content;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
   cursor: pointer;
   transition: transform 500ms linear;
   container-type: inline-size;
@@ -264,12 +264,12 @@ button {
   background-color: #ffdac6;
 }
 .health h3 {
-  font-size: 2.75cqb;
+  font-size: 3.75cqb;
   font-weight: 500;
   color: #7c6a0a;
 }
 .health p {
-  font-size: 1.7cqb;
+  font-size: 2.25cqb;
   font-weight: 400;
   color: #7c6a0a;
   letter-spacing: 0.5px;
@@ -279,12 +279,12 @@ button {
   background-color: #babd8d;
 }
 .furniture h3 {
-  font-size: 2.75cqb;
+  font-size: 3.75cqb;
   font-weight: 500;
   color: #ffefe7;
 }
 .furniture p {
-  font-size: 1.7cqb;
+  font-size: 2.25cqb;
   font-weight: 400;
   color: #ffefe7;
   letter-spacing: 0.5px;
@@ -316,9 +316,6 @@ button {
   min-width: 290px;
   width: clamp(290px, 45%, 1680px);
   container-type: inline-size;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
 }
 
 .about-us__img {
@@ -393,7 +390,7 @@ button {
   color: #e86424;
 }
 .location__wrapper p {
-  font-size: 1.5cqb;
+  font-size: 1.75cqb;
   font-weight: 400;
   color: #e86424;
 }
@@ -406,16 +403,17 @@ button {
   padding-bottom: 1rem;
 }
 .footer__wrapper .footer__info h3 {
-  font-size: 4cqb;
+  font-size: 5cqb;
   font-weight: 500;
   color: #fff8f5;
   padding-block: 0.3rem;
 }
 .footer__wrapper .footer__info p {
-  font-size: 1.7cqb;
+  font-size: 2cqb;
   font-weight: 400;
   color: #fff8f5;
   padding-left: 0.5rem;
+  line-height: 1.5;
 }
 .footer__wrapper .footer__social-media {
   display: flex;

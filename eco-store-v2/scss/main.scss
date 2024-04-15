@@ -17,7 +17,7 @@ $font-stack: "IBM Plex Sans", sans-serif;
   }
 }
 
-@mixin horizontal-scroller ($grid-auto-columns: auto) {
+@mixin horizontal-scroller($grid-auto-columns: auto) {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: $grid-auto-columns;
@@ -38,7 +38,7 @@ $font-stack: "IBM Plex Sans", sans-serif;
   }
 }
 
-@mixin box-shadow($offset, $blur, $color: black) {
+@mixin box-shadow($offset, $blur, $color: rgba(0, 0, 0, 0.5)) {
   -webkit-box-shadow: $offset $offset $blur $color;
   -moz-box-shadow: $offset $offset $blur $color;
   box-shadow: $offset $offset $blur $color;
@@ -119,7 +119,7 @@ nav,
 header,
 main,
 footer {
-  padding: 1cqw 4cqw;
+  padding: 2cqw 4cqw;
 }
 
 nav,
@@ -128,6 +128,7 @@ main {
 }
 header {
   background-color: $colour_pink-very-light;
+  padding-bottom: 2rem;
 }
 
 footer {
@@ -153,8 +154,8 @@ button {
 
   & .nav-title {
     & h1 {
-      @include font_swc(3cqw, 700, $colour_olive-dark);
-      text-shadow: 0.2cqi 0.2cqi 1px $colour_orange-dark;
+      @include font_swc(3cqb, 700, $colour_olive-dark);
+      text-shadow: 0.2cqb 0.2cqb 1px $colour_olive-ligth;
     }
   }
 
@@ -183,13 +184,13 @@ button {
 
     & h2 {
       @include font_swc(clamp(1.4rem, 4cqw, 4rem), 700, $colour_olive-dark);
-      padding-top: 3cqw;
-      padding-bottom: 3cqw;
+      padding-top: 3cqb;
+      padding-bottom: 3cqb;
     }
     & p {
-      @include font_swc(clamp(0.8rem, 3cqw, 1.8rem), 400, $colour_olive-dark);
-      padding-bottom: 3cqw;
-      line-height: 1.5;
+      @include font_swc(clamp(0.85rem, 2.5cqw, 2.5rem), 400, $colour_olive-dark);
+      padding-bottom: 3cqb;
+      line-height: 1.8;
     }
     & div {
       background-color: $colour_orange-light;
@@ -202,10 +203,20 @@ button {
       margin-top: 5cqw;
       display: grid;
       place-items: center;
+      cursor: pointer;
+      @include box-shadow(1px, 10px);
+      box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.5);
+      transition: transform 500ms linear;
+
+      &:hover {
+          transform: scale(1.1);
+        }
 
       & span {
-        @include font_swc(12cqw, 400, #fff);
+        @include font_swc(2.25cqb, 400, #fff);
         display: inline-block;
+
+        
       }
     }
   }
@@ -223,6 +234,7 @@ button {
       aspect-ratio: 7/9;
       object-fit: cover;
       border-radius: 24px;
+      @include box-shadow(1px, 5px);
     }
   }
 }
@@ -253,6 +265,8 @@ button {
   @include flex_dja(null, space-around, null);
   flex-wrap: wrap;
   gap: 5cqw;
+  max-width: 90vw;
+  margin-inline: auto;
 
   @include mobile() {
     @include horizontal-scroller();
@@ -273,21 +287,25 @@ button {
 }
 
 .item {
-  // width: 70cqw;
   width: clamp(250px, 20cqw, 300px);
   border-radius: 8px;
-
-  aspect-ratio: calc(11 / 1.618) / 11;
-
+  min-height: max-content;
   @include box-shadow(2px, 5px, rgba(0, 0, 0, 0.3));
   @include mobile() {
-    &:has(.furniture) {
-      margin-bottom: 20px;
+    &:has(.health, .furniture) {
+      margin-bottom: 3cqb;
     }
   }
 
-  container-type: inline-size;
+  user-select: none;
+  cursor: pointer;
 
+  transition: transform 500ms linear;
+  &:hover {
+    transform: scale(1.025);
+  }
+
+  container-type: inline-size;
   // dar al hijo 'card' la misma altura:
   @include flex_dja(column, null, null);
 }
@@ -306,11 +324,14 @@ button {
     }
   }
 
-  & img {
+  & > img {
     width: 100%;
     border-radius: 4px;
     aspect-ratio: 240 / 300;
-    padding-bottom: 5cqw;
+    margin-bottom: 5cqw;
+    border-radius: 4px;
+    @include box-shadow(1px, 2px);
+    border-radius: 14px;
   }
 }
 
@@ -320,11 +341,12 @@ button {
   background-color: $colour_pink-dark;
 
   & h3 {
-    @include font_swc(8cqw, 500, $colour_olive-dark);
+    @include font_swc(2.75cqb, 500, $colour_olive-dark);
   }
 
   & p {
-    @include font_swc(5cqw, 400, $colour_olive-dark);
+    @include font_swc(1.7cqb, 400, $colour_olive-dark);
+    letter-spacing: 0.5px;
   }
 }
 
@@ -334,11 +356,12 @@ button {
   background-color: $colour_olive-ligth;
 
   & h3 {
-    @include font_swc(8cqw, 500, $colour_pink-light);
+    @include font_swc(2.75cqb, 500, $colour_pink-light);
   }
 
   & p {
-    @include font_swc(5cqw, 400, $colour_pink-light);
+    @include font_swc(1.7cqb, 400, $colour_pink-light);
+    letter-spacing: 0.5px;
   }
 }
 
@@ -368,16 +391,26 @@ button {
   min-width: 290px;
   width: clamp(290px, 45%, 1680px);
   container-type: inline-size;
+  user-select: none;
 }
 
 .about-us__img {
   width: 40cqw;
   aspect-ratio: 1 / 1;
   padding: 1rem;
+  transition: all 500ms linear;
+}
+
+:where(.about-us__info-environment:hover, .about-us__info-innovation:hover) > img {
+  transform: scale(1.1);
+  rotate: 5deg;
+  @include box-shadow(3px, 10px, $colour_pink-dark);
+  border-radius: 50%;
+  transition: all 500ms linear;
 }
 
 .about-us__p {
-  @include font_swc(5cqw, 400, $colour_orange-dark);
+  @include font_swc(2.5cqb, 400, $colour_orange-dark);
   text-align: center;
   padding-inline: 0.5rem;
 }
@@ -394,10 +427,19 @@ button {
   flex-wrap: wrap;
 
   & img {
-    // width: 100%;
     width: clamp(250px, 25cqw, 380px);
     border-radius: 8px;
     aspect-ratio: 1 / 1;
+    @include box-shadow(1px, 10px);
+    opacity: 0.8;
+    transition:
+      transform 500ms ease-in,
+      opacity 800ms ease-in;
+
+    &:hover {
+      transform: scale(1.1);
+      opacity: 1;
+    }
   }
 }
 
@@ -407,21 +449,28 @@ button {
   & .location-img {
     width: 80vw;
     margin-inline: auto;
+    overflow: hidden;
 
     & img {
       width: 100%;
       height: 300px;
       object-fit: cover;
       border-radius: 4px;
+      transition: transform 500ms ease;
+      border-radius: 8px;
+
+      &:hover {
+        transform: scale(1.5) translate(50px, 50px);
+      }
     }
   }
 
   & h3 {
     padding-top: 0.5rem;
-    @include font_swc(4.5cqw, 500, $colour_orange-dark);
+    @include font_swc(3cqb, 500, $colour_orange-dark);
   }
   & p {
-    @include font_swc(2.5cqw, 400, $colour_orange-dark);
+    @include font_swc(1.5cqb, 400, $colour_orange-dark);
   }
 }
 
@@ -433,22 +482,19 @@ button {
   & .footer__info {
     padding-bottom: 1rem;
     & h3 {
-      @include font_swc(4.5cqw, 500, $colour_pink-very-light);
+      @include font_swc(4cqb, 500, $colour_pink-very-light);
       padding-block: 0.3rem;
     }
     & p {
-      @include font_swc(2.75cqw, 400, $colour_pink-very-light);
+      @include font_swc(1.7cqb, 400, $colour_pink-very-light);
       padding-left: 0.5rem;
     }
   }
   & .footer__social-media {
     @include flex_dja(row, center, center);
-    gap: 5cqw;
+    gap: 4cqb;
     & img {
-      width: clamp(25px, 4cqw, 60px);
+      width: clamp(25px, 4cqb, 60px);
     }
   }
 }
-
-
-

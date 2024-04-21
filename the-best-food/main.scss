@@ -48,7 +48,8 @@ button {
   background-color: var(--orange-5);
   border-radius: 12px;
   color: #fefefe;
-  padding: 0.5rem 1.5rem;
+  width: 20rem;
+  padding: 0.75rem 0;
 
   box-shadow: var(--shadow-2);
   transition: all 600ms ease-in;
@@ -65,7 +66,6 @@ img {
 }
 
 .body-wrapper {
-  // border: 1px solid red;
   width: clamp(320px, 90vw, 1088px);
   min-height: 100svh;
   padding-top: 1rem;
@@ -85,33 +85,28 @@ header {
 
   & .header--title {
     position: relative;
-    min-height: 28rem;
+    container-type: inline-size;
 
     & > button {
       margin-bottom: 1rem;
       display: block;
       margin-inline: auto;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translate(-50%, 0%);
+      margin-top: clamp(2rem, 4cqb, 8rem);
 
       & > span {
-        font-size: var(--size-fluid-2);
+        font-size: var(--size-fluid-3);
         font-weight: 600;
       }
     }
   }
 
   & .header--img {
-    // border: 1px solid lime;
     width: 100%;
     display: grid;
     place-items: center;
 
     & > img {
       width: clamp(150px, 95%, 600px);
-      // border: 1px solid green;
       border-radius: 50%;
     }
   }

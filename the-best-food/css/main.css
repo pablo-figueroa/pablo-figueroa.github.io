@@ -34,19 +34,19 @@ h1 {
 }
 
 h2 {
+  font-family: cursive;
   font-size: var(--size-fluid-3);
   color: var(--gray-6);
   line-height: 1.5;
-  font-family: cursive;
 }
 
 button {
   background: none;
   border-style: none;
   background-color: var(--orange-5);
-  border-radius: 12px;
   color: #fefefe;
   width: 20rem;
+  border-radius: 12px;
   padding: 0.75rem 0;
   box-shadow: var(--shadow-2);
   transition: all 600ms ease-in;
@@ -80,7 +80,7 @@ header {
   background-color: #f0fbfd;
 }
 header .header--title {
-  position: relative;
+  width: 100%;
   container-type: inline-size;
 }
 header .header--title > button {
@@ -99,14 +99,18 @@ header .header--img {
   place-items: center;
 }
 header .header--img > img {
-  width: clamp(150px, 95%, 600px);
-  border-radius: 50%;
+  width: clamp(150px, 95%, 300px);
+  border-radius: 50% 50% 50% 0;
 }
 
 main {
   margin-top: var(--size-fluid-2);
 }
 
+.our-services {
+  width: 80%;
+  margin-inline: auto;
+}
 .our-services .our-services--title {
   text-align: center;
   font-size: var(--size-fluid-4);
@@ -138,22 +142,9 @@ main {
   grid-auto-flow: row;
   grid-template-columns: repeat(2, minmax(50%, 1fr));
   grid-template-rows: repeat(2, minmax(50%, 1fr));
-  grid-template-areas: "i_1 i_2" "i_3 i_4";
+  grid-template-areas: "i i" "i i";
 }
-.our-services .our-services--img .item-dishes .item-1 {
-  grid-area: i_1;
-  position: relative;
-}
-.our-services .our-services--img .item-dishes .item-2 {
-  grid-area: i_2;
-  position: relative;
-}
-.our-services .our-services--img .item-dishes .item-3 {
-  grid-area: i_3;
-  position: relative;
-}
-.our-services .our-services--img .item-dishes .item-4 {
-  grid-area: i_4;
+.our-services .our-services--img .item-dishes .item-1, .our-services .our-services--img .item-dishes .item-2, .our-services .our-services--img .item-dishes .item-3, .our-services .our-services--img .item-dishes .item-4 {
   position: relative;
 }
 .our-services .our-services--img .item-dishes img {
@@ -190,10 +181,14 @@ main {
   font-weight: 700;
 }
 
-.carrousel-container {
+.carrousel-wrapper {
+  margin-inline: auto;
+  width: 80%;
+}
+.carrousel-wrapper .carrousel-container {
   display: grid;
-  grid-template-columns: repeat(5, minmax(200px, 1fr));
-  gap: 0.5rem;
+  grid-template-columns: repeat(5, minmax(140px, 1fr));
+  gap: 0.75rem;
   overflow-x: auto;
 }
 
@@ -201,6 +196,8 @@ main {
   width: 100%;
   position: relative;
   margin-bottom: 1rem;
+  background-color: var(--orange-1);
+  border-radius: 50% 8px 50% 0;
 }
 .carrousel_item > img {
   width: 100%;
@@ -208,7 +205,7 @@ main {
   object-fit: cover;
   padding: 0 0.5rem;
   box-shadow: var(--shadow-2);
-  border-bottom-right-radius: 24px;
+  border-radius: inherit;
 }
 
 svg {

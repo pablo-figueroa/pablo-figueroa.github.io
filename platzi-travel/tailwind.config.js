@@ -1,4 +1,5 @@
-module.exports = {
+/** @type {import('tailwindcss').Config} */
+export default {
   content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {
@@ -7,7 +8,6 @@ module.exports = {
         secondary: "#8FA206",
         tertiary: "#61AEC9"
       },
-      
       backgroundImage: {
         losangeles:
           "url('https://github.com/platzi/PlatziTravel/blob/main/public/img/LA.jpg?raw=true')",
@@ -39,7 +39,7 @@ module.exports = {
           "url('https://github.com/platzi/PlatziTravel/blob/main/public/img/yosemite.jpg?raw=true')"
       },
       fontFamily: {
-        Montserrat: ["Montserrat", "sans-serif"]
+        Montserrat: ["Montserrat"]
       }
     }
   },
@@ -49,4 +49,3 @@ module.exports = {
     require("@tailwindcss/aspect-ratio")
   ]
 };
-

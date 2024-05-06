@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @layer base {
   html {
     font-family: "Montserrat", system-ui, sans-serif;
@@ -23,7 +19,7 @@
     @apply bg-cover bg-center;
   }
   .card-bttm {
-    @apply h-2/5 w-full rounded-b-xl pt-2;
+    @apply h-2/5 w-full rounded-b-xl pt-1;
   }
   .bg-odd {
     @apply bg-secondary;

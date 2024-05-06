@@ -7,6 +7,7 @@ module.exports = {
         secondary: "#8FA206",
         tertiary: "#61AEC9"
       },
+      
       backgroundImage: {
         losangeles:
           "url('https://github.com/platzi/PlatziTravel/blob/main/public/img/LA.jpg?raw=true')",

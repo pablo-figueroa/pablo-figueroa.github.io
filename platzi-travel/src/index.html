@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>platzi-travel</title>
+    <link rel="stylesheet" href="./css/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <!-- <script src="//unpkg.com/alpinejs" defer></script> -->
+  </head>
+  <body>
+    <div id="wrapper" class="dark:bg-slate-900">
+    <div class="hidden lg:block">
+    <nav class="mx-0 fixed left-0 top-0 right-0">
+      <div class="flex justify-around items-center w-full h-16 bg-white dark:bg-slate-800">
+        <div><p class="cursor-pointer text-primary dark:text-tertiary hover:my-drop-shadow">Platzi Travel</p></div>
+        <div  class="flex gap-4">
+          <p class="cursor-pointer text-primary dark:text-tertiary hover:my-drop-shadow">Locations</p>
+          <p class="cursor-pointer text-primary dark:text-tertiary hover:my-drop-shadow">Stays</p>
+          <p class="cursor-pointer text-primary dark:text-tertiary hover:my-drop-shadow">FAQS</p>
+          <p class="cursor-pointer text-primary dark:text-tertiary hover:my-drop-shadow">About Us</p>
+        </div>
+        <div class="flex gap-4">
+          <a href="#search">
+        <svg class="w-9 h-9 text-gray-600 dark:text-white stroke-primary dark:stroke-tertiary hover:scale-110 duration-500" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+		  </a>
+          </a>
+      <button id="toggle-desktop">
+        <a href="">
+          <svg class="w-9 h-9 fill-primary dark:fill-tertiary text-gray-600 dark:text-white hover:scale-110 duration-500" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+        </a>
+      </button>
+          <a href="#user">
+        <svg class="w-9 h-9 fill-gray-300 text-gray-600 dark:text-white hover:scale-110 hover:fill-gray-500 duration-500" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+      </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+    <div id="tab_bar"></div>
+    <section>
+      <div id="home">
+        <div>
+          <div class="flex h-[75vh] flex-col items-center justify-between bg-sanFrancisco lg:bg-sanFranciscoDesktop lg:pt-14 sm bg-cover bg-center bg-no-repeat">
+            <input class="duration-600 mt-6 w-2/5 min-w-72 rounded-full bg-white/30 p-3 shadow-sm outline-none transition-all ease-linear focus-within:shadow-sm hover:w-3/5 hover:shadow-sm hover:ring-2 hover:ring-secondary focus:w-3/5 focus:bg-white focus:ring-2 focus:ring-tertiary" placeholder="San Francisco" type="search" />
+            <button class="hover:bg-principal mb-6 w-48 transform rounded-full bg-white bg-white/75 p-4 text-lg font-semibold text-primary shadow-sm transition-all duration-500 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-primary hover:text-white">Explore</button>
+          </div>
+        </div>
+      </div>
+      <div class="m-5 mt-10"><p class="text-2xl lg:text-3xl font-bold text-primary dark:text-tertiary">Our recommendations</p></div>
+      <section class="grid grid-flow-col gap-3 overflow-x-scroll px-1 py-6" id="recomendandos">
+        <div class="card">
+          <div class="card-top bg-props bg-norway"></div>
+          <div class="card-bttm bg-odd">
+            <h2 class="title text-odd">Norway</h2>
+            <p class="topic text-odd">Beautiful landscapes</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-top bg-props bg-new_york"></div>
+          <div class="card-bttm bg-even">
+            <h2 class="title text-even">New York</h2>
+            <p class="topic text-even">Concrete Jungle</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-top bg-props bg-yosemite"></div>
+          <div class="card-bttm bg-odd">
+            <h2 class="title text-odd">Yosemite</h2>
+            <p class="topic text-odd">Un respiro del mundo</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-top bg-props bg-seattle"></div>
+          <div class="card-bttm bg-even">
+            <h2 class="title text-even">Seattle</h2>
+            <p class="topic text-even">Una ciudad para disfrutar al máximo</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-top bg-props bg-switzerland"></div>
+          <div class="card-bttm bg-odd">
+            <h2 class="title text-odd">Switzerland</h2>
+            <p class="topic text-odd">El mejor chocolate caliente que probarás</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-top bg-props bg-sydney"></div>
+          <div class="card-bttm bg-even">
+            <h2 class="title text-even">Sydney</h2>
+            <p class="topic text-even">Conoce la famosísima Opera House</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-top bg-props bg-losangeles"></div>
+          <div class="card-bttm bg-odd">
+            <h2 class="title text-odd">Los Angeles</h2>
+            <p class="topic text-odd">Visita el Paseo de la Fama de Hollywood</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-top bg-props bg-iceland"></div>
+          <div class="card-bttm bg-even">
+            <h2 class="title text-even">Iceland</h2>
+            <p class="topic text-even">Auroras danzantes iluminan el cielo nocturno.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-top bg-props bg-bali"></div>
+          <div class="card-bttm bg-odd">
+            <h2 class="title text-odd">Bali</h2>
+            <p class="topic text-odd">Playas doradas y templos enclavados en la selva.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-top bg-props bg-chicago"></div>
+          <div class="card-bttm bg-even">
+            <h2 class="title text-even">Chicago</h2>
+            <p class="topic text-even">Rascacielos reflejados en las aguas del lago.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-top bg-props bg-europe"></div>
+          <div class="card-bttm bg-odd">
+            <h2 class="title text-odd">Europe</h2>
+            <p class="topic text-odd">Encanto histórico de los castillos.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-top bg-props bg-miami"></div>
+          <div class="card-bttm bg-even">
+            <h2 class="title text-even">Miami</h2>
+            <p class="topic text-even">Brisas cálidas acarician palmeras y arenas blancas.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-top bg-props bg-sanFrancisco"></div>
+          <div class="card-bttm bg-odd">
+            <h2 class="title text-odd">San Francisco</h2>
+            <p class="topic text-odd">Puente icónico se alza sobre la bahía neblinosa.</p>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section id="rentas_destacadas">
+      <div class="m-5 mt-10"><p class="text-2xl lg:text-3xl font-bold text-primary dark:text-tertiary">Estancias destacadas</p></div>
+      <div class="mx-8 h-96 rounded-lg bg-chicago bg-cover bg-center bg-no-repeat">
+        <h2 class="estancia-destacada_title">Chicago</h2>
+        <p class="estancia-destacada_comentario">2 habitaciones, baño y cocina.</p>
+      </div>
+      <div class="mt-4 grid grid-flow-row grid-cols-1 gap-4 lg:mx-auto lg:max-w-[1024px] lg:grid-cols-2 lg:grid-rows-2">
+        <div class="card-destacada bg-fixed bg-losangeles lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3 lg:h-auto lg:w-full lg:max-w-[768px]">
+          <h2 class="estancia-destacada_title">Los Ángeles</h2>
+          <p class="estancia-destacada_comentario">4 habitaciones, 3 baños, cocina y piscina.</p>
+        </div>
+        <div class="card-destacada bg-miami lg:col-start-2 lg:col-end-3 lg:row-start-1 lg:row-end-2 lg:h-80 lg:w-full lg:max-w-[768px]">
+          <h2 class="estancia-destacada_title">Miami</h2>
+          <p class="estancia-destacada_comentario">4 habitaciones, 3 baños, cocina y excelente vista al mar.</p>
+        </div>
+        <div class="card-destacada bg-bali lg:col-start-2 lg:col-end-3 lg:row-start-2 lg:row-end-3 lg:h-80 lg:w-full lg:max-w-[768px]">
+          <h2 class="estancia-destacada_title">Bali</h2>
+          <p class="estancia-destacada_comentario">2 habitaciones, baño, cocina y piscina privada.</p>
+        </div>
+      </div>
+    </section>
+    <section id="faq">
+      <div class="m-5 mt-10"><p class="text-3xl font-bold text-primary dark:text-tertiary">FAQs</p></div>
+      <div class="m-5">
+        <p class="text-2xl font-bold text-primary dark:text-tertiary">Payment Methods</p>
+        <p class="dark:text-white">We accept VISA, MasterCard, American Express, Paypal and Binance</p>
+      </div>
+      <div class="m-5">
+        <p class="dark:text-tertiary text-2xl font-bold text-primary">Payment Methods</p>
+        <p class="dark:text-white">We accept VISA, MasterCard, American Express, Paypal and Binance</p>
+      </div>
+      <div class="m-5">
+        <p class="dark:text-tertiary text-2xl font-bold text-primary">Payment Methods</p>
+        <p class="dark:text-white">We accept VISA, MasterCard, American Express, Paypal and Binance</p>
+      </div>
+      <div class="m-5">
+        <p class="dark:text-tertiary text-2xl font-bold text-primary">Payment Methods</p>
+        <p class="dark:text-white">We accept VISA, MasterCard, American Express, Paypal and Binance</p>
+      </div>
+      <div class="m-5">
+        <p class="dark:text-tertiary text-2xl font-bold text-primary">Payment Methods</p>
+        <p class="dark:text-white">We accept VISA, MasterCard, American Express, Paypal and Binance</p>
+      </div>
+    </section>
+    <footer class="mt-10 mb-16 lg:mb-0 h-auto w-full space-y-2 bg-slate-100 dark:bg-slate-800 p-6 text-gray-800 dark:text-white">
+        <p class="text-lg text-gray-500">Acerca de</p>
+        <p class="footer-text">Politica de privacidad</p>
+        <p class="footer-text">Inversionistas</p>
+        <p class="footer-text">Empleos</p>
+        <p class="footer-text">Términos y condiciones</p>
+        <p class="footer-text">Platzi Travel, Inc.</p>
+        <div class="flex space-x-4 pt-4">
+          <div><i class="fa fa-facebook fa-2x"></i></div>
+          <div><i class="fa fa-twitter fa-2x"></i></div>
+          <div><i class="fa fa-instagram fa-2x"></i></div>
+        </div>
+      </footer>
+      </div>
+    <div class="w-full h-16 bg-white fixed left-0 bottom-0 shadow-md flex space-x-8 items-center justify-center dark:bg-gray-800 lg:hidden">
+      <a href="#home">
+        <svg class="w-9 h-9 fill-green-500 text-gray-200 dark:text-white hover:scale-110 hover:fill-green-600 duration-500" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
+		  </a>
+		  <a href="#search">
+        <svg class="w-9 h-9 text-gray-600 dark:text-white hover:scale-110 duration-500 hover:stroke-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+		  </a>
+		  <a href="#recomendados">
+  			<svg class="w-9 h-9 fill-red-500 text-gray-600 dark:text-white hover:scale-110 hover:fill-red-600 duration-500" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+		  </a>
+      <button id="dark-mode-toggle">
+        <svg class="w-9 h-9 fill-gray-200 text-gray-600 dark:text-white hover:scale-110 hover:fill-gray-400 duration-500" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+      </button>
+      <a href="#user">
+        <svg class="w-9 h-9 fill-teal-500 text-gray-600 dark:text-white hover:scale-110 hover:fill-teal-700 duration-500" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+      </a>
+	</div>
+    <!-- <script>
+    const container = document.querySelector('html');
+    const toggleButtonNavbar = document.querySelector('#toggle-desktop');
+    const toggleButtonTabBar = document.querySelector('#toggle-sm');
+
+
+    toggleButtonNavbar.addEventListener('click', toggleDarkmode);
+    toggleButtonTabBar.addEventListener('click', toggleDarkmode);
+
+
+    function toggleDarkmode () {
+        container.classList.toggle('dark');
+    }
+    console.log('connect')
+  </script> -->
+  <script>
+  const toggleButton = document.getElementById('dark-mode-toggle');
+
+  toggleButton.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+  });
+</script>
+  </body>
+</html>

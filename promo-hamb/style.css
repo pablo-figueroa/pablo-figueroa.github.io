@@ -3,18 +3,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 100vh; */
     min-height: 100vh;
     min-height: 100dvh;
     margin: 0;
-    background-color: #000000;
+    background: url("assets/bg.svg") center / cover no-repeat;
 }
 
 .container {
     background: white;
     padding: 2rem;
-    border-radius: 0 26px 26px;
-    box-shadow: 0 4px 665px rgba(200,200,200,0.9);
+    border-radius: 47%;
+    box-shadow: 10px 45px 45px rgba(0,0,0,0.9);
     text-align: center;
     width: 350px;
 }
@@ -34,7 +33,7 @@ input[type="number"] {
     font-size: 20px;
     border-radius: 30px;
     border: none;
-    background-color: #4CAF50; /* Green 500 */
+    background-color: #01579B; /* Light Blue 900 */
     color: white;
     font-weight: bold;
     outline: none;
@@ -57,7 +56,7 @@ input::-webkit-inner-spin-button {
 }
 
 .label-title {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
 }
 

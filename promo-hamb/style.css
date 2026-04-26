@@ -56,13 +56,13 @@ input::-webkit-inner-spin-button {
 }
 
 .label-title {
-    font-size: 22px;
+    font-size: 26px;
     font-weight: bold;
 }
 
 .radio-group label {
     margin: 0 10px;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
 }
 

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador de Medallones</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        
+        <div class="row">
+            <p class="label-title">Medallones</p>
+        </div>
+
+        <div class="row radio-group">
+            <label>
+                <input type="radio" name="marca" value="a" onchange="calcularPaquetes()"> Friar
+            </label>
+            <label>
+                <input type="radio" name="marca" value="b" onchange="calcularPaquetes()"> Tres Cruces
+            </label>
+        </div>
+
+        <hr>
+        
+        
+        <div class="row">
+            <button onclick="minusClick()" class="icon-btn">−</button>
+            <input type="number" id="txtNumber" value="0" min="0" oninput="calcularPaquetes()">
+            <button onclick="plusClick()" class="icon-btn">+</button>
+        </div>
+
+        <hr>
+
+        
+
+        <div class="row">
+            <div id="lblResultado" class="resultado">Seleccione una marca</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

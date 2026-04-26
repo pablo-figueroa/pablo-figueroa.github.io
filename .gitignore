@@ -3,3 +3,6 @@ main-teacher.css
 createTailwind.sh
 node_modules/
 test-me-first.html
+main.scss
+*.map
+transform_transition/
